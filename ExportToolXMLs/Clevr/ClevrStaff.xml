@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Status: UNTESTED!!
+        [ ] Check to make sure the school ID field will actually be the school DAN
+        [ ] Check to make sure the staff ID is an appropriate field   
+
+    TODO:
+        [ ] Filter for active staff (based on if their user account is active? (relStfPsnOid.relPsnUsrOid.usrPwdRcDisInd == 1 is disabled)         
+-->
+<export table-id="tblStaff" header-row="true">
+    <!-- Clevr Tenant ID -->
+    <constant value="YOURTENANTIDHERE" header-source="constant" header-value="tenantId" />
+    
+    <!-- You may need to adjust these fields if you used different ID numbers initially -->
+    <!--
+        PersonID: relStfPsnOid.psnPersonID
+        StaffID: stfStaffID
+        UserID: relStfPsnOid.relPsnUsrOid 
+     -->
+    <field id="stfStaffID" header-source="constant" header-value="proprietaryId" />
+    <field id="stfStaffID" header-source="constant" header-value="localId" />
+
+    <!-- primaryLocation: should be the unique ID number for the school -->
+    <field id="relStfSklOid.sklSchoolID" header-source="constant" header-value="primaryLocation" />
+
+    <field id="relStfPsnOid.psnNameLast" header-source="constant" header-value="lastName" />
+    <field id="relStfPsnOid.psnNameFirst" header-source="constant" header-value="firstName" />
+    <field id="relStfPsnOid.psnNameMiddle" header-source="constant" header-value="middleName" />
+
+    <field id="relStfPsnOid.psnNameFirst" header-source="constant" header-value="commonName" />
+    <field id="relStfPsnOid.psnDob" header-source="constant" header-value="birthdate" />
+
+    <!-- status: 1 = Active, 2 = inactive -->
+    <!-- <field id="" header-source="constant" header-value="status" /> -->    
+    <constant value="1" header-source="constant" header-value="status" />
+
+    <!-- change to "relStfPsnOid.psnEmail02" if you need to use "alternate email" field instead of "primary email" -->
+    <field id="relStfPsnOid.psnEmail01" header-source="constant" header-value="email" />
+
+    <!-- gender is an optional field which you may choose to not send to clevr -->
+    <field id="relStfPsnOid.psnGenderCode" header-source="constant" header-value="gender" />
+    <!--<constant value="" header-source="constant" header-value="gender" />-->
+
+    <!-- If there is no field for role, this should be blank -->
+    <!-- <field id="" header-source="constant" header-value="role" /> -->
+    <constant value="" header-source="constant" header-value="role" />
+    
+    <!-- 
+        You may want the clevr username to be:
+            Match their MSS username: relStfPsnOid.relPsnUsrOid.usrLoginName
+            The user's email address: relStfPsnOid.psnEmail01
+            The user's alternate email address: relStfPsnOid.psnEmail02
+            The user's Active Directory ID: relStfPsnOid.relPsnUsrOid.usrAdID
+     -->
+    <field id="relStfPsnOid.psnEmail01" header-source="constant" header-value="username" />
+        
+    <!-- <field id="" header-source="constant" header-value="password" /> -->
+    <constant value="" header-source="constant" header-value="password" />
+    
+</export>
+
