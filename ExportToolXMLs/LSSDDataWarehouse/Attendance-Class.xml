@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export table-id="tblStdPerAtt" header-row="true">
+  <field id="relPatStdOid.stdGUID" header-source="constant" header-value="StudentGUID" />
+  <field id="relPatStdOid.stdIDState" header-source="constant" header-value="StudentLearningID" />
+  <field id="relPatStdOid.stdIDLocal" header-source="constant" header-value="StudentLocalID" />
+  <field id="relPatSklOid.sklSchoolName" header-source="constant" header-value="SchoolName" />
+  <field id="relPatSklOid.sklSchoolID" header-source="constant" header-value="SchoolID" />  
+  <field id="relPatMstOid.mstSectionNum" header-source="constant" header-value="sectionNumber" />
+  <field id="relPatMstOid.mstStaffView" header-source="constant" header-value="sectionTeacher" />
+  <field id="patCodeView" header-source="constant" header-value="" />
+  <field id="patComment" header-source="constant" header-value="" />
+  <field id="patDate" header-source="constant" header-value="" />
+  <field id="patAbsentInd" header-source="constant" header-value="" />
+  <field id="patDismissInd" header-source="constant" header-value="" />
+  <field id="patExcusedInd" header-source="constant" header-value="" />
+  <field id="patTardyInd" header-source="constant" header-value="" />
+  <field id="patOtherCode01" header-source="constant" header-value="" />
+  <field id="patOtherCode02" header-source="constant" header-value="" />
+  <field id="patPeriodView" header-source="constant" header-value="" />
+  <field id="patReason" header-source="constant" header-value="" />
+  <field id="patTimeIn" header-source="constant" header-value="" />
+  <field id="patTimeOut" header-source="constant" header-value="" />
+</export>
+

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export table-id="tblCalSklDate" header-row="true">
+  <field id="csdDate" />
+  <field id="csdInSession" />
+  <field id="csdBelOID" />
+  <field id="csdSchdDayNum" />
+  <field id="csdSchdDayType" />
+</export>

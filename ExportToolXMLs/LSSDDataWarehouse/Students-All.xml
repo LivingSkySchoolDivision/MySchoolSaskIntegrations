@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export table-id="tblStudent" header-row="true">   
+
+    <field id="stdOID" header-source="constant" header-value="StudentOID" />
+    <field id="stdIDState" header-source="constant" header-value="StudentLearningID" />
+    <field id="stdIDLocal" header-source="constant" header-value="StudentLocalID" />       
+
+    <field id="relStdPsnOid.psnNameFirst" header-source="constant" header-value="FirstName" />  
+    <field id="relStdPsnOid.psnNameLast" header-source="constant" header-value="LastName" />
+    <field id="relStdPsnOid.psnNameMiddle" header-source="constant" header-value="MiddleName" />
+    <field id="relStdPsnOid.psnGenderCode" header-source="constant" header-value="Gender" />
+    <field id="relStdPsnOid.psnDob" format="YYYY-MM-dd" header-source="constant" header-value="DateOfBirth" />
+    <field id="relStdPsnOid.psnEmail01" header-source="constant" header-value="email" />
+
+    <field id="relStdSklOid.sklSchoolName" header-source="constant" header-value="BaseSchool" />    
+    <field id="relStdSklOid.sklFieldA006" header-source="constant" header-value="SchoolDAN" />    
+  
+    <field id="stdEnrStatus" header-source="constant" header-value="EnrollmentStatus" />
+    <field id="stdGradeLevel" header-source="constant" header-value="GradeLevel" />
+    <field id="stdYog" header-source="constant" header-value="YOG" />    
+</export>
