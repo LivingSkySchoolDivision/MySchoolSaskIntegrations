@@ -1,0 +1,13 @@
+https://help.xello.world/article/940-tech-knowledge-base
+
+Data Definitions for File-Based Data Integration
+https://help.xello.world/article/945-data-definitions-for-file-based-data-integration
+
+Build Data Export Files
+https://help.xello.world/article/941-build-data-export-files
+
+Create Student Data Files
+https://help.xello.world/article/944-create-student-data-files
+
+Create Course Data Files
+https://help.xello.world/article/943-create-course-data-files
