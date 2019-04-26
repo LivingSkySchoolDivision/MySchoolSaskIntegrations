@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Status: TESTED, INCOMPLETE
+        [ ] Check to make sure the school ID field will actually be the school DAN
+        [ ] Check to make sure the staff ID is an appropriate field   
+
+    TODO:
+        [ ] How do we handle the Medical notes field?
+        [ ] How can we get an address into a single field? (for numerous fields in this export)
+-->
+<export table-id="tblStudent" header-row="true">
+    <!-- Only export active or prereg students -->
+    <filter field="stdEnrStatus" operator="equals" value="Active" />   
+    <filter field="stdEnrStatus" operator="equals" value="PreReg" connector="or" />
+
+    <!-- Clevr Tenant ID -->    
+    <constant value="YOURTENANTIDHERE" header-source="constant" header-value="tenantId" />
+    
+    <!--
+        "Learning ID" (probably SK learning ID): stdIDState        
+        "Student number": stdIDLocal
+
+        Other unique numbers:
+            GUID: stdGUID / stdGUID2 / stdGUID3
+            Object ID: stdOID (possibly the same as the GUID)
+    -->
+    <field id="stdIDLocal" header-source="constant" header-value="proprietaryId" />
+    <field id="stdIDLocal" header-source="constant" header-value="localId" />
+
+    <!-- Student -->
+    <field id="relStdPsnOid.psnNameLast" header-source="constant" header-value="lastName" />
+    <field id="relStdPsnOid.psnNameFirst" header-source="constant" header-value="firstName" />
+    <field id="relStdPsnOid.psnDob" header-source="constant" header-value="birthdate" />
+    <field id="relStdSklOid.sklSchoolName" header-source="constant" header-value="schoolName" />
+    <field id="stdPgmOfStudy" header-source="constant" header-value="schoolProgram" />
+    <field id="stdHomeLang" header-source="constant" header-value="homeLanguage" />
+    <constant value="" header-source="constant" header-value="countryOrigin" /><!-- TODO: Does this field exist and where is it -->
+    <field id="stdGradeLevel" header-source="constant" header-value="studentGradeLevel" />
+    
+    <!-- 
+        Homeroom
+        This will be the homeroom name, not the teacher. It's likely not possible to get the teacher.
+    -->
+    <field id="stdHomeroom" header-source="constant" header-value="homeroomTeacher" /> 
+
+    <field id="relStdPsnOid.psnPhone01" header-source="constant" header-value="studentPhone" />
+    <field id="relStdPsnOid.psnPhone02" header-source="constant" header-value="studentCell" />
+
+    <!-- TODO: Is it possible to pull the number of earned credits from somewhere? -->
+    <constant value="" header-source="constant" header-value="currentCredits" />
+
+    <!-- 
+        Student physical address
+        TODO: Find a way to get the whole address as one blob instead of separate fields
+    -->
+    <!-- <field id="" header-source="constant" header-value="studentStreetAddress" /> -->
+    <constant value="" header-source="constant" header-value="studentStreetAddress" /> 
+
+    <!-- PO Box - MSS doesn't store PO boxes separately, so this may not be possible to single out -->
+    <constant value="" header-source="constant" header-value="studentPOBox" /> 
+
+    <field id="relStdPsnOid.relPsnAdrPhys.adrCity" header-source="constant" header-value="studentCity" />
+    <field id="relStdPsnOid.relPsnAdrPhys.adrPostalCode" header-source="constant" header-value="studentPostalCode" />
+
+    <!-- 
+        Student mailing address
+        TODO: Find a way to get the whole address as one blob instead of separate fields
+    -->
+    <!-- <field id="" header-source="constant" header-value="studentMailingAddress" /> -->
+    <constant value="" header-source="constant" header-value="studentMailingAddress" />     
+
+    <!-- Contact 1 -->
+    <field id="relStdCtjOid1.relCtjCntOid.cntViewName" header-source="constant" header-value="parent1Name" />
+    <field id="relStdCtjOid1.relCtjCntOid.relCntPsnOid.psnEmail01" header-source="constant" header-value="parent1Email" />
+    <field id="relStdCtjOid1.relCtjCntOid.relCntPsnOid.psnPhone01" header-source="constant" header-value="parent1Phone" />
+    <field id="relStdCtjOid1.relCtjCntOid.relCntPsnOid.psnPhone02" header-source="constant" header-value="parent1Cell" />
+    <field id="relStdCtjOid1.relCtjCntOid.relCntPsnOid.psnPhone03" header-source="constant" header-value="parent1Workphone" />
+    <constant value="" header-source="constant" header-value="parent1StreetAddress" />
+    <constant value="" header-source="constant" header-value="parent1POBox" />
+    <field id="relStdCtjOid1.relCtjCntOid.relCntPsnOid.relPsnAdrPhys.adrCity" header-source="constant" header-value="parent1City" />
+    <field id="relStdCtjOid1.relCtjCntOid.relCntPsnOid.relPsnAdrPhys.adrPostalCode" header-source="constant" header-value="parent1PostalCode" />
+    <constant value="" header-source="constant" header-value="parent1MailingAddress" />
+    <field id="relStdCtjOid1.ctjRelateCode" header-source="constant" header-value="parent1Agency" />
+    
+    <!-- Contact 2 -->
+    <field id="relStdCtjOid2.relCtjCntOid.cntViewName" header-source="constant" header-value="parent2Name" />
+    <field id="relStdCtjOid2.relCtjCntOid.relCntPsnOid.psnEmail01" header-source="constant" header-value="parent2Email" />
+    <field id="relStdCtjOid2.relCtjCntOid.relCntPsnOid.psnPhone01" header-source="constant" header-value="parent2Phone" />
+    <field id="relStdCtjOid2.relCtjCntOid.relCntPsnOid.psnPhone02" header-source="constant" header-value="parent2Cell" />
+    <field id="relStdCtjOid2.relCtjCntOid.relCntPsnOid.psnPhone03" header-source="constant" header-value="parent2Workphone" />
+    <constant value="" header-source="constant" header-value="parent2StreetAddress" />
+    <constant value="" header-source="constant" header-value="parent2POBox" />
+    <field id="relStdCtjOid2.relCtjCntOid.relCntPsnOid.relPsnAdrPhys.adrCity" header-source="constant" header-value="parent2City" />
+    <field id="relStdCtjOid2.relCtjCntOid.relCntPsnOid.relPsnAdrPhys.adrPostalCode" header-source="constant" header-value="parent2PostalCode" />
+    <constant value="" header-source="constant" header-value="parent2MailingAddress" />
+    <field id="relStdCtjOid2.ctjRelateCode" header-source="constant" header-value="parent2Agency" />
+
+    <!-- Contact 3 -->
+    <field id="relStdCtjOid3.relCtjCntOid.cntViewName" header-source="constant" header-value="parent3Name" />
+    <field id="relStdCtjOid3.relCtjCntOid.relCntPsnOid.psnEmail01" header-source="constant" header-value="parent3Email" />
+    <field id="relStdCtjOid3.relCtjCntOid.relCntPsnOid.psnPhone01" header-source="constant" header-value="parent3Phone" />
+    <field id="relStdCtjOid3.relCtjCntOid.relCntPsnOid.psnPhone02" header-source="constant" header-value="parent3Cell" />
+    <field id="relStdCtjOid3.relCtjCntOid.relCntPsnOid.psnPhone03" header-source="constant" header-value="parent3Workphone" />
+    <constant value="" header-source="constant" header-value="parent3StreetAddress" />
+    <constant value="" header-source="constant" header-value="parent3POBox" />
+    <field id="relStdCtjOid3.relCtjCntOid.relCntPsnOid.relPsnAdrPhys.adrCity" header-source="constant" header-value="parent3City" />
+    <field id="relStdCtjOid3.relCtjCntOid.relCntPsnOid.relPsnAdrPhys.adrPostalCode" header-source="constant" header-value="parent3PostalCode" />
+    <constant value="" header-source="constant" header-value="parent3MailingAddress" />
+    <field id="relStdCtjOid3.ctjRelateCode" header-source="constant" header-value="parent3Agency" />
+
+    <!-- More student stuff -->    
+    <constant value="" header-source="constant" header-value="attendanceTotAbsences" />
+    <constant value="" header-source="constant" header-value="attendanceTotLates" />
+    <constant value="" header-source="constant" header-value="fundingLevel" />
+    <constant value="" header-source="constant" header-value="fundingCategory" />
+    <constant value="" header-source="constant" header-value="fundingRenewalDate" />
+    <constant value="" header-source="constant" header-value="medical" />
+    <constant value="" header-source="constant" header-value="aboriginalAcademicAchievementGrant" />
+
+</export>
+
