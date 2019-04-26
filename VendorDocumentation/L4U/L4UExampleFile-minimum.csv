@@ -1,0 +1,2 @@
+School, StudentID, GivenName, MiddleName, Surname, Grade, DateOfBirth, HomeRoom
+"Example School", "12345", "Harvey", "J", "Birdman", "5", "11/21/2006", "Grade 5 - Smith"
