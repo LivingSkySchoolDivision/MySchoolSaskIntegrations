@@ -26,7 +26,6 @@
     <field id="relStfPsnOid.psnNameLast" header-source="constant" header-value="lastName" />
     <field id="relStfPsnOid.psnNameFirst" header-source="constant" header-value="firstName" />
     <field id="relStfPsnOid.psnNameMiddle" header-source="constant" header-value="middleName" />
-
     <field id="relStfPsnOid.psnNameFirst" header-source="constant" header-value="commonName" />
     <field id="relStfPsnOid.psnDob" header-source="constant" header-value="birthdate" />
 

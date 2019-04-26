@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Status: UNTESTED!!
+        [ ] Check to make sure the school ID field will actually be the school DAN
+        [ ] Check to make sure the staff ID is an appropriate field   
+
+    Table Relations:
+        Person: relStdPsnOid
+        School: relStdSklOid
+
+-->
+<export table-id="tblStudent" header-row="true">
+    <!-- Only export active or prereg students -->
+    <filter field="stdEnrStatus" operator="equals" value="Active" />   
+    <filter field="stdEnrStatus" operator="equals" value="PreReg" connector="or" />
+
+    <!-- Clevr Tenant ID -->    
+    <constant value="YOURTENANTIDHERE" header-source="constant" header-value="tenantId" />
+    
+    <!--
+        "Learning ID" (probably SK learning ID): stdIDState        
+        "Student number": stdIDLocal
+
+        Other unique numbers:
+            GUID: stdGUID / stdGUID2 / stdGUID3
+            Object ID: stdOID (possibly the same as the GUID)
+    -->
+    <field id="stdIDLocal" header-source="constant" header-value="proprietaryId" />
+    <field id="stdIDLocal" header-source="constant" header-value="localId" />
+
+    <field id="relStdSklOid.sklSchoolID" header-source="constant" header-value="primaryLocation" />
+
+    <field id="relStdPsnOid.psnNameLast" header-source="constant" header-value="lastName" />
+    <field id="relStdPsnOid.psnNameFirst" header-source="constant" header-value="firstName" />
+    <field id="relStdPsnOid.psnNameMiddle" header-source="constant" header-value="middleName" />
+    <field id="relStdPsnOid.psnNameFirst" header-source="constant" header-value="commonName" />
+
+    <field id="relStdPsnOid.psnDob" format="YYYY-MM-dd" header-source="constant" header-value="birthdate" />
+
+    <!-- status: 1 = Active, 2 = inactive -->
+    <!-- <field id="" header-source="constant" header-value="status" /> -->  
+    <constant value="1" header-source="constant" header-value="status" />
+    
+    <field id="relStdPsnOid.psnEmail01" header-source="constant" header-value="email" />
+    <field id="relStdPsnOid.psnGenderCode" header-source="constant" header-value="gender" />
+    <constant value="student" header-source="constant" header-value="role" />
+
+    <!-- 
+        You may want the clevr username to be:
+            Match their MSS username: relStfPsnOid.relPsnUsrOid.usrLoginName
+            The user's email address: relStfPsnOid.psnEmail01
+            The user's alternate email address: relStfPsnOid.psnEmail02
+            The user's Active Directory ID: relStfPsnOid.relPsnUsrOid.usrAdID
+     -->
+    <field id="relStdPsnOid.psnEmail01" header-source="constant" header-value="username" />
+
+    <!-- Don't send a password, clevr will use LDAP or ADFS instead -->        
+    <constant value="" header-source="constant" header-value="password" />
+
+    <field id="stdGradeLevel" header-source="constant" header-value="grade" />
+</export>
+

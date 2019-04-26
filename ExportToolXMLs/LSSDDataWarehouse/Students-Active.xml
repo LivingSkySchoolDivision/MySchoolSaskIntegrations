@@ -18,7 +18,7 @@
     <field id="relStdPsnOid.psnEmail01" header-source="constant" header-value="email" />
 
     <field id="relStdSklOid.sklSchoolName" header-source="constant" header-value="BaseSchool" />    
-    <field id="relStdSklOid.sklFieldA006" header-source="constant" header-value="SchoolDAN" />    
+    <field id="relStdSklOid.sklSchoolID" header-source="constant" header-value="SchoolDAN" />    
   
     <field id="stdEnrStatus" header-source="constant" header-value="EnrollmentStatus" />
     <field id="stdGradeLevel" header-source="constant" header-value="GradeLevel" />
