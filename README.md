@@ -1,5 +1,5 @@
 # MySchoolSask Integrations
-This repo represents work and research done for the purpose of creating export definitions for MySchoolSask (an implementation of Follett Aspen).
+This git repository represents work and research done for the purpose of creating export definitions for MySchoolSask (an implementation of Follett Aspen).
 
 # Using this repository
 
