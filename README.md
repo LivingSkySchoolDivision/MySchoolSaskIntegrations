@@ -3,15 +3,22 @@ This repo represents work and research done for the purpose of creating export d
 
 # Using this repository
 
-The __AspenNotes__ directory contains some general notes on how Aspen handles things like special variables for filters.
+* The __AspenNotes__ directory contains some general notes on how Aspen handles things like special variables for filters.
 
-The __ExportToolXMLs__ directory contains XML files to be used when creating an export definition in Aspen/MySchoolSask. They are organized into folders by vendor or product.
+* The __ExportToolXMLs__ directory contains XML files to be used when creating an export definition in Aspen/MySchoolSask. They are organized into folders by vendor or product.
 
-The __Howto__ directory contains instructions for end-users on how to install an export XML file
+* The __Howto__ directory contains instructions for end-users on how to install an export XML file
 
-The __VendorDocumentation__ directory contains documents and/or links to vendor integration file specifications
+* The __VendorDocumentation__ directory contains documents and/or links to vendor integration file specifications
 
 
+# Documentation
+  * [How to install an XML file from this repository](HowTo/HowToInstallAnExportXML.md)
+  * [How to set an export to run automatically on a schedule](HowTo/HowToRunAnExportAutomatically.md)
+  * [How to run an export manually](HowTo/HowToRunAnExportManually.md)
+
+## Downloading this repository to your computer
+https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations/archive/master.zip
 
 # Contributing
 ## Contributing via GitHub
