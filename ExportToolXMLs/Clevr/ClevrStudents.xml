@@ -10,7 +10,14 @@
     <filter field="stdEnrStatus" operator="equals" value="Active" />   
     <filter field="stdEnrStatus" operator="equals" value="PreReg" connector="or" />
 
-    <!-- Clevr Tenant ID -->    
+    <!-- Clevr Tenant ID -->   
+    <!-- 
+        EXPORT CUSTOMIZATION REQUIRED
+        =============================
+        Clevr uses this field to identify which customer an integration file belongs to.
+        You will need to edit this value to match your Clevr tenant ID, or it will cause errors 
+        when the export file is imported into Clevr.
+    -->    
     <constant value="YOURTENANTIDHERE" header-source="constant" header-value="tenantId" />
     
     <!--
