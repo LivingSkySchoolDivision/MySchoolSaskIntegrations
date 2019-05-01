@@ -38,7 +38,7 @@ For example, if your Clevr tenant ID is "1234", you should edit this line in the
 6. Enter a meaningful name for your export (example: LSSD Clevr Student File)
 7. Enter a meaningful _Definition ID_ for your export (example: LSSD-CLEVR-STUDENT)
 8. If you plan to run this export automatically, check the __Schedulable__ checkbox
-9. Click the ![up-arrow](img/upload-icon.gif) __upload__ icon
+9. Click the ![up-arrow](IMG/upload-icon.gif) __upload__ icon
 10. Click __Choose File__ and select the XML file you wish to use for this export
 11. Click __Import__
 12. Click __Save__

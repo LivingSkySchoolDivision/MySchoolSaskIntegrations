@@ -10,7 +10,7 @@ You need __Division__ level access to create jobs.
 4. Click __Options__
 5. Click __Add__
 6. Give your job a meaningful name (Example: LSSD Clevr Student File)
-7. Click the ![magnifying-glass](img/picklist-black-small.png) magnifying glass icon next to __Select a tool__
+7. Click the ![magnifying-glass](IMG/picklist-black-small.png) magnifying glass icon next to __Select a tool__
 8. For __Tool type__ select __Import/Export__
 9. Select your export from the list
 10. Check __Enabled__
