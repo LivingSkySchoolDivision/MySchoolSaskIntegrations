@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
-    Status: INCOMPLETE - Waiting for more info from vendor regarding using date codes
-        
-    TODO:
-        [ ] How can we filter by date or datecode? We were told we could ,and that there are variables we can use, but the specifics haven't been made available to us yet
--->
 <export table-id="tblStdAttend" header-row="true">
-    <filter field="attDate" operator="equals" value="???"/>     
+    <filter field="attDate" operator="equals" source="default" value="today" />   
 
     <field id="relAttStdOid.stdGUID" header-source="constant" header-value="StudentGUID" />
     <field id="relAttStdOid.stdIDState" header-source="constant" header-value="StudentLearningID" />
