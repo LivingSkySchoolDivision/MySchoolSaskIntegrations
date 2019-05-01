@@ -30,19 +30,36 @@ For example, if your Clevr tenant ID is "1234", you should edit this line in the
 
 ## Creating the export in MySchoolSask
 
+### Create export by uploading an XML file from your computer
 1. Go to the __Division__ view
 2. Go to the __Tools__ top-tab
 3. Go to the __Exports__ side-tab
 4. Click __Options__
 5. Click __Add__
-6. Enter a meaningful name for your export (example: LSSD Clevr Student File)
-7. Enter a meaningful _Definition ID_ for your export (example: LSSD-CLEVR-STUDENT)
-8. If you plan to run this export automatically, check the __Schedulable__ checkbox
-9. Click the ![up-arrow](IMG/upload-icon.gif) __upload__ icon
-10. Click __Choose File__ and select the XML file you wish to use for this export
-11. Click __Import__
-12. Click __Save__
+6. Give your export a meaningful name (example: LSSD Clevr Student File)
+7. Give your export a unique _Definition ID_ (example: LSSD-CLEVR-STUDENTS)
+8. If you intend your export to be run automatically, check the __Schedulable__ checkbox
+9. In the __XML definition__ field, click the __upload__ icon ![The Up-Arrow icon](IMG/upload-icon.gif "Upload icon")
+10. Click the __Choose File__ button
+11. Select the XML file you wish to use for this export
+12. Click __Import__
+13. Click __Save__
+14. Now you can [Run your export](HowToRunAnExportManually.md) or [Create an automated job](HowToRunAnExportAutomatically.md) to run your export on a schedule.
 
-Your export is now created. 
+### Create export by copying and pasting XML code
+1. Go to the __Division__ view
+2. Go to the __Tools__ top-tab
+3. Go to the __Exports__ side-tab
+4. Click __Options__
+5. Click __Add__
+6. Give your export a meaningful name (example: LSSD Clevr Student File)
+7. Give your export a unique _Definition ID_ (example: LSSD-CLEVR-STUDENTS)
+8. If you intend your export to be run automatically, check the __Schedulable__ checkbox
+9. In the __XML definition__ field, click the __Edit__ icon ![Pencil icon](IMG/edit-icon.gif "Upload icon")
+10. Copy the contents of the XML file from this repository, or from your computer, into the text box in the pop-up window that appears
+11. Make any adjustments or customizations that you may need to make
+12. Click __Validate__ to ensure the XML file is formatted correctly
+13. Click __OK__
+14. Click __Save__
+15. Now you can [Run your export](HowToRunAnExportManually.md) or [Create an automated job](HowToRunAnExportAutomatically.md) to run your export on a schedule.
 
-You can run it manually by clicking __Options__ and selecting __Run__, or you can create a job to run it automatically. See HowToRunAnExportAutomatically.md for instructions on creating an automated job.
