@@ -21,7 +21,7 @@ Example 1: Get daily attendance entries for _today_ only
 ## Unix epoch timestamps
 Use these with fields that are timestamps rather than date or datetime data types.
 
-A unix epoch timestamp is an integer representing the number of seconds that have passed since 00:00:00 on Thursday, January 1, 1970.
+A unix epoch timestamp is an integer representing the number of seconds that have passed since 00:00:00 on Thursday, January 1, 1970 UTC.
 
 * `todayTimeStamp`
 * `yesterdayTimeStamp`
@@ -44,3 +44,6 @@ A unix epoch timestamp is an integer representing the number of seconds that hav
 * `currentGradeTerms`
 * `newId`
 * `newIncidentID`
+
+## Can you export any of these values as a field in your export file?
+No.
