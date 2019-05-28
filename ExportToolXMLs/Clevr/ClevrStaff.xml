@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
-    Status: TESTED
-        [ ] Check to make sure the school ID field will actually be the school DAN
-        [ ] Check to make sure the staff ID is an appropriate field   
+    Status: COMPLETE
 
-    TODO:
-        [ ] Filter for active staff (based on if their user account is active? (relStfPsnOid.relPsnUsrOid.usrPwdRcDisInd == 1 is disabled)         
 -->
 <export table-id="tblStaff" header-row="true">
+
+    <!-- Only load staff members who are "Active" -->
+    <filter field="stfStatus" operator="equals" source="default" value="Active" /> 
+
     <!-- Clevr Tenant ID -->
     <!-- 
         EXPORT CUSTOMIZATION REQUIRED
@@ -21,7 +21,7 @@
     <!-- You may need to adjust these fields if you used different ID numbers initially -->
     <!--
         PersonID: relStfPsnOid.psnPersonID
-        StaffID: stfStaffID
+        StaffID / "Staff Number": stfStaffID
         UserID: relStfPsnOid.relPsnUsrOid 
      -->
     <field id="stfStaffID" header-source="constant" header-value="proprietaryId" />
@@ -44,12 +44,15 @@
     <field id="relStfPsnOid.psnEmail01" header-source="constant" header-value="email" />
 
     <!-- gender is an optional field which you may choose to not send to clevr -->
-    <field id="relStfPsnOid.psnGenderCode" header-source="constant" header-value="gender" />
     <!--<constant value="" header-source="constant" header-value="gender" />-->
-
-    <!-- If there is no field for role, this should be blank -->
-    <!-- <field id="" header-source="constant" header-value="role" /> -->
-    <constant value="" header-source="constant" header-value="role" />
+    <field id="relStfPsnOid.psnGenderCode" header-source="constant" header-value="gender" />
+    
+    <!-- 
+        Using "Staff Type" to determine Clevr Role 
+        Comment out the "field" line and remove comments around "constant" line to send no role information
+    -->    
+    <!--<constant value="" header-source="constant" header-value="role" />-->
+    <field id="stfStaffType" header-source="constant" header-value="role" /> 
     
     <!-- 
         You may want the clevr username to be:
@@ -60,6 +63,10 @@
      -->
     <field id="relStfPsnOid.psnEmail01" header-source="constant" header-value="username" />
         
+    <!-- 
+        Send a blank password - hopefully you use some sort of AD or LDAP integration for this instead.
+        It is not safe to transmit passwords in a CSV.
+    -->
     <!-- <field id="" header-source="constant" header-value="password" /> -->
     <constant value="" header-source="constant" header-value="password" />
     
