@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Status: COMPLETE
+
+    NOTES:
+    Clevr expects the school "type" to be a 1 or a 2, but that's not possible with this file alone.
+    Either comment it out below, replacing it with the "contant" line directly above it, or use a 
+    script to conver the string value to a 1 or 2.
+-->
+<export table-id="tblSchool" header-row="true">
+
+    <!-- Only load staff members who are "Active" -->
+    <filter field="sklInactiveInd" operator="equals" source="default" value="false" /> 
+
+    <!-- Clevr Tenant ID -->
+    <!-- 
+        EXPORT CUSTOMIZATION REQUIRED
+        =============================
+        Clevr uses this field to identify which customer an integration file belongs to.
+        You will need to edit this value to match your Clevr tenant ID, or it will cause errors 
+        when the export file is imported into Clevr.
+    -->
+    <constant value="YOURTENANTIDHERE" header-source="constant" header-value="tenantId" />
+  
+    <field id="sklSchoolID" header-source="constant" header-value="proprietaryId" />
+    <field id="sklSchoolID" header-source="constant" header-value="localId" />
+    <field id="sklSchoolName" header-source="constant" header-value="name" />
+
+
+    <!-- 
+        School type (optional)
+            Expected values:
+                1 = elementary
+                2 = secondary
+
+        Pulling the "sklSchoolLevel" field will give you a string.
+        You will need to conver this to a number externally.
+    -->
+    <!--<constant value="" header-source="constant" header-value="type" />-->
+    <field id="sklSchoolLevel" header-source="constant" header-value="type" />    
+
+    <field id="sklFieldC002" header-source="constant" header-value="streetAddress" />
+    <field id="relSklAdrOid.adrCity" header-source="constant" header-value="city" />
+    <field id="relSklAdrOid.adrState" header-source="constant" header-value="region" />
+    <field id="relSklAdrOid.adrCountry" header-source="constant" header-value="country" />
+    <field id="relSklAdrOid.adrPostalCode" header-source="constant" header-value="postal" />
+    <field id="sklFieldB001" header-source="constant" header-value="phone" />
+
+    
+</export>
+
