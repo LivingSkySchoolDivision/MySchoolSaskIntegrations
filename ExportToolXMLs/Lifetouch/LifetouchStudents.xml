@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Status: COMPLETE
+-->
+<export table-id="tblStudent" header-row="true">
+    <!-- Only export active or prereg students -->
+    <filter field="stdEnrStatus" operator="equals" value="Active" />   
+    <filter field="stdEnrStatus" operator="equals" value="PreReg" connector="or" />
+    
+    <field id="relStdSklOid.sklSchoolName" header-source="constant" header-value="School" />
+    <field id="relStdPsnOid.psnNameLast" header-source="constant" header-value="LastName" />
+    <field id="relStdPsnOid.psnNameFirst" header-source="constant" header-value="FirstName" />
+    <field id="stdGradeLevel" header-source="constant" header-value="Grade" />
+    <field id="stdHomeroom" header-source="constant" header-value="Homeroom" />
+    <field id="stdIDLocal" header-source="constant" header-value="StudentNumber" />
+    <field id="stdIDLocal" header-source="constant" header-value="Barcode" />
+    <field id="relStdPsnOid.psnDob" header-source="constant" header-value="DateOfBirth" />
+</export>
+
