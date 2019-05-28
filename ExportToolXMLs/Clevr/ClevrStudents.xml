@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
-    Status: TESTED
-        [ ] Check to make sure the school ID field will actually be the school DAN
-        [ ] Check to make sure the staff ID is an appropriate field   
-
+    Status: COMPLETE
 -->
 <export table-id="tblStudent" header-row="true">
     <!-- Only export active or prereg students -->
@@ -31,6 +28,7 @@
     <field id="stdIDLocal" header-source="constant" header-value="proprietaryId" />
     <field id="stdIDLocal" header-source="constant" header-value="localId" />
 
+    <!-- primaryLocation: should be the unique ID number for the school -->
     <field id="relStdSklOid.sklSchoolID" header-source="constant" header-value="primaryLocation" />
 
     <field id="relStdPsnOid.psnNameLast" header-source="constant" header-value="lastName" />
@@ -56,8 +54,11 @@
             The user's Active Directory ID: relStfPsnOid.relPsnUsrOid.usrAdID
      -->
     <field id="relStdPsnOid.psnEmail01" header-source="constant" header-value="username" />
-
-    <!-- Don't send a password, clevr will use LDAP or ADFS instead -->        
+ 
+    <!-- 
+        Send a blank password - hopefully you use some sort of AD or LDAP integration for this instead.
+        It is not safe to transmit passwords in a CSV.
+    -->    
     <constant value="" header-source="constant" header-value="password" />
 
     <field id="stdGradeLevel" header-source="constant" header-value="grade" />
