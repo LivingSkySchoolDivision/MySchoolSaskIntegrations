@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
-    Status: TESTED, INCOMPLETE
-        [ ] Check to make sure the school ID field will actually be the school DAN
-        [ ] Check to make sure the staff ID is an appropriate field   
-
-    TODO:
-        [ ] How do we handle the Medical notes field?
-        [ ] How can we get an address into a single field? (for numerous fields in this export)
+    Status: INCOMPLETE
+        [ ] Student addresses - It's not possible to get addresses in a single string
+        [ ] Student PO Boxes - is part of address, not separate. See above address issue.
+        [ ] Contact Addresses (same address issue as above)
 -->
 <export table-id="tblStudent" header-row="true">
     <!-- Only export active or prereg students -->
@@ -41,7 +38,7 @@
     <field id="relStdSklOid.sklSchoolName" header-source="constant" header-value="schoolName" />
     <field id="stdPgmOfStudy" header-source="constant" header-value="schoolProgram" />
     <field id="stdHomeLang" header-source="constant" header-value="homeLanguage" />
-    <constant value="" header-source="constant" header-value="countryOrigin" /><!-- TODO: Does this field exist and where is it -->
+    <field id="relStdPsnOid.psnFieldA007" header-source="constant" header-value="countryOrigin" />
     <field id="stdGradeLevel" header-source="constant" header-value="studentGradeLevel" />
     
     <!-- 
@@ -58,7 +55,6 @@
 
     <!-- 
         Student physical address
-        TODO: Find a way to get the whole address as one blob instead of separate fields
     -->
     <!-- <field id="" header-source="constant" header-value="studentStreetAddress" /> -->
     <constant value="" header-source="constant" header-value="studentStreetAddress" /> 
