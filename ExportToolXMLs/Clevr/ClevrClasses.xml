@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Status: COMPLETE
+-->
+<export table-id="tblSchMaster" header-row="true">
+
+    <!-- Clevr Tenant ID -->   
+    <!-- 
+        EXPORT CUSTOMIZATION REQUIRED
+        =============================
+        Clevr uses this field to identify which customer an integration file belongs to.
+        You will need to edit this value to match your Clevr tenant ID, or it will cause errors 
+        when the export file is imported into Clevr.
+    -->    
+    <constant value="YOURTENANTIDHERE" header-source="constant" header-value="tenantId" />
+
+    <field id="relMstCskOid.relCskSklOid.sklSchoolID" header-source="constant" header-value="locationId" />
+    <field id="mstOID" header-source="constant" header-value="proprietaryId" />
+    <field id="mstOID" header-source="constant" header-value="localId" />    
+    <field id="relMstCskOid.relCskCrsOid.crsFieldA004" header-source="constant" header-value="courseCode" />
+    <field id="mstSectionNum" header-source="constant" header-value="courseSection" />
+    <field id="relMstCskOid.relCskCrsOid.crsCourseDesc" header-source="constant" header-value="courseName" />
+    <field id="relMstCskOid.relCskCrsOid.crsCourseDesc" header-source="constant" header-value="courseDescription" />
+    <field id="mstEnrTotal" header-source="constant" header-value="classSize" />
+    <field id="mstEnrMaximum" header-source="constant" header-value="classMaxSeats" />
+    <field id="relMstTrmOid.relTrmTmdOid.tmdStartDate" header-source="constant" header-value="termStartDate" />
+    <field id="relMstTrmOid.relTrmTmdOid.tmdEndDate" header-source="constant" header-value="termEndDate" />
+</export>
