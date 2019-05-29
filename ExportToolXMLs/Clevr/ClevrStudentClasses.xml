@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Status: COMPLETE
+-->
+<export table-id="tblStdSchedule" header-row="true">
+
+    <!-- Clevr Tenant ID -->   
+    <!-- 
+        EXPORT CUSTOMIZATION REQUIRED
+        =============================
+        Clevr uses this field to identify which customer an integration file belongs to.
+        You will need to edit this value to match your Clevr tenant ID, or it will cause errors 
+        when the export file is imported into Clevr.
+    -->    
+    <constant value="YOURTENANTIDHERE" header-source="constant" header-value="tenantId" />
+
+    <field id="relSscSchOid.relSchSklOid.sklSchoolID" header-source="constant" header-value="locationId" />
+    <field id="relSscMstOid.mstOID" header-source="constant" header-value="classId" />
+    <field id="relSscStdOid.stdIDLocal" header-source="constant" header-value="studentId" />
+</export>
