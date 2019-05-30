@@ -7,22 +7,22 @@
     <filter field="stdEnrStatus" operator="equals" value="Active" />   
     <filter field="stdEnrStatus" operator="equals" value="PreReg" connector="or" />
 
-    <field id="" header-source="constant" header-value="School" />
-    <field id="" header-source="constant" header-value="StudentID" />
-    <field id="relStdPsnOid." header-source="constant" header-value="GivenName" />
-    <field id="relStdPsnOid." header-source="constant" header-value="MiddleName" />
-    <field id="relStdPsnOid." header-source="constant" header-value="Surname" />
-    <field id="relStdPsnOid." header-source="constant" header-value="Grade" />
-    <field id="relStdPsnOid." header-source="constant" header-value="Gender" />
-    <field id="relStdPsnOid." header-source="constant" header-value="DateOfBirth" />
-    <field id="relStdPsnOid." header-source="constant" header-value="HomeRoom" />
-    <field id="relStdPsnOid." header-source="constant" header-value="Telephone" />
-    <field id="relStdPsnOid." header-source="constant" header-value="Apartment" />
-    <field id="relStdPsnOid.relPsnPadOid" header-source="constant" header-value="House" />
-    <field id="relStdPsnOid.relPsnPadOid" header-source="constant" header-value="Street" />
-    <field id="relStdPsnOid.relPsnPadOid" header-source="constant" header-value="City" />
-    <field id="relStdPsnOid.relPsnPadOid" header-source="constant" header-value="Province" />
-    <field id="relStdPsnOid.relPsnPadOid" header-source="constant" header-value="PostalCode" />
-    <field id="relStdPsnOid." header-source="constant" header-value="Username" />
+    <field id="relStdSklOid.sklSchoolName" header-source="constant" header-value="School" />
+    <field id="stdIDLocal" header-source="constant" header-value="StudentID" />
+    <field id="relStdPsnOid.psnFieldC001" header-source="constant" header-value="GivenName" />
+    <field id="relStdPsnOid.psnFieldC002" header-source="constant" header-value="MiddleName" />
+    <field id="relStdPsnOid.psnFieldC003" header-source="constant" header-value="Surname" />
+    <field id="stdGradeLevel" header-source="constant" header-value="Grade" />
+    <field id="relStdPsnOid.psnGenderCode" header-source="constant" header-value="Gender" />
+    <field id="relStdPsnOid.psnDob" header-source="constant" header-value="DateOfBirth" />
+    <field id="stdHomeroom" header-source="constant" header-value="HomeRoom" />
+    <field id="relStdPsnOid.psnPhone01" header-source="constant" header-value="Telephone" />
+    <field id="relStdPsnOid.relPsnAdrPhys.adrMisc" header-source="constant" header-value="Apartment" />
+    <field id="relStdPsnOid.relPsnAdrPhys.adrStreetNum" header-source="constant" header-value="House" />
+    <field id="relStdPsnOid.relPsnAdrPhys.adrStreetName" header-source="constant" header-value="Street" />
+    <field id="relStdPsnOid.relPsnAdrPhys.adrCity" header-source="constant" header-value="City" />
+    <field id="relStdPsnOid.relPsnAdrPhys.adrState" header-source="constant" header-value="Province" />
+    <field id="relStdPsnOid.relPsnAdrPhys.adrPostalCode" header-source="constant" header-value="PostalCode" />
+    <field id="relStdPsnOid.psnEmail01" header-source="constant" header-value="Username" />
 </export>
 
