@@ -11,18 +11,29 @@ This git repository represents work and research done for the purpose of creatin
 
 * The __VendorDocumentation__ directory contains documents and/or links to vendor integration file specifications
 
-
 # Documentation
   * [How to install an XML file from this repository](HowTo/HowToInstallAnExportXML.md)
   * [How to set an export to run automatically on a schedule](HowTo/HowToRunAnExportAutomatically.md)
   * [How to run an export manually](HowTo/HowToRunAnExportManually.md)
 
+# Integrations in this repository
+## Exports
+* Clevr
+  * [Classes](ExportToolXMLs/Clevr/ClevrClasses.xml)
+  * [Locations](ExportToolXMLs/Clevr/ClevrLocations.xml)
+  * [School Demographics](ExportToolXMLs/Clevr/ClevrSchoolDemographics.xml)
+  * [Staff](ExportToolXMLs/Clevr/ClevrStaff.xml)
+  * [Staff Classes](ExportToolXMLs/Clevr/ClevrStaffClasses.xml)
+  * [Staff Demographics](ExportToolXMLs/Clevr/ClevrStaffDemographics.xml)
+  * [Student Classes](ExportToolXMLs/Clevr/ClevrStudentClasses.xml)
+  * [Student Demographics](ExportToolXMLs/Clevr/ClevrStudentDemographics.xml)
+  * [Students](ExportToolXMLs/Clevr/ClevrStudents.xml)
+* L4U
+  * [L4U Current student list](ExportToolXMLs/L4U/L4U.xml)
+* Lifetouch (School Photos)
+  * [Lifetouch student list](ExportToolXMLs/Lifetouch/LifetouchStudents.xml)
+
 ## Downloading this repository to your computer
+Click the link below to download this entire Git repository in a zip file.
+
 https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations/archive/master.zip
-
-# Contributing
-## Contributing via GitHub
-If you are familliar with Git and GitHub, and would like to contribute a change, fix, or addition, please feel free to make a pull request, and I'd be happy to have a look.
-
-## Contributing via Email
-If you would like to contribue a change, but aren't familliar with git or github, please feel free to send me an email at _mark.strendin at lskysd.ca_
