@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Status: TESTED
+     [ ] Missing a mailing address
+     [ ] Missing Grade, ServiceProvided, Organization, OrganizationPhone, OrganizationFax
+-->
+<export table-id="tblStaff" header-row="true">
+
+    <!-- Only load staff members who are "Active" -->
+    <filter field="stfStatus" operator="equals" source="default" value="Active" /> 
+
+    <!-- Clevr Tenant ID -->
+    <!-- 
+        EXPORT CUSTOMIZATION REQUIRED
+        =============================
+        Clevr uses this field to identify which customer an integration file belongs to.
+        You will need to edit this value to match your Clevr tenant ID, or it will cause errors 
+        when the export file is imported into Clevr.
+    -->
+    <constant value="YOURTENANTIDHERE" header-source="constant" header-value="tenantId" />
+  
+    <field id="stfStaffID" header-source="constant" header-value="proprietaryId" />
+    <field id="stfStaffID" header-source="constant" header-value="localId" />
+    <field id="relStfPsnOid.psnNameLast" header-source="constant" header-value="lastName" />
+    <field id="relStfPsnOid.psnNameFirst" header-source="constant" header-value="firstName" />
+    <field id="relStfPsnOid.psnDob" header-source="constant" header-value="birthdate" />
+    <constant value="" header-source="constant" header-value="staffStreetAddress" />
+    <constant value="" header-source="constant" header-value="staffPOBox" />
+    <!-- 
+        Swap "relPsnAdrMail" for "relPsnAdrPhys" if you'd prefer to use physical address
+    -->
+    <field id="relStfPsnOid.relPsnAdrMail.adrCity" header-source="constant" header-value="staffCity" />
+    <field id="relStfPsnOid.relPsnAdrMail.adrPostalCode" header-source="constant" header-value="staffPostalCode" />
+    
+    <!-- There is currently no easy way to get a mailing address in one field -->
+    <constant value="" header-source="constant" header-value="staffMailingAddress" />
+    
+    <field id="relStfSklOid.sklSchoolName" header-source="constant" header-value="schoolName" />
+    <field id="relStfPsnOid.psnEmail01" header-source="constant" header-value="teacherEmail" />
+
+    <!-- 
+        Below are optional fields, which we do not use.
+    -->
+    <constant value="" header-source="constant" header-value="grade" />
+    <constant value="" header-source="constant" header-value="serviceProvided" />
+    <constant value="" header-source="constant" header-value="organization" />
+    <constant value="" header-source="constant" header-value="organizationPhone" />
+    <constant value="" header-source="constant" header-value="organizationFax" />
+
+</export>
+
