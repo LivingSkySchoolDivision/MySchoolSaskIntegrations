@@ -34,7 +34,18 @@
     <field id="relStfPsnOid.psnNameFirst" header-source="constant" header-value="firstName" />
     <field id="relStfPsnOid.psnNameMiddle" header-source="constant" header-value="middleName" />
     <field id="relStfPsnOid.psnNameFirst" header-source="constant" header-value="commonName" />
-    <field id="relStfPsnOid.psnDob" header-source="constant" header-value="birthdate" />
+
+    <!-- 
+        2019/06/04 - Was advised by Clevr support that staff birthdays are not actually used anywhere, and can cause import 
+                     problems if they are outside the MS SQL date range (1743/01/01 - 9999/12/31). They recommended blanking 
+                     out the field.
+                     The minimum date that MSS seems to support is 1900/01/01, which is within these bounds, so even a "null"
+                     date of birth should come accross to clevr as a valid 1900/01/01. 
+                     It should be safe to send this field still, but if they aren't using the data, its technically a 
+                     violation of Canadian privacy law for Clevr to collect this information.
+    -->   
+    <!--<field id="relStfPsnOid.psnDob" header-source="constant" header-value="birthdate" />-->
+    <constant value="1" header-source="constant" header-value="birthdate" />    
 
     <!-- status: 1 = Active, 2 = inactive -->
     <!-- <field id="" header-source="constant" header-value="status" /> -->    
