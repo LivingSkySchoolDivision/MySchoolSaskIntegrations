@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export table-id="tblStdTrans" header-row="true">
-    <!--<filter field="stfStatus" operator="equals" source="default" value="Active" /> -->
-    <!--<constant value="YOURTENANTIDHERE" header-source="constant" header-value="tenantId" />-->
     <field id="relTrnStdOid.stdIDLocal" header-source="constant" header-value="Student" /> 
     <field id="relTrnSklOid.sklSchoolName" header-source="constant" header-value="School" /> 
     <field id="relTrnMstOid.mstCourseView" header-source="constant" header-value="MasterSchedule" />
