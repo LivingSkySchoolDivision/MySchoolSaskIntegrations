@@ -1,0 +1,51 @@
+<!ENTITY % condition.dtd SYSTEM "condition.dtd">
+
+%condition.dtd;
+
+<!--
+  A filter element represents a filtering criteria for a list. Filter elements can be nested.
+
+    field - the string representation of a model property by which the list is filtered; required 
+        for all source types except sql
+    alias - alternative to specifying a field explicitly
+    operator - an SQL-equivalent operator for the filter; required for all source types except sql
+          - equalsOrganizations: source and value should both be organization OIDs (e.g. sklOrgOID1).  
+            This operator extrapolates all of the organization OIDs from the source and value and
+            compares ALL of the organization OIDs on both beans for equality or NULL.  
+            (e.g. a filter of "sklOrgOID1!equalsOrganizations!and!parent!casOrgOID1" will expand 
+            and compare sklOrgOID1 == casOrgOID1 && sklOrgOID2 == casOrgOID2, etc.)   
+    source - the entity that contains the value for the filter; for the empty and notEmpty operators
+        this value should be "constant". For greaterThanField and lessThanField operators this value should be "object"
+    value - the value for the filter; this attribute has different interpretations depending upon
+        the source attribute, and is not required for the empty and notEmpty operators. If the source is SQL, value
+        is the direct SQL code. Alternatively the value can be left blank and the SQL can be put in the body wrapped
+        in CDATA tag if necessary to avoid XML special character conflicts.
+    connector - the logical connector used to combine this filter with the previous filter in the node
+    application-context - semicolon-delimited list of application context names that this filter will
+        only be applied to when set. When not set, the filter will be applied to all contexts
+    navkey - navigation context key for which this filter should be applied. This is a more granular implementation
+        of application-context to allow recycling of a template within a given view. Use of application-context and 
+        navkey are exclusive - if a navkey is specified, application-context is ignored.
+    customClass - fully qualified class name for a custom criteria object. Intended for supporting more complex criteria
+       not easily represented using the standard filter XML notation.
+    validatorClass - the full classpath to a java class that extends ParameterValidator. This class is used to validate
+        that a user has access to the value the filter is matching up against. This is usually used with the "parameter"
+        source when query parameters from a request to an Aspen REST API need extra validation.
+    paramName - used with the "parameter" source and contains the name of the query parameter
+    prompt - used to create a prompted query (@see com.follett.fsc.core.k12.web.nav.Prompt)
+-->
+<!ELEMENT filter (#PCDATA | condition | filter)*>
+
+<!ATTLIST filter
+          field               CDATA   #IMPLIED
+          alias               CDATA   #IMPLIED
+          operator            (equals|equalsIgnoreCase|empty|greaterThan|greaterThanField|greaterOrEqual|lessThan|lessThanField|lessOrEqual|notEmpty|notEqual|beginsWith|contains|endsWith|in|notIn|after|before|onOrAfter|onOrBefore|ownable|parentOwnable|equalsOrganizations) #IMPLIED
+          source              (parent|current|session|detail|sql|preference|constant|input|parameter|object|default)   #REQUIRED
+          value               CDATA   #IMPLIED
+          connector           (and|or|union) "and"
+          application-context CDATA   #IMPLIED
+          navkey              CDATA   #IMPLIED
+          customClass         CDATA   #IMPLIED
+          validatorClass      CDATA   #IMPLIED
+          paramName           CDATA   #IMPLIED
+          prompt              CDATA   #IMPLIED>

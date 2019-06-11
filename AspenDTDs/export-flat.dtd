@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Root XML element. Defines the parameters for the export.
+
+    header-row - if true then the first row of the export will contain the names for each column
+
+    value-delimiter - the character used to separate the values within a record, the default value
+                      is a comma (,), this value can be empty if values aren't delimited. For a
+                      tab-delimited file, use "&#09;"
+
+    value-wrapper - the character used to wrap values within a record, the default value is a double
+                    quote ("), this value can be empty if values aren't wrapped
+
+    escape-character - the character used to escape itself and either the value-wrapper (if
+                       used) or the value-delimiter (if the value-wrapper is not used), the default
+                       value is a backslash (\), this value can be empty if escaping isn't used
+
+  	line-separator - the line separator to use for the end of line (EOL) format in the export. The default value
+  				is the EOL format for the report server operating system.
+  				Otherwise windows, unix, or default can be specified as the value to this field.
+  				The format used when windows is specified is (\r\n) and the format for unix is (\r).
+  				The default value represents what the report server uses as a line-separator.
+  			    For example if the report server is windows then you will see (\r\n) otherwise you will see (\r).
+
+    custom-header - custom header block to append to the top of the output file.
+
+    custom-trailer - custom trailer block to append to the bottom of the output file.
+-->
+<!ELEMENT export-flat (scripts*, iterate)>
+
+<!ATTLIST export-flat
+          header-row       (true|false) "false"
+          value-delimiter  CDATA   #IMPLIED
+          value-wrapper    CDATA   #IMPLIED
+          escape-character CDATA   #IMPLIED
+          line-separator   (windows|unix|default) "default"
+          custom-header    CDATA   #IMPLIED
+          custom-trailer   CDATA   #IMPLIED>
+
+<!--
+  An iterate element represents a collection of the records included in the output.
+
+    name - Name of the current object being iterated over. This value can be used to reference the
+           object directly.
+
+    collection - Reference to the collection to use as the main iterator. This could be a Java
+                 method call, JavaScript function call, Python function call, or a collection.
+
+    type - Java type of the objects being iterated over.
+
+    source - The source of the collection being used for this iterator.
+-->
+<!ELEMENT iterate (define*|logic|element*)>
+
+<!ATTLIST iterate
+          name             CDATA   #REQUIRED
+          collection       CDATA   #REQUIRED
+          type             CDATA   #REQUIRED
+          source           (java|javascript|python|expression)   #REQUIRED>
+
+<!--
+  A define element represents a variable that is stored and can be accessed at any time.
+
+    name - the name of the variable
+
+    value - the value of the variable. This is interpreted differently based on the source.
+
+    source - determines where the value for the variable comes from
+
+    type - Java type of the variable
+
+    default-value - defaults to this value if the retrieved value is empty
+
+    find - a REGEX string to match in the field data
+
+    format - specifies how dates and numbers should be formatted.  e.g. "YYYY/mm/dd", "###.##"
+
+    format-type - specifies the type of format.  e.g. "date", "number", "logical"
+
+    layout - the ID of a bean in the Regular Expression Library to use to format and layout the text
+
+    max-length - the maximum length of the retrieved value. This is used for validation and padding.
+
+    min-length - the minimum length of the retrieved value. This is only used for validation.
+
+    pad-character - the character to use to pad the field value.  Defaults to 'space'.  Only the
+                    first character of the string is used if more are specified
+
+    pad - pads the value of the field out the 'length' characters
+
+           left - inserts spaces at the beginning of the field value
+
+           right - appends spaces at the end of the field value (default)
+
+    reference-type - determine how to convert the reference code
+
+    replace-all - data to replace what was found in the 'find'
+
+    replace-first - data to replace what was found in the 'find'
+
+    return - a REGEX that specifies what data in the field to return as the value
+
+    transform - directs the transformation of the data
+
+           toupper - returns the field value as upper case
+
+           tolower - returns the field value as lower case
+
+           toproper - returns the field value as proper case
+
+           alpha - returns the alpha characters of the field value
+
+           numeric - returns only the numeric characters of the field value
+
+           nonalphanumeric - returns only characters that are not alphanumeric
+
+-->
+<!ELEMENT define EMPTY>
+
+<!ATTLIST define
+          name             CDATA   #REQUIRED
+          value            CDATA   #REQUIRED
+          source           (constant|current|java|javascript|python|expression|input|default|preference) "constant"
+          type             CDATA   #IMPLIED
+          default-value    CDATA   #IMPLIED
+          find             CDATA   #IMPLIED
+          format           CDATA   #IMPLIED
+          format-type      (date|number|logical|none) "none"
+          layout           CDATA   #IMPLIED
+          max-length       CDATA   #IMPLIED
+          min-length       CDATA   #IMPLIED
+          name-source      (constant|resource|javaName|databaseName|longUserName|shortUserName|default) "constant"
+          pad-character    CDATA   #IMPLIED
+          pad              (left|right|truncate|none) "none"
+          reference-type   (state|localfederal|system|default) "default"
+          replace-all      CDATA   #IMPLIED
+          replace-first    CDATA   #IMPLIED
+          return           CDATA   #IMPLIED
+          transform        (toupper|tolower|toproper|alpha|numeric|alphanumeric|nonalphanumeric|none) "none">
+
+<!--
+  A element element represents a single column in the export.
+
+    name - the column header value
+
+    value - the value of the column. This is interpreted differently based on the source.
+
+    source - determines where the value for the column comes from
+
+    type - Java type of the variable
+
+    default-value - defaults to this value if the retrieved value is empty
+
+    find - a REGEX string to match in the field data
+
+    format - specifies how dates and numbers should be formatted.  e.g. "YYYY/mm/dd", "###.##"
+
+    format-type - specifies the type of format.  e.g. "date", "number", "logical"
+
+    layout - the ID of a bean in the Regular Expression Library to use to format and layout the text
+
+    max-length - the maximum length of the retrieved value. This is used for validation and padding.
+
+    min-length - the minimum length of the retrieved value. This is only used for validation.
+
+    name-source - determines where the value for the column header comes from
+
+    pad-character - the character to use to pad the field value.  Defaults to 'space'.  Only the
+                    first character of the string is used if more are specified.
+
+    pad - pads the value of the field out the 'length' characters
+
+           left - inserts spaces at the beginning of the field value
+
+           right - appends spaces at the end of the field value (default)
+
+    reference-type - determine how to convert the reference code
+
+    replace-all - data to replace what was found in the 'find'
+
+    replace-first - data to replace what was found in the 'find'
+
+    return - a REGEX that specifies what data in the field to return as the value
+
+    transform - directs the transformation of the data
+
+           toupper - returns the field value as upper case
+
+           tolower - returns the field value as lower case
+
+           toproper - returns the field value as proper case
+
+           alpha - returns the alpha characters of the field value
+
+           numeric - returns only the numeric characters of the field value
+
+           nonalphanumeric - returns only characters that are not alphanumeric
+
+-->
+<!ELEMENT element (validation*)>
+
+<!ATTLIST element
+          name             CDATA   #REQUIRED
+          value            CDATA   #REQUIRED
+          source           (constant|current|java|javascript|python|expression|input|default|preference) "constant"
+          type             CDATA   #IMPLIED
+          default-value    CDATA   #IMPLIED
+          find             CDATA   #IMPLIED
+          format           CDATA   #IMPLIED
+          format-type      (date|number|logical|none) "none"
+          layout           CDATA   #IMPLIED
+          max-length       CDATA   #IMPLIED
+          min-length       CDATA   #IMPLIED
+          name-source      (constant|resource|javaName|databaseName|longUserName|shortUserName|default) "constant"
+          pad-character    CDATA   #IMPLIED
+          pad              (left|right|truncate|none) "none"
+          reference-type   (state|localfederal|system|default) "default"
+          replace-all      CDATA   #IMPLIED
+          replace-first    CDATA   #IMPLIED
+          return           CDATA   #IMPLIED
+          transform        (toupper|tolower|toproper|alpha|numeric|alphanumeric|nonalphanumeric|none) "none">
+
+<!--
+  A scripts element represents a set of functions for quick value manipulation.
+
+    type - specifies the script language
+
+    source - the relative path of a script file.  e.g. "js/common.js". This will only be used if no
+             content is specified.
+-->
+<!ELEMENT scripts (#PCDATA)>
+
+<!ATTLIST scripts
+          type             (javascript|python)   #REQUIRED
+          source           CDATA   #IMPLIED>
+
+<!--
+  A validation element represents value retrieval post processing.
+
+    source - determines where the validation value comes from
+
+    value - a method call or expression which returns a validation string
+-->
+<!ELEMENT validation EMPTY>
+
+<!ATTLIST validation
+          value            CDATA   #REQUIRED
+          source           (java|javascript|python|expression|regex)   #REQUIRED>
+
+<!--
+  A logic element represents a conditional statement. Child elements are only included if the
+  expression evaluates to "true".
+
+    expression - a Java expression which must evaluate to a Boolean
+-->
+<!ELEMENT logic (define*|element*)>
+
+<!ATTLIST logic
+          expression       CDATA   #REQUIRED>

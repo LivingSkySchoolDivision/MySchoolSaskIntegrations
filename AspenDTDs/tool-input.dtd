@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ENTITY % filter.dtd SYSTEM "filter.dtd">
+
+%filter.dtd;
+
+<!ENTITY % condition.dtd SYSTEM "condition.dtd">
+
+%condition.dtd;
+
+<!--
+  Root XML element. Defines the input parameters and types for a tool.
+  
+    allow-school-select - if true, a school selection input will be provided
+    allow-org-select - if true, an organization selection input will be provided
+    allow-year-select - if true, a school year input will be provided
+    district-support - if true, an option to run the report district-wide will be 
+                       included in the school selection if available
+    prompt-download - if true, user are prompted to download the file
+    download-file-name - file name for download
+    split-by-school - only applies to export, if true, split the results by school
+    width - the width of the popup window
+    height - the height of the popup window
+    page - the jsp page to be included
+    refresh - a user event number to use to refresh the parent page after the tool completes.
+    context - a fully qualified class name of a model bean
+    encoding - the character set encoding of the import/export file for text import, text export.
+               encoding should not be used for for binary files such as Excel format files.
+    max-duplicate-jobs - the number of instances of the tool that can be run at the same time
+               within a single user's personal tool queue; if not specified, the system-wide
+               default specified in ApplicationConfig.properties is used
+    force-secondary-connection - When set to true, the secondary database connection (replication 
+                                 server usually) will be used for all queries. You should be sure 
+                                 the secondary connection is configured, and if it is a read only
+                                 connection be sure the tool doesn't perform any writes.
+-->
+<!ELEMENT tool-input (input*|group*|tab)>
+
+<!ATTLIST tool-input
+          allow-school-select   		(true|false) "false"
+          allow-org-select      		(true|false) "false"
+          allow-year-select             (true|false) "false"
+          district-support      		(true|false) "true"
+          prompt-download       		(true|false) "false"
+          download-file-name    		CDATA #IMPLIED  
+          split-by-school       		(true|false) "false"
+          width                 		CDATA #IMPLIED 
+          height                		CDATA #IMPLIED
+          page                  		CDATA #IMPLIED
+          refresh               		CDATA #IMPLIED
+          context               		CDATA #IMPLIED
+          encoding              		(ISO-8859-1|UTF-8|UTF-16|UTF-16BE|UTF-16LE|US-ASCII) #IMPLIED
+          max-duplicate-jobs    		CDATA #IMPLIED
+          force-secondary-connection	(true|false) "false">
+    
+<!--
+  The tab element is a primary-level layout unit. For tabs to exist, all input and group elements
+  must be nested within tabs. Otherwise any tab content will not be displayed.
+  
+    name - value that describes the name label for the tab
+    privilege-id - privilege the user must have to see the tab
+-->    
+<!ELEMENT tab (input*|group*)+>
+
+<!ATTLIST tab
+          name              CDATA #REQUIRED
+          privilege-id      CDATA #IMPLIED>    
+          
+<!--
+  A group defines a set of input elements
+  
+    header - value that describes the header label for the group
+    value-from - the source of the header label, which can be the system label for a table, field,
+        or a relationship, a resource key, or a literal value
+    prefix-display - indicates whether or not to display relationship prefix labels for the properties
+        in the group
+-->
+<!ELEMENT group (input+)>
+
+<!ATTLIST group
+          header          CDATA   #IMPLIED
+          value-from      (table|field|relationship|resource|literal) "literal"
+          prefix-display  (show|hide|default) "default">
+          
+<!--
+  Each input element represents one input parameter.
+  
+    name - the variable name used by the report data source
+    data-type - the data type expected by the report data source
+    display-type - defines how the element will be represented in the UI
+    display-name - the resource key for the string to display in the UI
+    default-value - a default value for the parameter, set this value to "true" to initialize a
+      checkbox as checked. Built-in values may be used when default-value-source is not used, these 
+      values are; today, districtYear, districtYearEnd, districtYearStart, firstOfMonth, firstOfWeek,
+      lastOfMonth, now, schoolName, schoolOid, schoolStartGrade, schoolEndGrade, newId, todayTimeStamp,
+      yesterdayTimeStamp, firstOfWeekTimeStamp, firstOfLastWeekTimeStamp, firstOfMonthTimeStamp, 
+      lastOfWeek, currentGradeTerm, currentGradeTerms, newIncidentId 
+    default-value-source - an optional source to the default value; used if the default value is
+      from an alternate source (i.e., not one of the "built-in" default value keywords, like
+      "today")
+    context-dependent - if true, the element will only be displayed in contexts matching the context
+      attribute of the parent report-input
+    required - if true, the report will not be executed until a value has been provided for the
+      input; note that if the input element is disabled, this validation does not take place
+    preference-key - a system preference key to decide the criteria to match in order to display the
+       input.
+    preference-value - the preference value to match in order to display the input.
+    org-attributes-dictionary-id - required if the display-type is "orgAttributes"; this attribute
+       specifies the ID of the extended dictionary used to define the Organization Attributes records
+       to use as the source of this input parameter
+    org-attributes-display-alias - required if the display-type is "orgAttributes"; this attribute
+       specifies the value from the Organization Attributes record to display to the user in the input
+       parameter
+    org-attributes-value-alias - required if the display-type is "orgAttributes"; this attribute
+       specifies the value from the Organization Attributes record to submit as the value of the input
+       parameter
+-->
+<!ELEMENT input (condition*, option*, picklist?, disable*)>
+
+<!ATTLIST input
+          name                  CDATA   #REQUIRED
+          data-type             (string|integer|decimal|date|boolean) "string"
+          display-type          (text|checkbox|select|date|picklist|reference|school|textarea|hidden|org|orgAttributes) "text"
+          reference-table       CDATA   #IMPLIED
+          display-name          CDATA   #REQUIRED
+          default-value         CDATA   #IMPLIED
+          default-value-source  (parent|session|sql|preference|constant) #IMPLIED
+          context-dependent     (true|false) "false"
+          required              (true|false) "true"
+          preference-key        CDATA   #IMPLIED
+          preference-value      CDATA   #IMPLIED
+          org-attributes-dictionary-id  CDATA   #IMPLIED
+          org-attributes-display-alias  CDATA   #IMPLIED
+          org-attributes-value-alias    CDATA   #IMPLIED>
+
+<!--
+  An option element is nested inside input elements of type "select".
+  It defines an available value for the input.
+  
+    value - the value associated with this option
+    display-name - the resource key for the string to display in the UI
+    context-dependent - if true, the element will only be displayed in contexts matching the context attribute of the
+      parent report-input
+-->
+<!ELEMENT option (condition*)>
+
+<!ATTLIST option
+          value                 CDATA   #REQUIRED
+          display-name          CDATA   #REQUIRED
+          context-dependent     (true|false) "false">
+
+<!--
+  A picklist defines a complex data field to be displayed.
+
+    field-id - the ID (model property string) of the field to display
+    required - if false, a picklist remove link will be displayed
+    width - the width of the picklist table/window
+    height - the height of the picklist table/window
+    extended-dictionary - the ID of an extended data dictionary to use to resolve field names
+    ignore-org-access - flag to indicate whether or not to apply organization scoping on the picklist
+-->
+<!ELEMENT picklist (filter*, field+)>
+
+<!ATTLIST picklist
+          field-id              CDATA   #REQUIRED
+          multiple              (true|false) "false"
+          required              (true|false) "true"
+          height                CDATA   #IMPLIED
+          width                 CDATA   #IMPLIED
+          extended-dictionary   CDATA   #IMPLIED
+          ignore-org-access     (true|false) "false">
+
+<!--
+  A field defines a column displayed by the picklist and/or a sort order. If the display attribute
+  is set to "true," that field will be displayed as a column in the picklist. If the sort order is
+  set to "true," that field will be used in the sort order of the picklist. If multiple fields are 
+  defined as "sort" then the overall sort order follows the order of field definitions. Fields 
+  describe properties from the perspective of the related object.
+  
+  The first field among a list of field definitions is used to drive the picklist's search 
+  functionality.  
+  
+    id - the string representation of a ModelProperty
+    display - flag to indicate whether or not the field should be displayed in the picklist
+    sort - flag to indicate whether or not the field should be included in the picklist's sort 
+        order
+    sort-direction - to set the direction of the sort (in ascending or descending order). 
+        If it's not specified, it will sort in ascending order by default.
+-->
+<!ELEMENT field EMPTY>
+
+<!ATTLIST field
+          id                    CDATA   #REQUIRED
+          display               (true|false) "true"
+          sort                  (true|false) "false"
+          sort-direction        (asc|desc) "asc">
+
+<!--
+ A disable element is used to disable an input control based on the value of its parent input
+ element. If the parent input control equals the value in the "if-parent-equals" attribute, the 
+ input control reference in the "input-name" attribute is disabled. The control is re-enabled 
+ if the parent's value is changed.
+
+   input-name - the name of an input control within the same ancestor report-input element
+   if-parent-equals - the value causing the input control to be disabled
+-->
+<!ELEMENT disable EMPTY>
+
+<!ATTLIST input-name            CDATA   #REQUIRED
+          if-parent-equals      CDATA   #REQUIRED>
+          
+<!--
+ A text element is used to display text on a tool during user input. The text has no functional value but rather guidance
+ for the user such as a warning message or a suggestion for input.
+ 
+   name - the name of an text element
+   value - the value of the label to be applied to the text
+   content - the value to be displayed during user input
+   content-source - an optional source to the content; used if the content is
+      from an alternate source (i.e., not static text but text from a resource or preference)
+-->
+<!ELEMENT text EMPTY>
+
+<!ATTLIST name            CDATA   #REQUIRED
+          value           CDATA   #REQUIRED
+          content         CDATA   #REQUIRED
+          content-source  (preference|resource|constant) "constant" >          

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ENTITY % filter.dtd SYSTEM "filter.dtd">
+
+%filter.dtd;
+
+<!--
+  Root XML element. Defines the parameters for the export.
+
+    table-id - the data dictionary ID of the table to be exported
+
+    header-row - if true then the first row of the export will contain the names for each column
+
+    value-delimiter - the character used to separate the values within a record, the default value
+                      is a comma (,), this value can be empty if values aren't delmited. For a
+                      tab-delimited file, use "&#09;"
+
+    value-wrapper - the character used to wrap values within a record, the default value is a double
+                    quote ("), this value can be empty if values aren't wrapped
+
+    escape-character - the character used to escape itself and either the value-wrapper (if
+                       used) or the value-delimiter (if the value-wrapper is not used), the default
+                       value is a backslash (\), this value can be empty if escaping isn't used
+  
+  	line-separator - the line separator to use for the end of line (EOL) format in the export. The default value
+  				is the EOL format for the report server operating system.
+  				Otherwise windows, unix, or default can be specified as the value to this field. 
+  				The format used when windows is specified is (\r\n) and the format for unix is (\r). 
+  				The default value represents what the report server uses as a line-separator.
+  			    For example if the report server is windows then you will see (\r\n) otherwise you will see (\r).
+-->
+<!ELEMENT export (filter*, sort*, (field|blank|constant)+)>
+
+<!ATTLIST export
+          table-id           CDATA   #REQUIRED
+          header-row         (true|false) "false"
+          value-delimiter    CDATA   #IMPLIED
+          value-wrapper      CDATA   #IMPLIED
+          escape-character   CDATA   #IMPLIED
+          line-separator     (windows|unix|default) "default">
+
+<!--
+  A sort element represents a field that will participate in the sort order for the exported data.
+
+    field - the string representation of a model property
+    direction - order of the sort
+-->
+<!ELEMENT sort EMPTY>
+
+<!ATTLIST sort
+          field            CDATA   #REQUIRED
+          direction        (asc|desc) "asc">
+
+<!--
+  The field element represents a single value that will be exported for each record in the export.
+  The blanks and fields will be exported in the order that they are listed.
+
+    id - identifier for the field
+
+    type - determines how the id attribute is interpreted
+
+           modelProperty: the id is a model property; the model property can only contain X:1
+                          relationships
+
+           beanPath: the id is an bean (Java) path; this is useful for "virtual" properties that
+                     cannot be represented with a model property
+
+           alias: the id is an alias for a field in the data dictionary
+
+    length - the total length of the field to export; if the field's value is too short then it will
+             be right padded with spaces unless pad="left" is specified (see below), if the field's 
+             value is too long then it will be truncated; if no length is specified then the value 
+             will be exported without modification
+
+    header-source - determines where the value for the column header comes from, the "default"
+                    behavior is the field ID
+
+    header-value - only used if the header-source is "constant" or "resource"
+    
+    find - a REGEX string to match in the field data
+
+    replaceAll - data to replace what was found in the 'find'
+
+    replaceFirst - data to replace what was found in the 'find'
+
+    return - a REGEX that specifies what data in the field to return as the value
+    
+    layout - the ID of a bean in the Regular Expression Library to use to format and layout the text
+
+    transform - directs the transformation of the data
+
+           toupper - returns the field value as upper case
+           
+           tolower - returns the field value as lower case
+           
+           alpha - returns the alpha characters of the field value
+           
+           numeric - returns only the numeric characters of the field value
+           
+           nonalphanumeric - returns only characters that are not alphanumeric
+
+    pad-character - the character to use to pad the field value.  Defaults to 'space'.  Only the
+                    first character of the string is used if more are specified
+
+    pad - pads the value of the field out the 'length' characters
+    
+           left - inserts spaces at the beginning of the field value
+           
+           right - appends spaces at the end of the field value (default)
+           
+    format - specifies how dates and numbers should be formatted.  e.g. "YYYY/mm/dd", "###.##"
+-->
+<!ELEMENT field EMPTY>
+
+<!ATTLIST field
+          id                 CDATA   #REQUIRED
+          type               (modelProperty|beanPath|alias) "modelProperty"
+          length             CDATA   #IMPLIED
+          header-source      (constant|resource|javaName|databaseName|longUserName|shortUserName|default) "default"
+          header-value       CDATA   #IMPLIED
+          find               CDATA   #IMPLIED
+          replaceAll         CDATA   #IMPLIED
+          replaceFirst       CDATA   #IMPLIED
+          return             CDATA   #IMPLIED
+          layout             CDATA   #IMPLIED
+          transform          (toupper|tolower|alpha|numeric|alphanumeric|nonalphanumeric|none) "none"
+          pad-character      CDATA   #IMPLIED 
+          pad                (left|right) "right" 
+          format             CDATA   #IMPLIED>
+
+<!--
+  The blank element represents an empty value that will be exported for each record in the export.
+  The blanks and fields will be exported in the order that they are listed.
+
+    length - the number of spaces to export, the default value is 0
+
+    header-source - determines where the value for the column header comes from
+
+    header-value - the constant or resource key to display, the default value is the column index
+-->
+<!ELEMENT blank EMPTY>
+
+<!ATTLIST blank
+          length             CDATA   #IMPLIED
+          header-source      (constant|resource) "constant"
+          header-value       CDATA   #IMPLIED>
+          
+<!--
+  The constant element represents an constnat value that will be exported for each record in the export.
+  The constnats and fields will be exported in the order that they are listed.
+
+    value - the value to export
+
+    header-source - determines where the value for the column header comes from
+
+    header-value - the constant or resource key to display, the default value is the column index
+-->
+<!ELEMENT constant EMPTY>
+
+<!ATTLIST constant
+          value              CDATA   #IMPLIED
+          header-source      (constant|resource) "constant"
+          header-value       CDATA   #IMPLIED>
