@@ -3,7 +3,7 @@
     Status: TESTED
      [ ] Missing mailing address - its not currently possibly to get a mailing address in a single field
 -->
-<export table-id="tblSchool" header-row="true">
+<export table-id="tblSchool" header-row="true" value-delimiter="&#09;">
 
     <!-- Clevr Tenant ID -->   
     <!-- 

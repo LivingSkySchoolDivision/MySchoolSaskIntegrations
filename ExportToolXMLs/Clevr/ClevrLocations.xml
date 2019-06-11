@@ -7,7 +7,7 @@
     Either comment it out below, replacing it with the "contant" line directly above it, or use a 
     script to conver the string value to a 1 or 2.
 -->
-<export table-id="tblSchool" header-row="true">
+<export table-id="tblSchool" header-row="true" value-delimiter="&#09;">
 
     <!-- Only load staff members who are "Active" -->
     <filter field="sklInactiveInd" operator="equals" source="default" value="false" /> 

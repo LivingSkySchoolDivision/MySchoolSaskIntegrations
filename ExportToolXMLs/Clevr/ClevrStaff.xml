@@ -3,7 +3,7 @@
     Status: COMPLETE
 
 -->
-<export table-id="tblStaff" header-row="true">
+<export table-id="tblStaff" header-row="true" value-delimiter="&#09;">
 
     <!-- Only load staff members who are "Active" -->
     <filter field="stfStatus" operator="equals" source="default" value="Active" /> 

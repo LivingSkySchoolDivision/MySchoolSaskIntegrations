@@ -2,7 +2,7 @@
 <!-- 
     Status: COMPLETE
 -->
-<export table-id="tblStudent" header-row="true">
+<export table-id="tblStudent" header-row="true" value-delimiter="&#09;">
     <!-- Only export active or prereg students -->
     <filter field="stdEnrStatus" operator="equals" value="Active" />   
     <filter field="stdEnrStatus" operator="equals" value="PreReg" connector="or" />

@@ -2,7 +2,7 @@
 <!-- 
     Status: COMPLETE
 -->
-<export table-id="tblStdSchedule" header-row="true">
+<export table-id="tblStdSchedule" header-row="true" value-delimiter="&#09;">
 
     <!-- Clevr Tenant ID -->   
     <!-- 
