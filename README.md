@@ -32,7 +32,8 @@ This git repository represents work and research done for the purpose of creatin
   * [L4U Current student list](ExportToolXMLs/L4U/L4U.xml)
 * Lifetouch (School Photos)
   * [Lifetouch student list](ExportToolXMLs/Lifetouch/LifetouchStudents.xml)
-
+* Sangha / Scholantis (Sangha and Scholantis use identical files)
+  * [Sangha Students](ExportToolXMLs/Scholantis-Sangha/Scholantis-Students.xml)
 ## Downloading this repository to your computer
 Click the link below to download this entire Git repository in a zip file.
 
