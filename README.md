@@ -35,6 +35,7 @@ This git repository represents work and research done for the purpose of creatin
 * Sangha / Scholantis (Sangha and Scholantis use identical files)
   * [Sangha/Scholantis Students](ExportToolXMLs/Scholantis-Sangha/Scholantis-Students.xml)
   * [Sangha/Scholantis Staff](ExportToolXMLs/Scholantis-Sangha/Scholantis-Staff.xml)
+  * [Sangha/Scholantis Sections](ExportToolXMLs/Scholantis-Sangha/Scholantis-Sections.xml)
 ## Downloading this repository to your computer
 Click the link below to download this entire Git repository in a zip file.
 

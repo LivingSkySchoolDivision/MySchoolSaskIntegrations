@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<export table-id="tblSchMaster" header-row="true">
+    <field id="mstOID" header-source="constant" header-value="Section Id" />    
+    <field id="relMstCskOid.crsOID" header-source="constant" header-value="Class Id" />
+    <field id="mstSectionNum" header-source="constant" header-value="Section Number" />
+    <constant value="" header-source="constant" header-value="Period" />
+
+    <!-- 
+    The export crashes if you try to pull the start and end dates I think this is technically a
+    one-to-many relationship, so the export tool can't pull it.
+    -->
+    <constant value="" header-source="constant" header-value="Start" />
+    <constant value="" header-source="constant" header-value="End" />
+    
+    <field id="relMstSchOid.relSchSklOid.sklSchoolID" header-source="constant" header-value="SchoolId" /> 
+</export>
