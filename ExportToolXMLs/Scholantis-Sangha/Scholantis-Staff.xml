@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<export table-id="tblStaff" header-row="true">
+
+    <!-- Only export active staff -->
+    <filter field="stfStatus" operator="equals" value="Active" />
+
+    <field id="stfStaffID" header-source="constant" header-value="Staff Id" />
+    <field id="stfStaffID" header-source="constant" header-value="Staff Number" />
+    <field id="stfHireDate" header-source="constant" header-value="Hire Date" />
+    <field id="relStfPsnOid.psnNameFirst" header-source="constant" header-value="First Name" />
+    <field id="relStfPsnOid.psnNameMiddle" header-source="constant" header-value="Middle Name" />
+    <field id="relStfPsnOid.psnNameLast" header-source="constant" header-value="Last Name" />
+    <field id="relStfPsnOid.psnGenderCode" header-source="constant" header-value="Sex" />
+    <field id="relStfPsnOid.psnEmail01" header-source="constant" header-value="Email 1" />
+    <constant value="" header-source="constant" header-value="Email 2" />
+    <field id="relStfPsnOid.psnPhone01" header-source="constant" header-value="Tel" />
+    <field id="relStfPsnOid.psnPhone02" header-source="constant" header-value="Mobile" />
+    <field id="relStfPsnOid.psnDob" header-source="constant" header-value="Date Of Birth" />
+    <field id="relStfSklOid.sklSchoolID" header-source="constant" header-value="SchoolId" />
+</export>
