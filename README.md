@@ -33,7 +33,8 @@ This git repository represents work and research done for the purpose of creatin
 * Lifetouch (School Photos)
   * [Lifetouch student list](ExportToolXMLs/Lifetouch/LifetouchStudents.xml)
 * Sangha / Scholantis (Sangha and Scholantis use identical files)
-  * [Sangha Students](ExportToolXMLs/Scholantis-Sangha/Scholantis-Students.xml)
+  * [Sangha/Scholantis Students](ExportToolXMLs/Scholantis-Sangha/Scholantis-Students.xml)
+  * [Sangha/Scholantis Staff](ExportToolXMLs/Scholantis-Sangha/Scholantis-Staff.xml)
 ## Downloading this repository to your computer
 Click the link below to download this entire Git repository in a zip file.
 
