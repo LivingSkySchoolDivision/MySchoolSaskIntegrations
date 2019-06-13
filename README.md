@@ -48,3 +48,10 @@ This git repository represents work and research done for the purpose of creatin
 Click the link below to download this entire Git repository in a zip file.
 
 https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations/archive/master.zip
+
+
+# Contacting me
+
+If you have questions, concerns, or issues, please feel free to contact me at mark.strendin@lskysd.ca.
+
+If you would like to report an issue with any of the files or documents in this repository, you can use the __Issues__ tab along the top of this repository to create an issue that can be tracked (and won't get lost or forgotten about in an email inbox somewhere).
