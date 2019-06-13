@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  NOTE: Sangha / Scholantis expects STAFF and STUDENT enrolment in the _SAME FILE_.
+  This isn't possible with a single export XML.
+
+  You will need to use this export, with the STUDENT enrolment export, and combine the files
+  together before you send them to Sangha/Scholantis.
+-->
+<export table-id="tblSchMstTeach" header-row="true" value-delimiter=",">
+    <field id="relMtcStfOid.stfStaffID" header-source="constant" header-value="Id (Student / Staff)" />
+    <field id="relMtcMstOid.mstOID" header-source="constant" header-value="SectionId" />
+    <constant value="Teacher" header-source="constant" header-value="Role (Teacher / Student)" />
+    <field id="relMtcMstOid.relMstSchOid.relSchSklOid.sklSchoolID" header-source="constant" header-value="SchoolId" />    
+</export>
