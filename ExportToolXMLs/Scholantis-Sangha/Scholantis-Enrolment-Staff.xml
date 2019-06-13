@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
+    ===========================================================================
+    This export file was created by Mark Strendin, at 
+    Living Sky School Division No 202, for the 
+    MySchoolSask Virtual Integration Group.
+        
+    Other export file definitions, documentation, issue tracking, and 
+    always up-to-date copies of this export file can be found in our 
+    GitHub repository:
+    https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations    
+    ===========================================================================
+    
   NOTE: Sangha / Scholantis expects STAFF and STUDENT enrolment in the _SAME FILE_.
   This isn't possible with a single export XML.
 
