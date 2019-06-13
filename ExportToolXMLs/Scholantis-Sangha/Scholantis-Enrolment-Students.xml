@@ -17,7 +17,7 @@
   You will need to use this export, with the STAFF enrolment export, and combine the files
   together before you send them to Sangha/Scholantis.
 -->
-<export table-id="tblStdSchedule" header-row="true" value-delimiter=",">
+<export table-id="tblStdSchedule" header-row="false" value-delimiter=",">
     <field id="relSscStdOid.stdIDLocal" header-source="constant" header-value="Id (Student / Staff)" />
     <field id="relSscMstOid.mstOID" header-source="constant" header-value="SectionId" />
     <constant value="Student" header-source="constant" header-value="Role (Teacher / Student)" />
