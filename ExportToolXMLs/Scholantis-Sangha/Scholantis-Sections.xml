@@ -2,7 +2,7 @@
 
 <export table-id="tblSchMaster" header-row="true">
     <field id="mstOID" header-source="constant" header-value="Section Id" />    
-    <field id="relMstCskOid.crsOID" header-source="constant" header-value="Class Id" />
+    <field id="relMstCskOid.relCskCrsOid.crsOID" header-source="constant" header-value="Class Id" />
     <field id="mstSectionNum" header-source="constant" header-value="Section Number" />
     <constant value="" header-source="constant" header-value="Period" />
 
