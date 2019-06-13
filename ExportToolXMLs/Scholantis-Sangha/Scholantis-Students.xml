@@ -12,7 +12,7 @@
     <field id="relStdPsnOid.psnNameLast" header-source="constant" header-value="Last Name" />
     <field id="relStdPsnOid.psnGenderCode" header-source="constant" header-value="Sex" />
     <field id="relStdPsnOid.psnEmail01" header-source="constant" header-value="Email 1" />
-    <constant value="" header-source="constant" header-value="Email 2" />
+    <field id="relStdPsnOid.psnEmail02" header-source="constant" header-value="Email 2" />
     <field id="relStdPsnOid.psnPhone01" header-source="constant" header-value="Tel" />
     <field id="relStdPsnOid.psnPhone02" header-source="constant" header-value="Mobile" />
     <field id="relStdPsnOid.psnDob" format="YYYY-MM-dd" header-source="constant" header-value="Date of Birth" />
