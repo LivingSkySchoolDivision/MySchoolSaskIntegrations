@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export table-id="tblCourse" header-row="true">
+    <field id="crsOID" header-source="constant" header-value="Class Id" />
+    <field id="crsCourseNum" header-source="constant" header-value="Class Number" />
+    <field id="crsCourseDesc" header-source="constant" header-value="Title" />
+    <constant value="" header-source="constant" header-value="SchoolId" />    
+</export>
