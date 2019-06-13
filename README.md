@@ -33,12 +33,15 @@ This git repository represents work and research done for the purpose of creatin
 * Lifetouch (School Photos)
   * [Lifetouch student list](ExportToolXMLs/Lifetouch/LifetouchStudents.xml)
 * Sangha / Scholantis (Sangha and Scholantis use identical files)
-  * [Sangha/Scholantis Students](ExportToolXMLs/Scholantis-Sangha/Scholantis-Students.xml)
-  * [Sangha/Scholantis Staff](ExportToolXMLs/Scholantis-Sangha/Scholantis-Staff.xml)
-  * [Sangha/Scholantis Sections](ExportToolXMLs/Scholantis-Sangha/Scholantis-Sections.xml)
   * [Sangha/Scholantis Classes](ExportToolXMLs/Scholantis-Sangha/Scholantis-Class.xml)
-  * [Sangha/Scholantis Enrolment - Students](ExportToolXMLs/Scholantis-Sangha/Scholantis-Enrolment-Students.xml)
-  * [Sangha/Scholantis Enrolment - Staff](ExportToolXMLs/Scholantis-Sangha/Scholantis-Enrolment-Staff.xml)
+  * Sangha/Scholantis Enrolment
+    * __Note__: You will need to combine the output of the following two exports into the same file before submitting them to Sangha/Scholantis.
+    * [Sangha/Scholantis Enrolment - Students](ExportToolXMLs/Scholantis-Sangha/Scholantis-Enrolment-Students.xml)
+    * [Sangha/Scholantis Enrolment - Staff](ExportToolXMLs/Scholantis-Sangha/Scholantis-Enrolment-Staff.xml)
+  * [Sangha/Scholantis Sections](ExportToolXMLs/Scholantis-Sangha/Scholantis-Sections.xml)
+  * [Sangha/Scholantis Staff](ExportToolXMLs/Scholantis-Sangha/Scholantis-Staff.xml)
+  * [Sangha/Scholantis Students](ExportToolXMLs/Scholantis-Sangha/Scholantis-Students.xml)
+  
 ## Downloading this repository to your computer
 Click the link below to download this entire Git repository in a zip file.
 
