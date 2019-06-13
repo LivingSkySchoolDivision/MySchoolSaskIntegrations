@@ -35,7 +35,7 @@ This git repository represents work and research done for the purpose of creatin
 * Sangha / Scholantis (Sangha and Scholantis use identical files)
   * [Sangha/Scholantis Classes](ExportToolXMLs/Scholantis-Sangha/Scholantis-Class.xml)
   * Sangha/Scholantis Enrolment
-    * __Note__: You will need to combine the output of the following two exports into the same file before submitting them to Sangha/Scholantis.
+    * __Note__: You will need to combine the output of the following two exports into the same file before submitting them to Sangha/Scholantis. [See this readme for details](ExportToolXMLs/Scholantis-Sangha/README-Enrolmentfiles.md)
     * [Sangha/Scholantis Enrolment - Staff](ExportToolXMLs/Scholantis-Sangha/Scholantis-Enrolment-Staff.xml)
     * [Sangha/Scholantis Enrolment - Students](ExportToolXMLs/Scholantis-Sangha/Scholantis-Enrolment-Students.xml)
   * [Sangha/Scholantis Parent/Guardian](ExportToolXMLs/Scholantis-Sangha/Scholantis-ParentGuardian.xml)
