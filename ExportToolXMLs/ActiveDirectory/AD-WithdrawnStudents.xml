@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export table-id="tblStudent" header-row="true">
+    <!-- Only get withdrawn students -->
+    <filter field="stdEnrStatus" operator="equals" value="Withdrawn" />   
+
+    <!-- Don't pull students from schools that are inactive or archived -->
+    <filter field="relStdSklOid.sklArchiveInd" operator="equals" value="false" /> 
+    <filter field="relStdSklOid.sklInactiveInd" operator="equals" value="false" />     
+
+    <field id="stdIDLocal" header-source="constant" header-value="StudentID" />
+    <field id="relStdPsnOid.psnNameFirst" header-source="constant" header-value="LegalFirstName" />  
+    <field id="relStdPsnOid.psnNameLast" header-source="constant" header-value="LegalLastName" />
+    <field id="relStdPsnOid.psnNameMiddle" header-source="constant" header-value="LegalMiddleName" />
+    <field id="relStdPsnOid.psnFieldC001" header-source="constant" header-value="PreferredFirstName" />  
+    <field id="relStdPsnOid.psnFieldC003" header-source="constant" header-value="PreferredLastName" />
+    <field id="relStdPsnOid.psnFieldC002" header-source="constant" header-value="PreferredMiddleName" />
+    <field id="relStdPsnOid.psnEmail01" header-source="constant" header-value="PrimaryEmail" />
+    <field id="relStdPsnOid.psnEmail02" header-source="constant" header-value="AlternateEmail" />
+    <field id="relStdSklOid.sklSchoolName" header-source="constant" header-value="BaseSchoolName" />
+    <field id="relStdSklOid.sklSchoolID" header-source="constant" header-value="BaseSchoolDAN" />
+    <field id="stdEnrStatus" header-source="constant" header-value="EnrollmentStatus" />
+    <field id="stdGradeLevel" header-source="constant" header-value="GradeLevel" />
+    <field id="stdYog" header-source="constant" header-value="YOG" />
+    <field id="stdFieldA026" header-source="constant" header-value="O365Authorisation" /> 
+    <field id="stdFieldA005" header-source="constant" header-value="AcceptableUsePolicy" />        
+    <field id="stdFieldC002" header-source="constant" header-value="LegacyStudentID" />      
+    <field id="relStdPsnOid.psnEmailG" header-source="constant" header-value="GoogleDocsEmail" />
+</export>
