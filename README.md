@@ -17,7 +17,11 @@ This git repository represents work and research done for the purpose of creatin
   * [How to run an export manually](HowTo/HowToRunAnExportManually.md)
 
 # Integrations in this repository
-## Exports
+## Export Tool XML Files
+* Active Directory
+  * __Note__: Everyone's Active Directory implementation will be different, so this file may not be suitable for the way your organization handles AD integration now. You may need to change/add/remove fields, or reconfigure your existing identity system or scripts for these exports to work. 
+  * [AD Active Students](ExportToolXMLs/ActiveDirectory/AD-ActiveStudents.xml)
+  * [AD Withdrawn Students](ExportToolXMLs/ActiveDirectory/AD-WithdrawnStudents.xml)
 * Clevr
   * [Classes](ExportToolXMLs/Clevr/ClevrClasses.xml)
   * [Locations](ExportToolXMLs/Clevr/ClevrLocations.xml)
