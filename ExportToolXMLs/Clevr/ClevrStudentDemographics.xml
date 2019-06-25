@@ -9,16 +9,10 @@
     most-recent copies of this export file can be found in our GitHub repository:
     https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations    
     ===========================================================================
-
-    TODO:
-        [ ] Student addresses - It's not possible to get addresses in a single string
-        [ ] Student PO Boxes - is part of address, not separate. See above address issue.
-        [ ] Contact Addresses (same address issue as above)
 -->
 <export table-id="tblStudent" header-row="true" value-delimiter="&#09;">
-    <!-- Only export active or prereg students -->
-    <filter field="stdEnrStatus" operator="equals" value="Active" />   
-    <filter field="stdEnrStatus" operator="equals" value="PreReg" connector="or" />
+    <!-- Only export active students -->
+    <filter field="stdEnrStatus" operator="equals" value="Active" />
 
     <!-- Clevr Tenant ID -->
     <!-- 
@@ -66,11 +60,10 @@
     <!-- 
         Student physical address
     -->
-    <!-- <field id="" header-source="constant" header-value="studentStreetAddress" /> -->
-    <constant value="" header-source="constant" header-value="studentStreetAddress" /> 
+    <field id="relStdPsnOid.relPsnAdrPhys.adrAddress01" header-source="constant" header-value="studentStreetAddress" />
 
     <!-- PO Box - MSS doesn't store PO boxes separately, so this may not be possible to single out -->
-    <constant value="" header-source="constant" header-value="studentPOBox" /> 
+    <field id="relStdPsnOid.relPsnAdrPhys.adrAddress02" header-source="constant" header-value="studentPOBox" /> 
 
     <field id="relStdPsnOid.relPsnAdrPhys.adrCity" header-source="constant" header-value="studentCity" />
     <field id="relStdPsnOid.relPsnAdrPhys.adrPostalCode" header-source="constant" header-value="studentPostalCode" />
@@ -88,11 +81,11 @@
     <field id="relStdCtjOid1.relCtjCntOid.relCntPsnOid.psnPhone01" header-source="constant" header-value="parent1Phone" />
     <field id="relStdCtjOid1.relCtjCntOid.relCntPsnOid.psnPhone02" header-source="constant" header-value="parent1Cell" />
     <field id="relStdCtjOid1.relCtjCntOid.relCntPsnOid.psnPhone03" header-source="constant" header-value="parent1Workphone" />
-    <constant value="" header-source="constant" header-value="parent1StreetAddress" />
-    <constant value="" header-source="constant" header-value="parent1POBox" />
+    <field id="relStdCtjOid1.relCtjCntOid.relCntPsnOid.relPsnAdrPhys.adrAddress01" header-source="constant" header-value="parent1StreetAddress" />
+    <field id="relStdCtjOid1.relCtjCntOid.relCntPsnOid.relPsnAdrMail.adrAddress02" header-source="constant" header-value="parent1POBox" />
     <field id="relStdCtjOid1.relCtjCntOid.relCntPsnOid.relPsnAdrPhys.adrCity" header-source="constant" header-value="parent1City" />
     <field id="relStdCtjOid1.relCtjCntOid.relCntPsnOid.relPsnAdrPhys.adrPostalCode" header-source="constant" header-value="parent1PostalCode" />
-    <constant value="" header-source="constant" header-value="parent1MailingAddress" />
+    <field id="relStdCtjOid1.relCtjCntOid.relCntPsnOid.relPsnAdrMail.adrAddress01" header-source="constant" header-value="parent1MailingAddress" />
     <field id="relStdCtjOid1.ctjRelateCode" header-source="constant" header-value="parent1Agency" />
     
     <!-- Contact 2 -->
@@ -101,11 +94,11 @@
     <field id="relStdCtjOid2.relCtjCntOid.relCntPsnOid.psnPhone01" header-source="constant" header-value="parent2Phone" />
     <field id="relStdCtjOid2.relCtjCntOid.relCntPsnOid.psnPhone02" header-source="constant" header-value="parent2Cell" />
     <field id="relStdCtjOid2.relCtjCntOid.relCntPsnOid.psnPhone03" header-source="constant" header-value="parent2Workphone" />
-    <constant value="" header-source="constant" header-value="parent2StreetAddress" />
-    <constant value="" header-source="constant" header-value="parent2POBox" />
+    <field id="relStdCtjOid2.relCtjCntOid.relCntPsnOid.relPsnAdrPhys.adrAddress01" header-source="constant" header-value="parent2StreetAddress" />
+    <field id="relStdCtjOid2.relCtjCntOid.relCntPsnOid.relPsnAdrMail.adrAddress02" header-source="constant" header-value="parent2POBox" />
     <field id="relStdCtjOid2.relCtjCntOid.relCntPsnOid.relPsnAdrPhys.adrCity" header-source="constant" header-value="parent2City" />
     <field id="relStdCtjOid2.relCtjCntOid.relCntPsnOid.relPsnAdrPhys.adrPostalCode" header-source="constant" header-value="parent2PostalCode" />
-    <constant value="" header-source="constant" header-value="parent2MailingAddress" />
+    <field id="relStdCtjOid2.relCtjCntOid.relCntPsnOid.relPsnAdrMail.adrAddress01" header-source="constant" header-value="parent2MailingAddress" />
     <field id="relStdCtjOid2.ctjRelateCode" header-source="constant" header-value="parent2Agency" />
 
     <!-- Contact 3 -->
@@ -114,11 +107,11 @@
     <field id="relStdCtjOid3.relCtjCntOid.relCntPsnOid.psnPhone01" header-source="constant" header-value="parent3Phone" />
     <field id="relStdCtjOid3.relCtjCntOid.relCntPsnOid.psnPhone02" header-source="constant" header-value="parent3Cell" />
     <field id="relStdCtjOid3.relCtjCntOid.relCntPsnOid.psnPhone03" header-source="constant" header-value="parent3Workphone" />
-    <constant value="" header-source="constant" header-value="parent3StreetAddress" />
-    <constant value="" header-source="constant" header-value="parent3POBox" />
+    <field id="relStdCtjOid3.relCtjCntOid.relCntPsnOid.relPsnAdrPhys.adrAddress01" header-source="constant" header-value="parent3StreetAddress" />
+    <field id="relStdCtjOid3.relCtjCntOid.relCntPsnOid.relPsnAdrMail.adrAddress02" header-source="constant" header-value="parent3POBox" />
     <field id="relStdCtjOid3.relCtjCntOid.relCntPsnOid.relPsnAdrPhys.adrCity" header-source="constant" header-value="parent3City" />
     <field id="relStdCtjOid3.relCtjCntOid.relCntPsnOid.relPsnAdrPhys.adrPostalCode" header-source="constant" header-value="parent3PostalCode" />
-    <constant value="" header-source="constant" header-value="parent3MailingAddress" />
+    <field id="relStdCtjOid3.relCtjCntOid.relCntPsnOid.relPsnAdrMail.adrAddress01" header-source="constant" header-value="parent3MailingAddress" />
     <field id="relStdCtjOid3.ctjRelateCode" header-source="constant" header-value="parent3Agency" />
 
     <!-- More student stuff -->    
