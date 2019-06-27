@@ -65,8 +65,8 @@
     <field id="relStfPsnOid.psnEmail01" header-source="constant" header-value="teacherEmail" />
 
     <!-- Optional fields -->
-    <constant value="" header-source="constant" header-value="grade" />
-    <constant value="" header-source="constant" header-value="serviceProvided" />
+    <blank header-value="grade" />
+    <blank header-value="serviceProvided" />
     <field id="relStfSklOid.sklSchoolName" header-source="constant" header-value="organization" />
     <field id="relStfSklOid.sklFieldB001" header-source="constant" header-value="organizationPhone" />
     <blank header-value="organizationFax" />

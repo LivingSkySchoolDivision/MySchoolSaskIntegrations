@@ -28,9 +28,9 @@
     <field id="sklSchoolID" header-source="constant" header-value="proprietaryId" />
     <field id="sklSchoolID" header-source="constant" header-value="localId" />
     <field id="sklSchoolName" header-source="constant" header-value="schoolName" />
-    <constant value="" header-source="constant" header-value="schoolStreetAddress" />
-    <constant value="" header-source="constant" header-value="schoolPOBox" />
+    <blank header-value="schoolStreetAddress" />
+    <blank header-value="schoolPOBox" />
     <field id="relSklAdrOid.adrCity" header-source="constant" header-value="schoolCity" />
     <field id="relSklAdrOid.adrPostalCode" header-source="constant" header-value="schoolPostalCode" />
-    <constant value="" header-source="constant" header-value="schoolMailingAddress" />   
+    <blank header-value="schoolMailingAddress" />   
    </export>

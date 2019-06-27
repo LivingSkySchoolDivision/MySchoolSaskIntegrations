@@ -14,5 +14,5 @@
     <field id="crsOID" header-source="constant" header-value="Class Id" />
     <field id="crsCourseNum" header-source="constant" header-value="Class Number" />
     <field id="crsCourseDesc" header-source="constant" header-value="Title" />
-    <constant value="" header-source="constant" header-value="SchoolId" />    
+    <blank header-value="SchoolId" />    
 </export>

@@ -67,7 +67,7 @@
         Send a blank password - hopefully you use some sort of AD or LDAP integration for this instead.
         It is not safe to transmit passwords in a CSV.
     -->    
-    <constant value="" header-source="constant" header-value="password" />
+    <blank header-value="password" />
 
     <field id="stdGradeLevel" header-source="constant" header-value="grade" />
 </export>

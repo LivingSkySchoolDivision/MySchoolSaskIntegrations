@@ -86,7 +86,7 @@
         It is not safe to transmit passwords in a CSV.
     -->
     <!-- <field id="" header-source="constant" header-value="password" /> -->
-    <constant value="" header-source="constant" header-value="password" />
+    <blank header-value="password" />
     
 </export>
 

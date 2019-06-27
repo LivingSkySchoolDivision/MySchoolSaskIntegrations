@@ -28,8 +28,8 @@
     <field id="relStdPsnOid.psnDob" format="YYYY-MM-dd" header-source="constant" header-value="Date of Birth" />
     
     <!-- Skipping in/out dates, as they are not required -->
-    <constant value="" header-source="constant" header-value="Enrollment Date" />
-    <constant value="" header-source="constant" header-value="Leave Date" />    
+    <blank header-value="Enrollment Date" />
+    <blank header-value="Leave Date" />    
     
     <field id="relStdSklOid.sklSchoolID" header-source="constant" header-value="SchoolId" />        
 </export>

@@ -20,8 +20,8 @@
     The export crashes if you try to pull the start and end dates I think this is technically a
     one-to-many relationship, so the export tool can't pull it.
     -->
-    <constant value="" header-source="constant" header-value="Start" />
-    <constant value="" header-source="constant" header-value="End" />
+    <blank header-value="Start" />
+    <blank header-value="End" />
     
     <field id="relMstSchOid.relSchSklOid.sklSchoolID" header-source="constant" header-value="SchoolId" /> 
 </export>
