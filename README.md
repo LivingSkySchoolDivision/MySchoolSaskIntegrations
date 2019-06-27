@@ -46,6 +46,8 @@ This git repository represents work and research done for the purpose of creatin
   * [Sangha/Scholantis Sections](ExportToolXMLs/Scholantis-Sangha/Scholantis-Sections.xml)
   * [Sangha/Scholantis Staff](ExportToolXMLs/Scholantis-Sangha/Scholantis-Staff.xml)
   * [Sangha/Scholantis Students](ExportToolXMLs/Scholantis-Sangha/Scholantis-Students.xml)
+* Xello
+  * [Xello Students](ExportToolXMLs/Xello/XelloStudents.xml)
   
   
 ## Downloading this repository to your computer
