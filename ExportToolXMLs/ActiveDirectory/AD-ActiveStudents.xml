@@ -16,7 +16,11 @@
 
     <!-- Don't pull students from schools that are inactive or archived -->
     <filter field="relStdSklOid.sklArchiveInd" operator="equals" value="false" /> 
-    <filter field="relStdSklOid.sklInactiveInd" operator="equals" value="false" />     
+    <filter field="relStdSklOid.sklInactiveInd" operator="equals" value="false" /> 
+
+    <sort field="relStfSklOid.sklSchoolName" direction="asc" />
+    <sort field="relStfPsnOid.psnNameLast" direction="asc" />
+    <sort field="relStfPsnOid.psnNameFirst" direction="asc" />    
 
     <field id="stdIDLocal" header-source="constant" header-value="StudentID" />
     <field id="relStdPsnOid.psnNameFirst" header-source="constant" header-value="LegalFirstName" />  
