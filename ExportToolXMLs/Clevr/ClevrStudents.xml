@@ -24,15 +24,7 @@
         when the export file is imported into Clevr.
     -->    
     <constant value="YOURTENANTIDHERE" header-source="constant" header-value="tenantId" />
-    
-    <!--
-        "Learning ID" (probably SK learning ID): stdIDState        
-        "Student number": stdIDLocal
-
-        Other unique numbers:
-            GUID: stdGUID / stdGUID2 / stdGUID3
-            Object ID: stdOID (possibly the same as the GUID)
-    -->
+   
     <field id="stdIDLocal" header-source="constant" header-value="proprietaryId" />
     <field id="stdIDLocal" header-source="constant" header-value="localId" />
 
