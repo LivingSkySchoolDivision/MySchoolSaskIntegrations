@@ -10,7 +10,7 @@
     https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations    
     ===========================================================================
 -->
-<export table-id="tblStudent" header-row="true">
+<export table-id="tblStudent" header-row="true" value-delimiter=",">
     <!-- Only export active students -->
     <filter field="stdEnrStatus" operator="equals" value="Active" />   
 

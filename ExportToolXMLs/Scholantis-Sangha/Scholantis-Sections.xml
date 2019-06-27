@@ -10,7 +10,7 @@
     https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations    
     ===========================================================================
 -->
-<export table-id="tblSchMaster" header-row="true">
+<export table-id="tblSchMaster" header-row="true" value-delimiter=",">
     <field id="mstOID" header-source="constant" header-value="Section Id" />    
     <field id="relMstCskOid.relCskCrsOid.crsOID" header-source="constant" header-value="Class Id" />
     <field id="mstSectionNum" header-source="constant" header-value="Section Number" />

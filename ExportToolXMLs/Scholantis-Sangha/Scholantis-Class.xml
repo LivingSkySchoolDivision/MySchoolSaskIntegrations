@@ -10,7 +10,7 @@
     https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations    
     ===========================================================================
 -->
-<export table-id="tblCourse" header-row="true">
+<export table-id="tblCourse" header-row="true" value-delimiter=",">
     <field id="crsOID" header-source="constant" header-value="Class Id" />
     <field id="crsCourseNum" header-source="constant" header-value="Class Number" />
     <field id="crsCourseDesc" header-source="constant" header-value="Title" />

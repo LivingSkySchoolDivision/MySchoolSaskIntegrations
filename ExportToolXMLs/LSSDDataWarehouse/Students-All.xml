@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<export table-id="tblStudent" header-row="true">   
+<export table-id="tblStudent" header-row="true" value-delimiter=",">   
 
     <field id="stdOID" header-source="constant" header-value="StudentOID" />
     <field id="stdIDState" header-source="constant" header-value="StudentLearningID" />

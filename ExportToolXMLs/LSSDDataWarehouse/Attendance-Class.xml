@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<export table-id="tblStdPerAtt" header-row="true">
+<export table-id="tblStdPerAtt" header-row="true" value-delimiter=",">
   <field id="relPatStdOid.stdGUID" header-source="constant" header-value="StudentGUID" />
   <field id="relPatStdOid.stdIDState" header-source="constant" header-value="StudentLearningID" />
   <field id="relPatStdOid.stdIDLocal" header-source="constant" header-value="StudentLocalID" />

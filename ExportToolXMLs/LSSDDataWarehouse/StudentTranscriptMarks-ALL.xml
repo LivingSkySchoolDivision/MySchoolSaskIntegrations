@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<export table-id="tblStdTrans" header-row="true">
+<export table-id="tblStdTrans" header-row="true" value-delimiter=",">
     <field id="relTrnStdOid.stdIDLocal" header-source="constant" header-value="Student" /> 
     <field id="relTrnSklOid.sklSchoolName" header-source="constant" header-value="School" /> 
     <field id="relTrnMstOid.mstCourseView" header-source="constant" header-value="MasterSchedule" />
