@@ -12,7 +12,7 @@
     
     NOTES:
     Clevr expects the school "type" to be a 1 or a 2, but that's not possible with this file alone.
-    Either comment it out below, replacing it with the "contant" line directly above it, or use a 
+    Either comment it out below, replacing it with the "blank" line directly above it, or use a 
     script to conver the string value to a 1 or 2.
 -->
 <export table-id="tblSchool" header-row="true" value-delimiter="&#09;">
@@ -42,10 +42,10 @@
                 2 = secondary
 
         Pulling the "sklSchoolLevel" field will give you a string.
-        You will need to conver this to a number externally.
+        You will need to convert this to a number externally.
     -->
-    <!--<constant value="" header-source="constant" header-value="type" />-->
-    <field id="sklSchoolLevel" header-source="constant" header-value="type" />    
+    <!-- <blank header-value="type"> -->
+    <field id="sklSchoolLevel" header-source="constant" header-value="type" value="2" return="(?)" />    
 
     <field id="sklFieldC002" header-source="constant" header-value="streetAddress" />
     <field id="relSklAdrOid.adrCity" header-source="constant" header-value="city" />
