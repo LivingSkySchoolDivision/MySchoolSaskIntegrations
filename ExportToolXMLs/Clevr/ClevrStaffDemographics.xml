@@ -10,14 +10,19 @@
     https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations    
     ===========================================================================
 
-    TODO:
-     [ ] Missing a mailing address
-     [ ] Missing Grade, ServiceProvided, Organization, OrganizationPhone, OrganizationFax
+    NOTE: This file intentionally does not include staff addresses and birthdays. 
+          We don't send these fields to Clevr, and can't think of any reason why 
+          anyone would. We feel that since Clevr doesn't have an apparent use for
+          this information, it violates Canadian privacy code for them to have it.
 -->
 <export table-id="tblStaff" header-row="true" value-delimiter="&#09;">
 
     <!-- Only load staff members who are "Active" -->
     <filter field="stfStatus" operator="equals" source="default" value="Active" /> 
+
+    <sort field="relStfSklOid.sklSchoolName" direction="asc" />
+    <sort field="relStfPsnOid.psnNameLast" direction="asc" />
+    <sort field="relStfPsnOid.psnNameFirst" direction="asc" />
 
     <!-- Clevr Tenant ID -->
     <!-- 
@@ -33,29 +38,38 @@
     <field id="stfStaffID" header-source="constant" header-value="localId" />
     <field id="relStfPsnOid.psnNameLast" header-source="constant" header-value="lastName" />
     <field id="relStfPsnOid.psnNameFirst" header-source="constant" header-value="firstName" />
-    <field id="relStfPsnOid.psnDob" header-source="constant" header-value="birthdate" />
-    <constant value="" header-source="constant" header-value="staffStreetAddress" />
-    <constant value="" header-source="constant" header-value="staffPOBox" />
+
     <!-- 
-        Swap "relPsnAdrMail" for "relPsnAdrPhys" if you'd prefer to use physical address
+        Skipping some staff information, because we feel that this is none of Clevr's business.
+        If you'd like to include these fields, uncomment the following six "field" lines, and  
+        comment out or delete the "constant" lines following those.
+
+        Swap out "relPsnAdrPhys" for "relPsnAdrMail" to use the mailing address instead of the physical address
     -->
-    <field id="relStfPsnOid.relPsnAdrMail.adrCity" header-source="constant" header-value="staffCity" />
-    <field id="relStfPsnOid.relPsnAdrMail.adrPostalCode" header-source="constant" header-value="staffPostalCode" />
-    
-    <!-- There is currently no easy way to get a mailing address in one field -->
-    <constant value="" header-source="constant" header-value="staffMailingAddress" />
+    <!--
+    <field id="relStfPsnOid.psnDob" header-source="constant" header-value="birthdate" />
+    <field id="relStfPsnOid.relPsnAdrPhys.adrAddress01" header-source="constant" header-value="staffStreetAddress" />
+    <field id="relStfPsnOid.relPsnAdrPhys.adrAddress02" header-source="constant" header-value="staffPOBox" />
+    <field id="relStfPsnOid.relPsnAdrPhys.adrCity" header-source="constant" header-value="staffCity" />
+    <field id="relStfPsnOid.relPsnAdrPhys.adrPostalCode" header-source="constant" header-value="staffPostalCode" />
+    <field id="relStfPsnOid.relPsnAdrMail.adrAddress01" header-source="constant" header-value="staffMailingAddress" />
+    -->
+    <blank header-value="birthdate" />
+    <blank header-value="staffStreetAddress" />
+    <blank header-value="staffPOBox" />
+    <blank header-value="staffCity" />
+    <blank header-value="staffPostalCode" />
+    <blank header-value="staffMailingAddress" />
     
     <field id="relStfSklOid.sklSchoolName" header-source="constant" header-value="schoolName" />
     <field id="relStfPsnOid.psnEmail01" header-source="constant" header-value="teacherEmail" />
 
-    <!-- 
-        Below are optional fields, which we do not use.
-    -->
+    <!-- Optional fields -->
     <constant value="" header-source="constant" header-value="grade" />
     <constant value="" header-source="constant" header-value="serviceProvided" />
-    <constant value="" header-source="constant" header-value="organization" />
-    <constant value="" header-source="constant" header-value="organizationPhone" />
-    <constant value="" header-source="constant" header-value="organizationFax" />
+    <field id="relStfSklOid.sklSchoolName" header-source="constant" header-value="organization" />
+    <field id="relStfSklOid.sklFieldB001" header-source="constant" header-value="organizationPhone" />
+    <blank header-value="organizationFax" />
 
 </export>
 
