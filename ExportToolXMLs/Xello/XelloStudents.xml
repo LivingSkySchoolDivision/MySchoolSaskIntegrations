@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    ===========================================================================
+    This export file was created by Mark Strendin, at 
+    Living Sky School Division No 202, for the 
+    MySchoolSask Virtual Integration Group.
+        
+    Other export file definitions, documentation, issue tracking, and 
+    most-recent copies of this export file can be found in our GitHub repository:
+    https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations    
+    ===========================================================================
+-->
+<export table-id="tblStudent" header-row="true" value-delimiter="|">
+    <!-- Only export active or prereg students -->
+    <filter field="stdEnrStatus" operator="equals" value="Active" />    
+
+    <sort field="relStfSklOid.sklSchoolName" direction="asc" />
+    <sort field="relStfPsnOid.psnNameLast" direction="asc" />
+    <sort field="relStfPsnOid.psnNameFirst" direction="asc" />  
+    
+    <field id="stdIDLocal" header-source="constant" header-value="StudentID" />
+    <field id="relStdPsnOid.psnNameFirst" header-source="constant" header-value="FirstName" />
+    <field id="relStdPsnOid.psnNameLast" header-source="constant" header-value="LastName" />
+    <field id="relStdPsnOid.psnGenderCode" header-source="constant" header-value="Gender" />
+    <field id="relStdPsnOid.psnDob" header-source="constant" header-value="DateOfBirth" />
+    <field id="stdGradeLevel" header-source="constant" header-value="CurrentGrade" />
+    <field id="relStdSklOid.sklSchoolID" header-source="constant" header-value="CurrentSchoolCode" />
+    <field id="relStdSklNext.sklSchoolID" header-source="constant" header-value="PreRegSchoolCode" />
+    <field id="relStdPsnOid.psnEmail01" header-source="constant" header-value="Email" />
+</export>
+
