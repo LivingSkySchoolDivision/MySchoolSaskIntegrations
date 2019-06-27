@@ -10,6 +10,31 @@ Example 1: Get daily attendance entries for _today_ only
 </export>
 ```
 
+## Operators
+* equals
+* equalsIgnoreCase
+* empty
+* greaterThan
+* greaterThanField
+* greaterOrEqual
+* lessThan
+* lessThanField
+* lessOrEqual
+* notEmpty
+* notEqual
+* beginsWith
+* contains
+* endsWith
+* in
+* notIn
+* after
+* before
+* onOrAfter
+* onOrBefore
+* ownable
+* parentOwnable
+* equalsOrganizations
+
 ## Dates 
 * `today`
 * `now`
