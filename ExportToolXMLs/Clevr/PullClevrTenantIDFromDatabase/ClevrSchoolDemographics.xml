@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    ===========================================================================
+    This export file was created by Mark Strendin, at 
+    Living Sky School Division No 202, for the 
+    MySchoolSask Virtual Integration Group.
+        
+    Other export file definitions, documentation, issue tracking, and 
+    most-recent copies of this export file can be found in our GitHub repository:
+    https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations    
+    ===========================================================================
+
+    TODO:
+     [ ] Missing mailing address - its not currently possibly to get a mailing address in a single field
+-->
+<export table-id="tblSchool" header-row="true" value-delimiter="&#09;">
+
+    <!-- Ignore schools with no tenant ID set -->    
+    <filter field="sklFieldA008" operator="notEmpty" source="default" />
+      
+    <field id="sklFieldA008" header-source="constant" header-value="tenantId" />    
+    <field id="sklSchoolID" header-source="constant" header-value="proprietaryId" />
+    <field id="sklSchoolID" header-source="constant" header-value="localId" />
+    <field id="sklSchoolName" header-source="constant" header-value="schoolName" />
+    <blank header-value="schoolStreetAddress" />
+    <blank header-value="schoolPOBox" />
+    <field id="relSklAdrOid.adrCity" header-source="constant" header-value="schoolCity" />
+    <field id="relSklAdrOid.adrPostalCode" header-source="constant" header-value="schoolPostalCode" />
+    <blank header-value="schoolMailingAddress" />   
+   </export>

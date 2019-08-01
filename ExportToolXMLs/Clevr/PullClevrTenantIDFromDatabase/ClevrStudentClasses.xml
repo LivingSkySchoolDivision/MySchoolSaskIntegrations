@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    ===========================================================================
+    This export file was created by Mark Strendin, at 
+    Living Sky School Division No 202, for the 
+    MySchoolSask Virtual Integration Group.
+        
+    Other export file definitions, documentation, issue tracking, and 
+    most-recent copies of this export file can be found in our GitHub repository:
+    https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations    
+    ===========================================================================
+-->
+<export table-id="tblStdSchedule" header-row="true" value-delimiter="&#09;">
+
+    <!-- Ignore schools with no tenant ID set -->    
+    <filter field="relSscSchOid.relSchSklOid.sklFieldA008" operator="notEmpty" source="default" />
+
+    <!-- Clevr Tenant ID -->   
+    <!-- 
+        In MySchoolSask, Clevr Tenant ID is stored in a field specific to each SCHOOL.
+        To edit this value, change the "Clevr Tenant ID" for your school, which can be found in the following locations:
+        - In School View -> School top-tab -> Setup side-tab -> Details leaf
+        - In Division View -> Division top-tab -> Organizations side-tab -> Schools leaf -> Select the school you wish to edit
+
+        This value MUST be present for a school's students to be included in the Clevr export. 
+        Students at schools without this value present will be ignored by this export.
+        If your entire division uses the same tenant ID, you will need to enter it for every school. 
+        If your division has schools that don't use clevr, don't enter a tenant ID and those schools will be ignored.
+    -->    
+    <field id="relSscSchOid.relSchSklOid.sklFieldA008" header-source="constant" header-value="tenantId" />
+
+    <field id="relSscSchOid.relSchSklOid.sklSchoolID" header-source="constant" header-value="locationId" />
+    <field id="relSscMstOid.mstOID" header-source="constant" header-value="classId" />
+    <field id="relSscStdOid.stdIDLocal" header-source="constant" header-value="studentId" />
+</export>
