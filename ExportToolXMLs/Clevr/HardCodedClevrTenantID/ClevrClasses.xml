@@ -31,6 +31,6 @@
     <field id="relMstCskOid.relCskCrsOid.crsCourseDesc" header-source="constant" header-value="courseDescription" />
     <field id="mstEnrTotal" header-source="constant" header-value="classSize" />
     <field id="mstEnrMaximum" header-source="constant" header-value="classMaxSeats" />
-    <field id="relMstTrmOid.relTrmTmdOid.tmdStartDate" header-source="constant" header-value="termStartDate" />
-    <field id="relMstTrmOid.relTrmTmdOid.tmdEndDate" header-source="constant" header-value="termEndDate" />
+    <field id="scheduleTerm.scheduleTermDates[0].startDate" header-source="constant" header-value="termStartDate" type="beanPath" />
+    <field id="scheduleTerm.scheduleTermDates[0].endDate" header-source="constant" header-value="termEndDate" type="beanPath" />
 </export>
