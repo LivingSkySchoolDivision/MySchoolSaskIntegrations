@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export table-id="tblCourse" header-row="true" value-delimiter=",">
-    <filter field="relCrsCtxOid.ctxContextID" operator="equals" source="default" value="2020" />
-    <field id="crsOID" header-source="constant" header-value="CourseGUID" />
-    <field id="crsCourseNum" header-source="constant" header-value="CourseNumber" />
-    <field id="crsCourseDesc" header-source="constant" header-value="CourseDescription" />
-    <field id="crsDeptCode" header-source="constant" header-value="Department" />
-    <field id="crsFieldC001" header-source="constant" header-value="AreaOfStudy" />
-    <field id="crsExamCode" header-source="constant" header-value="ExamCode" />
-    <field id="crsFlavor" header-source="constant" header-value="Flavour" />
-    <field id="crsGradeLevel" header-source="constant" header-value="GradeLevel" />
-    <field id="crsProgram" header-source="constant" header-value="CourseProgram" />
-    <field id="crsFieldA004" header-source="constant" header-value="MinistryCourseNumber" />
-    <field id="crsShortDesc" header-source="constant" header-value="ShortDescription" />
-    <field id="crsSummary" header-source="constant" header-value="Summary" />
-    <field id="relCrsCtxOid.ctxContextID" header-source="constant" header-value="SchoolYearContext" />
+  <filter field="relCrsCtxOid.ctxContextID" operator="equals" source="default" value="2019-2020" />
+  <field id="crsOID" header-source="constant" header-value="CourseGUID" />
+  <field id="crsCourseNum" header-source="constant" header-value="CourseNumber" />
+  <field id="crsCourseDesc" header-source="constant" header-value="CourseDescription" />
+  <field id="crsDeptCode" header-source="constant" header-value="Department" />
+  <field id="crsFieldC001" header-source="constant" header-value="AreaOfStudy" />
+  <field id="crsExamCode" header-source="constant" header-value="ExamCode" />
+  <field id="crsFlavor" header-source="constant" header-value="Flavour" />
+  <field id="crsGradeLevel" header-source="constant" header-value="GradeLevel" />
+  <field id="crsProgram" header-source="constant" header-value="CourseProgram" />
+  <field id="crsFieldA004" header-source="constant" header-value="MinistryCourseNumber" />
+  <field id="crsShortDesc" header-source="constant" header-value="ShortDescription" />
+  <field id="crsSummary" header-source="constant" header-value="Summary" />
+  <field id="relCrsCtxOid.ctxContextID" header-source="constant" header-value="SchoolYearContext" />
 </export>
