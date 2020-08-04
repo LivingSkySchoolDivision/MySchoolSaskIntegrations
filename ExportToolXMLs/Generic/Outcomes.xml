@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export table-id="tblRubCriteria" header-row="true" value-delimiter=",">
+
+    <!-- 
+        NOTE: This export DOES NOT WORK - I can't get any records to return from the tblRubCriteria table, with any export.
+        My best guess is the tblRubCriteria table is not compatible with this export system.
+    -->
+
+    <!-- Where rbcLevelCount == 0 -->
+    <filter field="rbcLevelCount" operator="equals" source="default" value="1" />   
+
+    <!-- Course info -->
+    <field id="relRbcRbdOid.relRbdCskOid.cskCourseNum" header-source="constant" header-value="CourseNumber" />
+    <field id="relRbcRbdOid.relRbdCskOid.cskFieldA001" header-source="constant" header-value="MinistryCourseNum" />
+    <field id="relRbcRbdOid.relRbdCskOid.cskCourseDesc" header-source="constant" header-value="CourseName" />
+    <field id="relRbcRbdOid.relRbdCskOid.cskGradeLevel" header-source="constant" header-value="CourseGrade" />
+
+    <!-- Outcome info -->
+    <field id="relRbcRbdOid.rbdDefinition" header-source="constant" header-value="OutcomeDescription" />
+    <field id="relRbcRbdOid.rbdRubricId" header-source="constant" header-value="OutcomeId" />
+
+    <!-- Outcome Criteria info -->
+    <field id="rbcName" header-source="constant" header-value="OutcomeName" />
+    <field id="rbcColumnHdr" header-source="constant" header-value="OutcomeDescription" />
+    <field id="rbcSeqNo" header-source="constant" header-value="OutcomeSortOrder" />
+    <field id="rbcDescription" header-source="constant" header-value="OutcomeDescription" />
+    <field id="rbcDiscontdInd" header-source="constant" header-value="IsDiscontinued" />
+
+</export>
