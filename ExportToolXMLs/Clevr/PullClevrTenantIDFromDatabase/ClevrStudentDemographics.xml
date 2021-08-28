@@ -63,7 +63,7 @@
     <field id="relStdPsnOid.relPsnAdrPhys.adrAddress02" header-source="constant" header-value="studentPOBox" /> 
     <field id="relStdPsnOid.relPsnAdrPhys.adrCity" header-source="constant" header-value="studentCity" />
     <field id="relStdPsnOid.relPsnAdrPhys.adrPostalCode" header-source="constant" header-value="studentPostalCode" />    
-    <field id="relStdPsnOid.relPsnAdrMail.adrAddress01" header-source="constant" header-value="studentStreetAddress" />
+    <field id="relStdPsnOid.relPsnAdrMail.adrAddress01" header-source="constant" header-value="studentMailingAddress" />
 
     <!-- Contact 1 -->
     <field id="relStdCtjOid1.relCtjCntOid.cntViewName" header-source="constant" header-value="parent1Name" />
