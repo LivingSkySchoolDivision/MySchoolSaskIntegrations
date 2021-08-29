@@ -22,7 +22,8 @@
     <sort field="relStfPsnOid.psnNameLast" direction="asc" />
     <sort field="relStfPsnOid.psnNameFirst" direction="asc" />    
 
-    <field id="stdIDLocal" header-source="constant" header-value="StudentID" />
+    <field id="stdIDLocal" header-source="constant" header-value="PupilNo" />
+    <field id="stdIDState" header-source="constant" header-value="SaskLearningID" />
     <field id="relStdPsnOid.psnNameFirst" header-source="constant" header-value="LegalFirstName" />  
     <field id="relStdPsnOid.psnNameLast" header-source="constant" header-value="LegalLastName" />
     <field id="relStdPsnOid.psnNameMiddle" header-source="constant" header-value="LegalMiddleName" />
