@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Consider generating this file from your HR system instead of MSS.
+    
+    Clever _Staff_ is for non-instructional staff such as support staff, school secretaries, etc.
+    
+    It's OK to be in both lists, but since the intent is non-instructional, many of these individuals
+    may not be in MSS in the first place.
+
+-->
+<export table-id="tblStaff" header-row="true" value-delimiter=",">    
+    <filter field="stfStatus" operator="equals" source="default" value="Active"/>
+
+    <field id="relStfSklOid.sklSchoolID" header-source="constant" header-value="School_id"/>
+    <field id="stfStaffID" header-source="constant" header-value="Staff_id"/>
+    <field id="relStfPsnOid.psnEmail01" header-source="constant" header-value="Staff_email"/>
+    <field id="relStfPsnOid.psnNameFirst" header-source="constant" header-value="First_name"/>
+    <field id="relStfPsnOid.psnNameLast" header-source="constant" header-value="Last_name"/>
+    <field id="stfDeptCode" header-source="constant" header-value="Department"/>
+    <field id="stfStaffType" header-source="constant" header-value="Title"/>
+    <field id="relStfPsnOid.psnEmail01" header-source="constant" header-value="Username"/>
+    <constant value="" header-source="constant" header-value="Password" />
+    <constant value="" header-source="constant" header-value="Role" />
+</export>
+

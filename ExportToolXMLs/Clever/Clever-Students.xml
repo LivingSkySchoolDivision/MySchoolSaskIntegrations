@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export table-id="tblStdContact" header-row="true">
+    <filter field="relCtjStdOid.stdEnrStatus" operator="equals" value="Active"/>
+    <filter field="relCtjStdOid.stdIDLocal" operator="notEmpty" connector="and"/>
+    <filter field="ctjPortalAcs	" operator="equals" value="true" connector="and"/>
+
+    <field id="relCtjStdOid.relStdSklOid.sklSchoolID" header-source="constant" header-value="School_id"/>
+    <field id="relCtjStdOid.stdIDLocal" header-source="constant" header-value="Student_id"/>
+    <field id="relCtjStdOid.stdIDState" header-source="constant" header-value="State_id"/>
+    <field id="relCtjStdOid.relStdPsnOid.psnNameLast" header-source="constant" header-value="Last_name"/>
+    <field id="relCtjStdOid.relStdPsnOid.psnNameMiddle" header-source="constant" header-value="Middle_name"/>
+    <field id="relCtjStdOid.relStdPsnOid.psnNameFirst" header-source="constant" header-value="First_name"/>
+    <field id="relCtjStdOid.stdGradeLevel" header-source="constant" header-value="Grade"/>
+    <field id="relCtjStdOid.relStdPsnOid.psnGenderCode" header-source="constant" header-value="Gender"/>
+    <field id="relCtjStdOid.stdYog" header-source="constant" header-value="Graduation_year"/>
+    <field id="relCtjStdOid.relStdPsnOid.psnDob" format="MM/dd/YYYY" header-source="constant" header-value="DOB"/>
+    
+    <constant value="" header-source="constant" header-value="Race" />
+    <constant value="" header-source="constant" header-value="Hispanic_Latino" />
+    <constant value="" header-source="constant" header-value="Home_language" />
+    <constant value="" header-source="constant" header-value="Ell_status" />
+    <constant value="" header-source="constant" header-value="Frl_status" />
+    <constant value="" header-source="constant" header-value="IEP_status" />
+
+    <constant value="" header-source="constant" header-value="Student_street" />
+    <constant value="" header-source="constant" header-value="Student_city" />
+    <constant value="" header-source="constant" header-value="Student_state" />
+    <constant value="" header-source="constant" header-value="Student_zip" />
+
+    <field id="relCtjStdOid.relStdPsnOid.psnEmail01" header-source="constant" header-value="Student_email"/>
+    
+    <field id="ctjRelateCode" header-source="constant" header-value="Contact_relationship"/>
+    <field id="relCtjCntOid.cntContactType" header-source="constant" header-value="Contact_type"/>
+    <field id="relCtjCntOid.cntViewName" header-source="constant" header-value="Contact_name"/>
+    <field id="relCtjCntOid.relCntPsnOid.psnPhone01" header-source="constant" header-value="Contact_phone"/>
+    <field id="relCtjCntOid.relCntPsnOid.psnEmail01" header-source="constant" header-value="Contact_email"/>
+    <field id="relCtjCntOid.relCntPsnOid.psnOID" header-source="constant" header-value="Contact_sis_id"/>
+
+    <field id="relCtjStdOid.relStdPsnOid.psnEmail01" header-source="constant" header-value="Username"/>
+
+    <constant value="" header-source="constant" header-value="Password" />
+    <constant value="" header-source="constant" header-value="Unweighted_gpa" />
+    <constant value="" header-source="constant" header-value="Weighted_gpa" />
+
+</export>
