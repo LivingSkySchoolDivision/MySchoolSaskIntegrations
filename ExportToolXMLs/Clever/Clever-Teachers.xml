@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export table-id="tblStaff" header-row="true" value-delimiter=",">    
+    <filter field="stfStatus" operator="equals" source="default" value="Active"/>
+    <filter field="relStfSklOid.sklSchoolID" operator="notEmpty" source="default"/>
+
+    <field id="relStfSklOid.sklSchoolID" header-source="constant" header-value="School_id"/>
+    <field id="stfStaffID" header-source="constant" header-value="Teacher_id"/>
+    <field id="stfStaffID" header-source="constant" header-value="Teacher_number"/>
+    <constant value="" header-source="constant" header-value="State_teacher_id" />
+    <field id="relStfPsnOid.psnEmail01" header-source="constant" header-value="Teacher_email"/>
+    <field id="relStfPsnOid.psnNameFirst" header-source="constant" header-value="First_name"/>
+    <constant value="" header-source="constant" header-value="Middle_name" />    
+    <field id="relStfPsnOid.psnNameLast" header-source="constant" header-value="Last_name"/>
+    <field id="stfStaffType" header-source="constant" header-value="Title"/>
+    <field id="relStfPsnOid.psnEmail01" header-source="constant" header-value="Username"/>
+    <constant value="" header-source="constant" header-value="Password" />
+</export>
