@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export table-id="tblSchMaster" header-row="true">
+	<filter field="schStartDate" format="MM/dd/yyyy" operator="greaterOrEqual" source="session" value="currentContext.startDate"/>
+	<filter field="relMstStfPrim.stfStaffID" operator="notEmpty" />    
+	<filter field="relMstCskOid.cskFieldA001" operator="notEqual" source="default" value="ATT-AM" connector="and"/>
+	<filter field="relMstCskOid.cskFieldA001" operator="notEqual" source="default" value="ATT-PM" connector="and"/>
+
+	<field id="relMstCskOid.relCskSklOid.sklSchoolID" header-source="constant" header-value="School_id"/>
+	<field id="mstOID" header-source="constant" header-value="Section_id"/>
+	<field id="relMstStfPrim.stfStaffID" header-source="constant" header-value="Teacher_id"/>
+    <constant value="" header-source="constant" header-value="Teacher_2_id" />
+    <constant value="" header-source="constant" header-value="Teacher_3_id" />
+    <constant value="" header-source="constant" header-value="Teacher_4_id" />
+    <constant value="" header-source="constant" header-value="Teacher_5_id" />
+    <constant value="" header-source="constant" header-value="Teacher_6_id" />
+    <constant value="" header-source="constant" header-value="Teacher_7_id" />
+    <constant value="" header-source="constant" header-value="Teacher_8_id" />
+    <constant value="" header-source="constant" header-value="Teacher_9_id" />
+    <constant value="" header-source="constant" header-value="Teacher_10_id" />
+    
+    <field id="mstDescription" header-source="constant" header-value="Name"/>
+    <field id="mstSectionNum" header-source="constant" header-value="Section_number"/>
+    <field id="" header-source="constant" header-value="Grade"/>    
+	<field id="relMstCskOid.relCskCrsOid.crsCourseDesc" header-source="constant" header-value="Course_name"/>
+	<field id="mstCourseView" header-source="constant" header-value="Course_number"/>
+    <constant value="" header-source="constant" header-value="Course_description" />
+    <constant value="" header-source="constant" header-value="Period" />
+    <constant value="" header-source="constant" header-value="Subject" />
+    <constant value="" header-source="constant" header-value="Term_name" />
+    <constant value="" header-source="constant" header-value="Term_start" />
+    <constant value="" header-source="constant" header-value="Term_end" />
+</export>
+
+
+ScheduleClass relMstClsOid
+Schedule relMstSchOid
+SchoolCourse	relMstCskOid

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export table-id="tblSchool"  header-row="true" value-delimiter=",">
+    <filter field="sklInactiveInd" operator="equals" value="0" />
+
+    <field id="sklSchoolID" header-source="constant" header-value="School_id" />
+    <field id="sklSchoolName" header-source="constant" header-value="School_name" />
+    <field id="sklSchoolID" header-source="constant" header-value="School_number" />
+    
+    <constant value="" header-source="constant" header-value="State_id" />
+    <constant value="" header-source="constant" header-value="Low_grade" />
+    <constant value="" header-source="constant" header-value="High_grade" />
+
+    <field id="relSklStfAdm1.stfNameView" header-source="constant" header-value="Principal" />
+    <field id="relSklStfAdm1.relStfPsnOid.psnEmail01" header-source="constant" header-value="Principal_email" />
+    <field id="sklFieldC002" header-source="constant" header-value="School_address" />
+    <field id="relSklAdrOid.adrCity" header-source="constant" header-value="School_city" />
+    <field id="relSklAdrOid.adrState" header-source="constant" header-value="School_state" />
+    <field id="relSklAdrOid.adrPostalCode" header-source="constant" header-value="School_zip" />
+    <field id="relSklAdrOid.adrPhone01" header-source="constant" header-value="School_phone" />
+</export>
