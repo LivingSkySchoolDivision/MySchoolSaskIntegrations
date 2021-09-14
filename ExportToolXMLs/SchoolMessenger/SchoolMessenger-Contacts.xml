@@ -10,6 +10,7 @@
   <field id="relStdPsnOid.psnNameFirst" header-source="constant" header-value="LegalFirstName" />
   <field id="stdGradeLevel" header-source="constant" header-value="Grade" />
   <field id="relStdCtjOid1.ctjEmergncyPri" header-source="constant" header-value="Contact1Priority" />
+  <field id="relStdCtjOid1.ctjRelateCode" header-source="constant" header-value="EmergencyContact1Relation" />
   <field id="relStdCtjOid1.relCtjCntOid.relCntPsnOid.psnNameFirst" header-source="constant" header-value="EmergencyContact1FirstName" />
   <field id="relStdCtjOid1.relCtjCntOid.relCntPsnOid.psnNameLast" header-source="constant" header-value="EmergencyContact1LastName" />
   <field id="relStdCtjOid1.relCtjCntOid.relCntPsnOid.psnPhone01" header-source="constant" header-value="EmergencyContact1Phone1" />
@@ -19,6 +20,7 @@
   <field id="relStdCtjOid1.ctjRecEmail" header-source="constant" header-value="EmergencyContact1ReceivesEmail" />
   <field id="relStdCtjOid1.ctjLivesWith" header-source="constant" header-value="EmergencyContact1LivesWithStudent" />
   <field id="relStdCtjOid2.ctjEmergncyPri" header-source="constant" header-value="Contact2Priority" />
+  <field id="relStdCtjOid2.ctjRelateCode" header-source="constant" header-value="EmergencyContact2Relation" />
   <field id="relStdCtjOid2.relCtjCntOid.relCntPsnOid.psnNameFirst" header-source="constant" header-value="EmergencyContact2FirstName" />
   <field id="relStdCtjOid2.relCtjCntOid.relCntPsnOid.psnNameLast" header-source="constant" header-value="EmergencyContact2LastName" />
   <field id="relStdCtjOid2.relCtjCntOid.relCntPsnOid.psnPhone01" header-source="constant" header-value="EmergencyContact2Phone1" />
@@ -28,6 +30,7 @@
   <field id="relStdCtjOid2.ctjRecEmail" header-source="constant" header-value="EmergencyContact2ReceivesEmail" />
   <field id="relStdCtjOid2.ctjLivesWith" header-source="constant" header-value="EmergencyContact2LivesWithStudent" />
   <field id="relStdCtjOid3.ctjEmergncyPri" header-source="constant" header-value="Contact3Priority" />
+  <field id="relStdCtjOid3.ctjRelateCode" header-source="constant" header-value="EmergencyContact3Relation" />
   <field id="relStdCtjOid3.relCtjCntOid.relCntPsnOid.psnNameFirst" header-source="constant" header-value="EmergencyContact3FirstName" />
   <field id="relStdCtjOid3.relCtjCntOid.relCntPsnOid.psnNameLast" header-source="constant" header-value="EmergencyContact3LastName" />
   <field id="relStdCtjOid3.relCtjCntOid.relCntPsnOid.psnPhone01" header-source="constant" header-value="EmergencyContact3Phone1" />
