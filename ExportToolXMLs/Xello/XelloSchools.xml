@@ -9,11 +9,6 @@
     most-recent copies of this export file can be found in our GitHub repository:
     https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations    
     ===========================================================================
-    
-    NOTES:
-    Clevr expects the school "type" to be a 1 or a 2, but that's not possible with this file alone.
-    Either comment it out below, replacing it with the "blank" line directly above it, or use a 
-    script to conver the string value to a 1 or 2.
 -->
 <export table-id="tblSchool" header-row="true" value-delimiter="|" value-wrapper="">
     <!-- Only load locations that are "Active" -->
