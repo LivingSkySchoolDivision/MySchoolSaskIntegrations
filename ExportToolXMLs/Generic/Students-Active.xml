@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    ===========================================================================
+    This export file was created by Mark Strendin, at 
+    Living Sky School Division No 202, for the 
+    MySchoolSask Virtual Integration Group.
+        
+    Other export file definitions, documentation, issue tracking, and 
+    most-recent copies of this export file can be found in our GitHub repository:
+    https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations    
+    ===========================================================================
+-->
 <export table-id="tblStudent" header-row="true" value-delimiter=",">
     <filter field="stdEnrStatus" operator="equals" value="Active" />   
     <filter field="stdEnrStatus" operator="equals" value="PreReg" connector="or" />

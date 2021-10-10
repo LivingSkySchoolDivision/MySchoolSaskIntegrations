@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    ===========================================================================
+    This export file was created by Mark Strendin, at 
+    Living Sky School Division No 202, for the 
+    MySchoolSask Virtual Integration Group.
+        
+    Other export file definitions, documentation, issue tracking, and 
+    most-recent copies of this export file can be found in our GitHub repository:
+    https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations    
+    ===========================================================================
+-->
 <export table-id="tblSchMaster" header-row="true">
 	<filter field="schStartDate" format="MM/dd/yyyy" operator="greaterOrEqual" source="session" value="currentContext.startDate"/>
 	<filter field="relMstStfPrim.stfStaffID" operator="notEmpty" />    
@@ -30,8 +41,3 @@
     <constant value="" header-source="constant" header-value="Term_start" />
     <constant value="" header-source="constant" header-value="Term_end" />
 </export>
-
-
-ScheduleClass relMstClsOid
-Schedule relMstSchOid
-SchoolCourse	relMstCskOid
