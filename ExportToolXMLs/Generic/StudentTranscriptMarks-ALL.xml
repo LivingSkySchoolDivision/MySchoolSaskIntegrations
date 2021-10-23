@@ -32,7 +32,7 @@
     <field id="trnFieldA048" header-source="constant" header-value="trnFieldA048" /> 
     <field id="trnFieldC010" header-source="constant" header-value="trnFieldC010" /> 
     <field id="trnFinalGrade" header-source="constant" header-value="trnFinalGrade" /> 
-    <field id="trnGradeLevel" header-source="constant" header-value="trnGradeLevel" /> 
+    <field id="trnGradeLevel" header-source="constant" header-value="trnGradeLevel" find="^0" replaceAll="" /> 
     <field id="trnGrdLvlOvInd" header-source="constant" header-value="trnGrdLvlOvInd" /> 
     <field id="trnGUID" header-source="constant" header-value="trnGUID" /> 
     <field id="trnOverrideMap" header-source="constant" header-value="trnOverrideMap" /> 

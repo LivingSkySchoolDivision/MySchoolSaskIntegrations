@@ -32,6 +32,6 @@
     <field id="relStdSklOid.sklSchoolID" header-source="constant" header-value="SchoolDAN" />    
   
     <field id="stdEnrStatus" header-source="constant" header-value="EnrollmentStatus" />
-    <field id="stdGradeLevel" header-source="constant" header-value="GradeLevel" />
+    <field id="stdGradeLevel" header-source="constant" header-value="GradeLevel" find="^0" replaceAll="" />
     <field id="stdYog" header-source="constant" header-value="YOG" />    
 </export>

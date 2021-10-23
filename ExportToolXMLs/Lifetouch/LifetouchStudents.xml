@@ -18,7 +18,7 @@
     <field id="relStdSklOid.sklSchoolName" header-source="constant" header-value="School" />
     <field id="relStdPsnOid.psnNameLast" header-source="constant" header-value="LastName" />
     <field id="relStdPsnOid.psnNameFirst" header-source="constant" header-value="FirstName" />
-    <field id="stdGradeLevel" header-source="constant" header-value="Grade" />
+    <field id="stdGradeLevel" header-source="constant" header-value="Grade" find="^0" replaceAll="" />
     <field id="stdHomeroom" header-source="constant" header-value="Homeroom" />
     <field id="stdIDLocal" header-source="constant" header-value="StudentNumber" />
     <field id="stdIDLocal" header-source="constant" header-value="Barcode" />

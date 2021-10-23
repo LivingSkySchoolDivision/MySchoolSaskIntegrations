@@ -34,7 +34,7 @@
     <field id="relStdSklOid.sklSchoolName" header-source="constant" header-value="BaseSchoolName" />
     <field id="relStdSklOid.sklSchoolID" header-source="constant" header-value="BaseSchoolDAN" />
     <field id="stdEnrStatus" header-source="constant" header-value="EnrollmentStatus" />
-    <field id="stdGradeLevel" header-source="constant" header-value="GradeLevel" />
+    <field id="stdGradeLevel" header-source="constant" header-value="GradeLevel" find="^0" replaceAll=""/>
     <field id="stdYog" header-source="constant" header-value="YOG" />
     <field id="stdFieldA026" header-source="constant" header-value="O365Authorisation" /> 
     <field id="stdFieldA005" header-source="constant" header-value="AcceptableUsePolicy" />        

@@ -18,8 +18,8 @@
     <field id="sklSchoolID" header-source="constant" header-value="School_number" />
     
     <constant value="" header-source="constant" header-value="State_id" />
-    <constant value="" header-source="constant" header-value="Low_grade" />
-    <constant value="" header-source="constant" header-value="High_grade" />
+    <constant value="" header-source="constant" header-value="Low_grade" find="^0" replaceAll=""/>
+    <constant value="" header-source="constant" header-value="High_grade" find="^0" replaceAll=""/>
 
     <field id="relSklStfAdm1.stfNameView" header-source="constant" header-value="Principal" />
     <field id="relSklStfAdm1.relStfPsnOid.psnEmail01" header-source="constant" header-value="Principal_email" />

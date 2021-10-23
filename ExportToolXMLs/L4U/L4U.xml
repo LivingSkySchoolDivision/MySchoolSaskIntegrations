@@ -20,7 +20,7 @@
     <field id="relStdPsnOid.psnFieldC001" header-source="constant" header-value="GivenName" />
     <field id="relStdPsnOid.psnFieldC002" header-source="constant" header-value="MiddleName" />
     <field id="relStdPsnOid.psnFieldC003" header-source="constant" header-value="Surname" />
-    <field id="stdGradeLevel" header-source="constant" header-value="Grade" />
+    <field id="stdGradeLevel" header-source="constant" header-value="Grade" find="^0" replaceAll="" />
     <field id="relStdPsnOid.psnGenderCode" header-source="constant" header-value="Gender" />
     <field id="relStdPsnOid.psnDob" header-source="constant" header-value="DateOfBirth" />
     <field id="stdHomeroom" header-source="constant" header-value="HomeRoom" />
