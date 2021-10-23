@@ -24,7 +24,7 @@
     <field id="relStdPsnOid.psnNameLast" header-source="constant" header-value="LastName" />
     <field id="relStdPsnOid.psnGenderCode" header-source="constant" header-value="Gender" />
     <field id="relStdPsnOid.psnDob" format="YYYY-MM-dd" header-source="constant" header-value="DateOfBirth" />
-    <field id="stdGradeLevel" header-source="constant" header-value="CurrentGrade" />
+    <field id="stdGradeLevel" header-source="constant" header-value="CurrentGrade" find="^0" replaceAll="" />
     <field id="relStdSklOid.sklSchoolID" header-source="constant" header-value="CurrentSchoolCode" />
     <field id="relStdSklNext.sklSchoolID" header-source="constant" header-value="PreRegSchoolCode" />
     <field id="relStdPsnOid.psnEmail01" header-source="constant" header-value="Email" />

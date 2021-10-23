@@ -41,7 +41,7 @@
     <field id="stdPgmOfStudy" header-source="constant" header-value="schoolProgram" />
     <field id="stdHomeLang" header-source="constant" header-value="homeLanguage" />
     <field id="relStdPsnOid.psnFieldA007" header-source="constant" header-value="countryOrigin" />
-    <field id="stdGradeLevel" header-source="constant" header-value="studentGradeLevel" />
+    <field id="stdGradeLevel" header-source="constant" header-value="studentGradeLevel" find="^0" replaceAll="" />
     
     <!-- Homeroom: This will be the homeroom name, not the teacher. It may not be possible to get the teacher -->
     <field id="stdHomeroom" header-source="constant" header-value="homeroomTeacher" /> 

@@ -61,6 +61,6 @@
     -->    
     <blank header-value="password" />
 
-    <field id="stdGradeLevel" header-source="constant" header-value="grade" />
+    <field id="stdGradeLevel" header-source="constant" header-value="grade" find="^0" replaceAll="" />
 </export>
 

@@ -21,7 +21,7 @@
     <field id="relCtjStdOid.relStdPsnOid.psnNameLast" header-source="constant" header-value="Last_name"/>
     <field id="relCtjStdOid.relStdPsnOid.psnNameMiddle" header-source="constant" header-value="Middle_name"/>
     <field id="relCtjStdOid.relStdPsnOid.psnNameFirst" header-source="constant" header-value="First_name"/>
-    <field id="relCtjStdOid.stdGradeLevel" header-source="constant" header-value="Grade"/>
+    <field id="relCtjStdOid.stdGradeLevel" header-source="constant" header-value="Grade" find="^0" replaceAll=""/>
     <field id="relCtjStdOid.relStdPsnOid.psnGenderCode" header-source="constant" header-value="Gender"/>
     <field id="relCtjStdOid.stdYog" header-source="constant" header-value="Graduation_year"/>
     <field id="relCtjStdOid.relStdPsnOid.psnDob" format="MM/dd/YYYY" header-source="constant" header-value="DOB"/>

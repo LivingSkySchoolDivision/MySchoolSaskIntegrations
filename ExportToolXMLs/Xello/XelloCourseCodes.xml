@@ -27,7 +27,7 @@
     <field id="relCskCrsOid.crsFieldA004" header-source="constant" header-value="CourseCode" />
     <field id="relCskCrsOid.crsCourseDesc" header-source="constant" header-value="CourseName" />
     <field id="relCskCrsOid.crsCredit" header-source="constant" header-value="CreditValue" />
-    <field id="cskGradeLevel" header-source="constant" header-value="GradeLower" />
-    <field id="cskGradeLevel" header-source="constant" header-value="GradeUpper" />    
+    <field id="cskGradeLevel" header-source="constant" header-value="GradeLower" find="^0" replaceAll="" />
+    <field id="cskGradeLevel" header-source="constant" header-value="GradeUpper" find="^0" replaceAll="" />    
 </export>
 

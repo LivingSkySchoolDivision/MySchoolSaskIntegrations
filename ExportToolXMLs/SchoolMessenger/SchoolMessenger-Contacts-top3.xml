@@ -26,7 +26,7 @@
   <field id="stdIDState" header-source="constant" header-value="LearningID" />
   <field id="relStdPsnOid.psnNameLast" header-source="constant" header-value="LegalLastName" />
   <field id="relStdPsnOid.psnNameFirst" header-source="constant" header-value="LegalFirstName" />
-  <field id="stdGradeLevel" header-source="constant" header-value="Grade" />
+  <field id="stdGradeLevel" header-source="constant" header-value="Grade" find="^0" replaceAll="" />
   <field id="relStdCtjOid1.ctjEmergncyPri" header-source="constant" header-value="Contact1Priority" />
   <field id="relStdCtjOid1.ctjRelateCode" header-source="constant" header-value="EmergencyContact1Relation" />
   <field id="relStdCtjOid1.relCtjCntOid.relCntPsnOid.psnNameFirst" header-source="constant" header-value="EmergencyContact1FirstName" />
