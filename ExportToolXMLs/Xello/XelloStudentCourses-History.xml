@@ -15,7 +15,7 @@
     <filter field="relTrnStdOid.stdEnrStatus" operator="equals" value="Active" />
 
     <!-- Only care about history marks that earned a credit -->
-    <filter field="trnTotalCredit" operator="greaterThan" value="0" />
+    <!--<filter field="trnTotalCredit" operator="greaterThan" value="0" />-->
 
     <!-- Only bring in credits that have valid courses linked up -->
     <filter field="relTrnCskOid.relCskCrsOid.crsFieldA004" operator="notEmpty" value="0" />
