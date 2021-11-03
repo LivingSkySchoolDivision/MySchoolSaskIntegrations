@@ -16,7 +16,7 @@
     <filter field="relSscMstOid.relMstCskOid.relCskCrsOid.crsFieldA004" operator="notEqual" value="NAC" connector="and" />
     <filter field="relSscMstOid.relMstCskOid.relCskCrsOid.crsFieldA004" operator="notEqual" value="FASA" connector="and" />
     <filter field="relSscMstOid.relMstCskOid.relCskCrsOid.crsFieldA004" operator="notEqual" value="FIRE" connector="and" />
-    <filter field="relSscMstOid.relMstCskOid.relCskCrsOid.crsCredit" operator="greaterThan" value="0" connector="and" />
+    <!--<filter field="relSscMstOid.relMstCskOid.relCskCrsOid.crsCredit" operator="greaterThan" value="0" connector="and" />-->
 
     <field id="relSscStdOid.stdIDLocal" header-source="constant" header-value="StudentID" />
     <field id="relSscMstOid.relMstCskOid.relCskCrsOid.crsFieldA004" header-source="constant" header-value="CourseCode" />

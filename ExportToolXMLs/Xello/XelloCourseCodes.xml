@@ -18,7 +18,7 @@
     <filter field="relCskCrsOid.crsFieldA004" operator="notEqual" value="NAC" connector="and" />
     <filter field="relCskCrsOid.crsFieldA004" operator="notEqual" value="FASA" connector="and" />
     <filter field="relCskCrsOid.crsFieldA004" operator="notEqual" value="FIRE" connector="and" />
-    <filter field="relCskCrsOid.crsCredit" operator="greaterThan" value="0" connector="and" />
+    <!--<filter field="relCskCrsOid.crsCredit" operator="greaterThan" value="0" connector="and" />-->
 
     <!-- Sort by course code-->
     <sort field="relCskCrsOid.crsFieldA004" direction="asc" />
