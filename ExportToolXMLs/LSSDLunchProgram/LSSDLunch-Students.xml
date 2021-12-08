@@ -19,8 +19,8 @@
   
   <field id="relStdSklOid.sklSchoolName" header-source="constant" header-value="School" />
   <field id="stdIDLocal" header-source="constant" header-value="StudentID" />
-  <field id="relStdPsnOid.psnFieldC001" header-source="constant" header-value="FirstName" />
-  <field id="relStdPsnOid.psnFieldC003" header-source="constant" header-value="LastName" />
+  <field id="relStdPsnOid.psnNameFirst" header-source="constant" header-value="FirstName" />
+  <field id="relStdPsnOid.psnNameLast" header-source="constant" header-value="LastName" />
   <field id="stdHomeroom" header-source="constant" header-value="HomeRoom" />
 </export>
 
