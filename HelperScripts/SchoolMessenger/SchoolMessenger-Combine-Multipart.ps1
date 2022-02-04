@@ -1,12 +1,36 @@
+param(
+    [Parameter(Mandatory=$true)][string]$InputDemographicFileName,
+    [Parameter(Mandatory=$true)][string]$InputContactsFileName,
+    [Parameter(Mandatory=$true)][string]$OutputFileName
+)
+
 # This script builds a heirarchy of students in memory and outputs it to a new file.
 # This may take a large amount of RAM if your files are huge.
 
-$OutputFile = "testfile-output.txt"
+# Check if input files exist
+
+# Check that output file does not exist
+if ((Test-Path $InputDemographicFileName) -ne $true)
+{
+    write-host "Input demographic file not found!"
+    exit
+}
+
+if ((Test-Path $InputContactsFileName) -ne $true)
+{
+    write-host "Input contacts file not found!"
+    exit
+}
+
+if ((Test-Path $OutputFileName) -eq $true)
+{
+    Remove-Item $OutputFileName
+}
 
 # Read in the list of students
 
 write-host "Loading student demographic file..."
-$StudentDemographicfile = import-csv testfile-p1.txt
+$StudentDemographicfile = import-csv $InputDemographicFileName
 $MasterStudentList = @{}
 foreach($Line in $StudentDemographicfile)
 {
@@ -14,11 +38,13 @@ foreach($Line in $StudentDemographicfile)
         LegalFirstName = $Line.LegalFirstName
         LegalLastName = $Line.LegalLastName
         SchoolName = $Line.SchoolName
+        SchoolAlias = $Line.SchoolAlias
         SchoolNumber = $Line.SchoolNumber
         LocalStudentNumber = $Line.LocalStudentNumber
         LearningID = $Line.LearningID
         Grade = $Line.Grade
         StudentOID = $Line.StudentOID
+        Homeroom = $Line.Homeroom
         Contacts = @()
     }
 
@@ -28,7 +54,7 @@ foreach($Line in $StudentDemographicfile)
 # Read in the list of contacts and attach them to the students
 
 write-host "Loading contacts file..."
-$ContactsFile = import-csv testfile-p2.txt
+$ContactsFile = import-csv $InputContactsFileName
 $MasterContactsList = @()
 foreach($Line in $ContactsFile)
 {
@@ -65,14 +91,24 @@ foreach($Contact in $MasterContactsList)
 
 # Output a new csv file
 write-host "Writing output file..."
-$file = [system.io.file]::OpenWrite($OutputFile)
-$writer = New-Object System.IO.StreamWriter($file)
 
 $CSVLines = @()
 
 foreach($StudentOID in $MasterStudentList.Keys)
 {
     $Student = $MasterStudentList[$StudentOID]
+
+    $HomeRoomValue = ""
+    if ($Student.Homeroom.length -gt 0)
+    {
+        if ($Student.SchoolAlias.length -gt 0)
+        {
+            $HomeRoomValue = "$($Student.SchoolAlias)-$($Student.Homeroom)"
+        } else {
+            $HomeRoomValue = "$($Student.SchoolName)-$($Student.Homeroom)"
+        }
+    }
+
     $CSVLine = [PSCustomObject]@{
         SchoolName = $Student.SchoolName
         SchoolNumber = $Student.SchoolNumber
@@ -115,7 +151,7 @@ foreach($StudentOID in $MasterStudentList.Keys)
         BusRoute2 = ""
         AltBusRoute1 = ""
         AltBusRoute2 = ""
-        Homeroom = ""
+        Homeroom = $HomeRoomValue
     }
 
     if ($Student.Contacts.Count -gt 0)
@@ -166,4 +202,4 @@ foreach($StudentOID in $MasterStudentList.Keys)
     $CSVLines += $CSVLine
 }
 
-$CSVLines | Sort-Object -Property @{Expression = "SchoolName"},@{Expression = "LegalLastName"} | export-csv $OutputFile -NoTypeInformation -Delimiter ","
+$CSVLines | Sort-Object -Property @{Expression = "SchoolName"},@{Expression = "LegalLastName"} | export-csv $OutputFileName -NoTypeInformation -Delimiter ","

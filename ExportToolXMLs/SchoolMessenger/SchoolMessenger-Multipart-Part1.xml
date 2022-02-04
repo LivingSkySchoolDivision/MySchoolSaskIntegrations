@@ -16,11 +16,13 @@
 
   <field id="stdOID" header-source="constant" header-value="StudentOID" />
   <field id="relStdSklOid.sklSchoolName" header-source="constant" header-value="SchoolName" />
+  <field id="relStdSklOid.sklFieldB003" header-source="constant" header-value="SchoolAlias" />
   <field id="relStdSklOid.sklSchoolID" header-source="constant" header-value="SchoolNumber" />
   <field id="stdIDLocal" header-source="constant" header-value="LocalStudentNumber" />
   <field id="stdIDState" header-source="constant" header-value="LearningID" />
   <field id="relStdPsnOid.psnNameLast" header-source="constant" header-value="LegalLastName" />
   <field id="relStdPsnOid.psnNameFirst" header-source="constant" header-value="LegalFirstName" />
   <field id="stdGradeLevel" header-source="constant" header-value="Grade" find="^0" replaceAll="" />
+  <field id="stdHomeroom" header-source="constant" header-value="Homeroom" />
 </export>
 
