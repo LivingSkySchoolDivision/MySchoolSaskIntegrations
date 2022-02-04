@@ -22,6 +22,13 @@ This git repository represents work and research done for the purpose of creatin
   * __Note__: Everyone's Active Directory implementation will be different, so this file may not be suitable for the way your organization handles AD integration now. You may need to change/add/remove fields, or reconfigure your existing identity system or scripts for these exports to work. 
   * [AD Active Students](ExportToolXMLs/ActiveDirectory/AD-ActiveStudents.xml)
   * [AD Withdrawn Students](ExportToolXMLs/ActiveDirectory/AD-WithdrawnStudents.xml)
+* Clever
+  * [Clever - Enrollments](ExportToolXMLs/Clever/Clever-Enrollments.xml)
+  * [Clever - Schools](ExportToolXMLs/Clever/Clever-Schools.xml)
+  * [Clever - Sections](ExportToolXMLs/Clever/Clever-Sections.xml)
+  * [Clever - Staff](ExportToolXMLs/Clever/Clever-Staff.xml)
+  * [Clever - Students](ExportToolXMLs/Clever/Clever-Students.xml)
+  * [Clever - Teachers](ExportToolXMLs/Clever/Clever-Teachers.xml)
 * Clevr - With hard-coded Tenant IDs (that you must set in the XML file)
   * [Classes](ExportToolXMLs/Clevr/HardCodedClevrTenantID/ClevrClasses.xml)
   * [Locations](ExportToolXMLs/Clevr/HardCodedClevrTenantID/ClevrLocations.xml)
@@ -42,12 +49,22 @@ This git repository represents work and research done for the purpose of creatin
   * [Student Classes](ExportToolXMLs/Clevr/PullClevrTenantIDFromDatabase/ClevrStudentClasses.xml)
   * [Student Demographics](ExportToolXMLs/Clevr/PullClevrTenantIDFromDatabase/ClevrStudentDemographics.xml)
   * [Students](ExportToolXMLs/Clevr/PullClevrTenantIDFromDatabase/ClevrStudents.xml)
-* L4U
+* Insignia Library System
+  * [Insignia - Student List](ExportToolXMLs/Insignia/Insignia-Students.xml)
+* L4U Library System
   * [L4U Current student list](ExportToolXMLs/L4U/L4U.xml)
 * Lifetouch (School Photos)
   * [Lifetouch student list](ExportToolXMLs/Lifetouch/LifetouchStudents.xml)
+* LSSD Lunch (In-house school lunch tracker)
+  * [LSSD Lunch - student list](ExportToolXMLs/LSSDLunchProgram/LSSDLunch-Students.xml)
 * SchoolMessenger
-  * [SchoolMessenger Contacts](ExportToolXMLs/SchoolMessenger/SchoolMessenger-Contacts.xml)
+  * [SchoolMessenger Contacts - MSS top 2](ExportToolXMLs/SchoolMessenger/SchoolMessenger-Contacts-top2.xml) - Exports the top 2 contacts for students. No control of which contacts it exports, aside from priority.
+  * [SchoolMessenger Contacts - MSS top 3](ExportToolXMLs/SchoolMessenger/SchoolMessenger-Contacts-top3.xml) - Exports the top 3 contacts for students. No control of which contacts it exports, aside from priority.
+  * __SchoolMessenger Multipart Demographic Export__
+    * These two "multipart" exports allow finer grained control of which contacts are exported. They are configured to export the first 3 with "Has Family Portal Access" permission, and most importantly, nobody that _doesn't_ have this permission (unlike the other SchoolMessenger exports)
+    * [SchoolMessenger Contacts - Multipart - Students](ExportToolXMLs/SchoolMessenger/SchoolMessenger-Multipart-Part1.xml)
+    * [SchoolMessenger Contacts - Multipart - Contacts](ExportToolXMLs/SchoolMessenger/SchoolMessenger-Multipart-Part2.xml)    
+    * Script to combine these: [SchoolMessenger demographics multipart combiner script](https://github.com/LivingSkySchoolDivision/SyncOMatic/blob/main/Utilities/SchoolMessenger-Combine-Multipart.ps1)
 * Xello
   * [Xello Students](ExportToolXMLs/Xello/XelloStudents.xml)
   
