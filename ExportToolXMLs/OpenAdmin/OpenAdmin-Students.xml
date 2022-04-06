@@ -39,8 +39,9 @@
     <field id="relStdPsnOid.psnFieldC003" header-source="constant" header-value="PreferredLastName" />
     <field id="relStdPsnOid.psnFieldC002" header-source="constant" header-value="PreferredMiddleName" />
 
-    <field id="relStdPsnOid.psnGenderCode" header-source="constant" header-value="Gender" />
+    <field id="relStdPsnOid.psnGenderCode" header-source="constant" header-value="Gender" />    
     <field id="relStdPsnOid.psnDob" format="YYYY-MM-dd" header-source="constant" header-value="DOB" />
+    <field id="stdIDMed" header-source="constant" header-value="HSN" />
     <field id="stdIDLocal" header-source="constant" header-value="MSSPupilNumber" />
     <field id="stdIDState" header-source="constant" header-value="SaskLearningIDNumber" />
     <field id="stdEnrStatus" header-source="constant" header-value="EnrollmentStatus" />
