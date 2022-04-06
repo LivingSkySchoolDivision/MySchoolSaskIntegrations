@@ -1,0 +1,69 @@
+<!--
+  The condition element controls behavior of the parent element depending on the expression
+  contained in the condition.  For each condition, the expression must evaluate to a boolean value.
+  
+  action - display    includes the parent element if the expression evaluates to 'true'.
+           hide       hides the parent element if the expression evaluates to 'true'.
+                      display and hide work with the following elements:
+                      - filter-definition
+                      - filter
+                      - property
+           read-only  causes the parent element to be read-only if the expression evaluates to 'true'.
+                      This only works with the following elements:  
+                      - property
+           
+  expression -  The expression is any valid Java code that results in a boolean value.  The 
+                UserDataContainer is available so that session information can be used by calling
+                the methods on the class.  Strings should be enclosed in single quotes.
+
+  e.g.  This example for use in templates will render the field stdIDLocal as read-only for any 
+  student whose name begins with an uppercase B:
+        
+        <property id="stdIDLocal">
+          <condition action="read-only" expression="getCurrentDetail().getValue('stdViewName').toString().startsWith('B')" />
+        </property>
+
+  The X2BeanResolver class in ConditionExpression.java makes available certain classes and beans
+  using a short-cut annotation to make expressions less complex.  They are available by prefacing
+  the object name with an '@' symbol.  This example uses '@detail' to replace 'getCurrentDetail()'.
+  Both methods of accessing the user data's current detail are identical:
+
+        <property id="stdIDLocal">
+          <condition action="read-only" expression="@detail.getValue('stdViewName').toString().startsWith('B')" />
+        </property>
+
+  This example, for use in filters, will change which filter is used based on the current school's
+  current context OID matching the root organization's current context OID:
+        
+        <filter-definition id="activePrimary" name="filter.activeStudents.primary">
+         <filter field="stdSklOID" operator="equals" source="session" value="schoolOid" >
+          <condition action="display" expression="getSchool().getCurrentContextOid().equals(getRootOrganization().getCurrentContextOid())" />
+         </filter>
+         <filter field="relStdSxaOid.sxaSklOID" operator="equals" source="session" value="schoolOid" >
+          <condition action="hide" expression="getSchool().getCurrentContextOid().equals(getRootOrganization().getCurrentContextOid())" />
+         </filter>
+         <filter field="stdEnrStatus" operator="equals" connector="and" source="preference" value="sys.std.activeCode">
+          <filter field="stdEnrStatus" operator="equals" connector="or" source="preference" value="sys.std.activeCode.noPrimary" />
+         </filter>
+        </filter-definition>
+        
+  An example of a sort definition based the the comparison of userData.getSchool().getCurrentContextOid() 
+  and userData.getRootOrganization().getRootCurrentContextOid() via the objects defined in X2BeanReasolver
+  
+        <sort-definition id="gradeLevel">
+         <sort   field="stdGradeLevel" >
+          <condition action="display" expression="@sklCurrentCtxOid.equals(@rootOrgCurrentCtxOid)" />
+         </sort>
+         <sort   field="relStdSxaOid.sxaGradeLevel">
+          <condition action="hide"    expression="@sklCurrentCtxOid.equals(@rootOrgCurrentCtxOid)" />
+         </sort>
+         <sort   field="stdViewName" />
+        </sort-definition>
+
+-->
+<!ELEMENT condition EMPTY >
+
+<!ATTLIST condition
+          action       (display|hide|read-only) #REQUIRED
+          expression   CDATA #REQUIRED >
+
