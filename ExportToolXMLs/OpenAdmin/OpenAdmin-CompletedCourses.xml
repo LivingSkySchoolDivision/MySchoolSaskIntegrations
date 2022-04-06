@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    ===========================================================================
+    This export file was created by Mark Strendin, at
+    Living Sky School Division No 202, for the
+    MySchoolSask Virtual Integration Group.
+
+    Other export file definitions, documentation, issue tracking, and
+    most-recent copies of this export file can be found in our GitHub repository:
+    https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations
+    ===========================================================================
+-->
+<export table-id="tblStdTrans" header-row="true" value-delimiter="," value-wrapper="&#34;">
+    <!--
+        Uncomment the following line if you only want active students.
+        Keep commented out to include withdrawn students.
+
+        Note that regardless of this setting, withdrawn students may not appear if
+        another school has enroled the student.
+    -->
+    <!-- <filter field="relTrnStdOid.stdEnrStatus" operator="equals" value="Active" /> -->
+
+    <!-- Only care about history marks that earned a credit -->
+    <!--<filter field="trnTotalCredit" operator="greaterThan" value="0" />-->
+
+    <!-- Only bring in credits that have valid courses linked up -->
+    <filter field="relTrnCskOid.relCskCrsOid.crsFieldA004" operator="notEmpty" value="0" />
+
+    <field id="relTrnStdOid.stdIDLocal" header-source="constant" header-value="MSSPupilNumber" />
+    <field id="relTrnCskOid.relCskCrsOid.crsFieldA004" header-source="constant" header-value="CourseCode" />
+    <field id="relTrnCskOid.relCskCrsOid.crsCourseDesc" header-source="constant" header-value="CourseName" />
+    <constant value="" header-source="constant" header-value="GradeLevel" />
+    <field id="trnFieldA045" header-source="constant" header-value="GradeMark" />
+    <field id="trnTotalCredit" header-source="constant" header-value="CreditValue" />
+    <field id="trnFieldA042" format="YYYY-MM-dd" header-source="constant" header-value="DateCourseComplete" />
+</export>
