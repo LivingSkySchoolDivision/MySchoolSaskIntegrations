@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    ===========================================================================
+    This export file was created by Mark Strendin, at 
+    Living Sky School Division No 202, for the 
+    MySchoolSask Virtual Integration Group.
+        
+    Other export file definitions, documentation, issue tracking, and 
+    most-recent copies of this export file can be found in our GitHub repository:
+    https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations    
+    ===========================================================================
+-->
+<export table-id="tblStudent" header-row="true" value-delimiter="," value-wrapper="&#34;">
+    <!-- 
+        Uncomment the following line if you only want active students.
+        Keep commented out to include withdrawn students.
+
+        Note that regardless of this setting, withdrawn students may not appear if 
+        another school has enroled the student.
+    -->
+    <!-- <filter field="stdEnrStatus" operator="equals" value="Active" /> -->
+
+    <!-- Sorting -->
+    <sort field="relStfSklOid.sklSchoolName" direction="asc" />
+    <sort field="relStfPsnOid.psnNameLast" direction="asc" />
+    <sort field="relStfPsnOid.psnNameFirst" direction="asc" />
+
+    <!-- School name and DAN, since this is run at the division level -->
+    <field id="relStdSklOid.sklSchoolName" header-source="constant" header-value="BaseSchoolName" />
+    <field id="relStdSklOid.sklSchoolID" header-source="constant" header-value="BaseSchoolDAN" />
+
+    <!-- Legal names -->
+    <field id="relStdPsnOid.psnNameFirst" header-source="constant" header-value="LegalFirstName" />
+    <field id="relStdPsnOid.psnNameLast" header-source="constant" header-value="LegalLastName" />
+    <field id="relStdPsnOid.psnNameMiddle" header-source="constant" header-value="LegalMiddleName" />
+
+    <!-- Preferred names (warning: may be blank) -->
+    <field id="relStdPsnOid.psnFieldC001" header-source="constant" header-value="PreferredFirstName" />
+    <field id="relStdPsnOid.psnFieldC003" header-source="constant" header-value="PreferredLastName" />
+    <field id="relStdPsnOid.psnFieldC002" header-source="constant" header-value="PreferredMiddleName" />
+
+    <field id="relStdPsnOid.psnDob" format="YYYY-MM-dd" header-source="constant" header-value="DOB" />
+    <field id="stdIDLocal" header-source="constant" header-value="MSSPupilNumber" />
+    <field id="stdIDState" header-source="constant" header-value="SaskLearningIDNumber" />
+    <field id="stdEnrStatus" header-source="constant" header-value="EnrollmentStatus" />
+    <field id="stdGradeLevel" header-source="constant" header-value="GradeLevel" find="^0" replaceAll="" />
+</export>
+
