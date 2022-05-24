@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    ===========================================================================
+    This export file was created by Mark Strendin, at
+    Living Sky School Division No 202, for the
+    MySchoolSask Virtual Integration Group.
+    Other export file definitions, documentation, issue tracking, and
+    most-recent copies of this export file can be found in our GitHub repository:
+    https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations
+    ===========================================================================
+-->
+<export table-id="tblStdSchedule" header-row="true" value-delimiter="&#x9;" value-wrapper="">
+  <filter field="relSscSchOid.schCtxOID" operator="equals" source="session" value="currentContext.oid" />
+
+  <field id="relSscSchOid.relSchSklOid.sklSchoolID" header-source="constant" header-value="Student_School_Number" />
+  <field id="relSscMstOid.relMstCskOid.crsCourseNum" header-source="constant" header-value="Course_Code" />
+  <field id="relSscMstOid.relMstCskOid.crsCourseDesc" header-source="constant" header-value="Course_Name" />
+  <field id="relSscMstOid.relMstCskOid.crsShortDesc" header-source="constant" header-value="Course_Description" />
+  <field id="relSscMstOid.mstSectionNum" header-source="constant" header-value="Course_Code_Section" />
+  <field id="relSscMstOid.mstTermView" header-source="constant" header-value="Course_Semester" />
+  <field id="section.scheduleTerm.scheduleTermDates[0].startDate" format="MM-dd-yyyy" header-source="constant" header-value="Semester_Start_Date" type="beanPath" />
+  <field id="section.scheduleTerm.scheduleTermDates[0].endDate" format="MM-dd-yyyy" header-source="constant" header-value="Semester_End_Date" type="beanPath" />
+  <field id="relSscMstOid.mstTermView" header-source="constant" header-value="Course_Term" />
+  <field id="section.scheduleTerm.scheduleTermDates[0].startDate" format="MM-dd-yyyy" header-source="constant" header-value="Course_Term_Start_Date" type="beanPath" />
+  <field id="section.scheduleTerm.scheduleTermDates[0].endDate" format="MM-dd-yyyy" header-source="constant" header-value="Course_Term_End_Date" type="beanPath" />
+  <field id="relSscSchOid.relSchCtxOid.ctxContextID" header-source="constant" header-value="Course_School_Year" />
+  <field id="relSscMstOid.relMstStfPrim.stfStaffID" header-source="constant" header-value="Course_Teacher_ID_Number" />
+  <field id="relSscMstOid.relMstStfPrim.relStfPsnOid.psnNameSuffix" header-source="constant" header-value="Course_Teacher_Prefix" />
+  <field id="relSscMstOid.relMstStfPrim.relStfPsnOid.psnNameLast" header-source="constant" header-value="Course_Teacher_Last_Name" />
+  <field id="relSscMstOid.relMstStfPrim.relStfPsnOid.psnNameFirst" header-source="constant" header-value="Course_Teacher_First_Name" />
+  <field id="relSscStdOid.stdIDLocal" header-source="constant" header-value="Student_Number" />
+</export>

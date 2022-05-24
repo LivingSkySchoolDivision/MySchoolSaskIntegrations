@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    ===========================================================================
+    This export file was created by Mark Strendin, at
+    Living Sky School Division No 202, for the
+    MySchoolSask Virtual Integration Group.
+    Other export file definitions, documentation, issue tracking, and
+    most-recent copies of this export file can be found in our GitHub repository:
+    https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations
+    ===========================================================================
+-->
+<export table-id="tblStudent" header-row="true" value-delimiter="&#x9;" value-wrapper="">
+  <filter field="stdEnrStatus" operator="equals" value="Active" />
+
+  <sort field="relStdSklOid.sklSchoolName" direction="asc" />
+  <sort field="relStdPsnOid.psnNameLast" direction="asc" />
+
+  <field id="relStdSklOid.sklSchoolName" header-source="constant" header-value="Student_School_Name" />
+  <field id="relStdSklOid.sklSchoolID" header-source="constant" header-value="Student_School_Number" />
+  <field id="relStdPsnOid.psnNameFirst" header-source="constant" header-value="Student_First_Name" />
+  <field id="relStdPsnOid.psnNameMiddle" header-source="constant" header-value="Student_Middle_Name" />
+  <field id="relStdPsnOid.psnNameLast" header-source="constant" header-value="Student_Last_Name" />
+  <field id="stdIDLocal" header-source="constant" header-value="Student_Number" />
+  <field id="relStdPsnOid.relPsnAdrPhys.adrAddress01" header-source="constant" header-value="Student_Address" />
+  <field id="relStdPsnOid.relPsnAdrPhys.adrCity" header-source="constant" header-value="Student_City" />
+  <field id="relStdPsnOid.relPsnAdrPhys.adrState" header-source="constant" header-value="Student_Province" />
+  <field id="relStdPsnOid.relPsnAdrPhys.adrPostalCode" header-source="constant" header-value="Student_Postal_Code" />
+  <field id="relStdPsnOid.psnPhone01" header-source="constant" header-value="Student_Phone" />
+  <field id="relStdPsnOid.psnEmail01" header-source="constant" header-value="Student_Email" />
+  <field id="stdHomeroom" header-source="constant" header-value="Student_Classroom/Homeroom" />
+  <field id="stdGradeLevel" header-source="constant" header-value="Student_Grade" />
+  <field id="relStdCtjOid1.relCtjCntOid.relCntPsnOid.psnNameFirst" header-source="constant" header-value="Student_Parent/Guardian1_First_Name" />
+  <field id="relStdCtjOid1.relCtjCntOid.relCntPsnOid.psnNameLast" header-source="constant" header-value="Student_Parent/Guardian1_Last_Name" />
+  <field id="relStdCtjOid2.relCtjCntOid.relCntPsnOid.psnNameFirst" header-source="constant" header-value="Student_Parent/Guardian2_First_Name" />
+  <field id="relStdCtjOid2.relCtjCntOid.relCntPsnOid.psnNameLast" header-source="constant" header-value="Student_Parent/Guardian2_Last_Name" />
+  <field id="relStdPsnOid.psnDob" format="MM-dd-yyyy" header-source="constant" header-value="Student_DOB" />
+  <field id="relStdPsnOid.psnGenderCode" header-source="constant" header-value="Student_Gender" />
+  <field id="relStdCtjOid1.relCtjCntOid.relCntPsnOid.psnEmail01" header-source="constant" header-value="Student_Parent/Guardian_Email" />
+  <field id="relStdPsnOid.psnFieldC001" header-source="constant" header-value="Student_Preferred_First_Name" />
+  <field id="relStdPsnOid.psnFieldC003" header-source="constant" header-value="Student_Preferred_Last_Name" />
+</export>

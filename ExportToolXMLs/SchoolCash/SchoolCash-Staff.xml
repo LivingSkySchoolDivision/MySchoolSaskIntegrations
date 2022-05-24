@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    ===========================================================================
+    This export file was created by Mark Strendin, at
+    Living Sky School Division No 202, for the
+    MySchoolSask Virtual Integration Group.
+    Other export file definitions, documentation, issue tracking, and
+    most-recent copies of this export file can be found in our GitHub repository:
+    https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations
+    ===========================================================================
+-->
+<export table-id="tblStaff" header-row="true" value-delimiter="&#x9;" value-wrapper="">
+  <filter field="stfStatus" operator="equals" source="default" value="Active" />
+
+  <field id="relStfSklOid.sklSchoolName" header-source="constant" header-value="Staff_School_Name" />
+  <field id="relStfSklOid.sklSchoolID" header-source="constant" header-value="Staff_School_Number" />
+  <field id="relStfPsnOid.psnNameFirst" header-source="constant" header-value="Staff_First_Name" />
+  <field id="relStfPsnOid.psnNameMiddle" header-source="constant" header-value="Staff_Middle_Name" />
+  <field id="relStfPsnOid.psnNameLast" header-source="constant" header-value="Staff_Last_Name" />
+  <field id="stfStaffID" header-source="constant" header-value="Staff_Number" />
+  <field id="relStfPsnOid.relPsnAdrPhys.adrAddress01" header-source="constant" header-value="Staff_Address" />
+  <field id="relStfPsnOid.relPsnAdrPhys.adrCity" header-source="constant" header-value="Staff_City" />
+  <field id="relStfPsnOid.relPsnAdrPhys.adrState" header-source="constant" header-value="Staff_Province" />
+  <field id="relStfPsnOid.relPsnAdrPhys.adrPostalCode" header-source="constant" header-value="Staff_Postal_Code" />
+  <field id="relStfPsnOid.psnPhone01" header-source="constant" header-value="Staff_Phone" />
+  <field id="relStfPsnOid.psnEmail01" header-source="constant" header-value="Staff_Email" />
+  <field id="stfHomeroom" header-source="constant" header-value="Staff_Classroom/Homeroom" />  
+  <blank header-value="Staff_Grade" />
+  <blank header-value="Staff_Parent/Guardian1_First_Name" />
+  <blank header-value="Staff_Parent/Guardian1_Last_Name" />
+  <blank header-value="Staff_Parent/Guardian2_First_Name" />
+  <blank header-value="Staff_Parent/Guardian2_Last_Name" />  
+  <field id="relStfPsnOid.psnDob" header-source="constant" header-value="Staff_DOB" format="MM-dd-yyyy" />
+  <field id="relStfPsnOid.psnGenderCode" header-source="constant" header-value="Staff_Gender" />
+  <blank header-value="Staff_Parent/Guardian_Email" />
+  <field id="relStfPsnOid.psnFieldC001" header-source="constant" header-value="Staff_Preferred_First_Name" />
+  <field id="relStfPsnOid.psnFieldC003" header-source="constant" header-value="Staff_Preferred_Last_Name" />
+</export>
