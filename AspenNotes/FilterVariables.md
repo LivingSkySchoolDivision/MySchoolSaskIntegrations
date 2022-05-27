@@ -10,6 +10,15 @@ Example 1: Get daily attendance entries for _today_ only
 </export>
 ```
 
+## More than one filter
+```xml
+<export table-id="tblStdAttend" header-row="true">
+    <filter field="stdEnrStatus" operator="equals" value="Active" />
+    <filter field="stdEnrStatus" operator="equals" value="PreReg" connector="or" />
+  ...
+</export>
+```
+
 ## Operators
 * equals
 * equalsIgnoreCase
@@ -35,7 +44,7 @@ Example 1: Get daily attendance entries for _today_ only
 * parentOwnable
 * equalsOrganizations
 
-## Dates 
+## Dates
 * `today`
 * `now`
 * `lastOfWeek`
