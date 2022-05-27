@@ -14,6 +14,7 @@
     <!-- Only export active or prereg students -->
     <filter field="stdEnrStatus" operator="equals" value="Active" />   
     <filter field="stdEnrStatus" operator="equals" value="PreReg" connector="or" />
+    <filter field="stdEnrStatus" operator="equals" value="Active No Primary" connector="or" />
 
     <!-- Ignore schools with no tenant ID set -->    
     <filter field="relStdSklOid.sklFieldA008" operator="notEmpty" source="default" />

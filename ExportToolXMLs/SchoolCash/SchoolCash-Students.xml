@@ -11,6 +11,7 @@
 -->
 <export table-id="tblStudent" header-row="true" value-delimiter="&#x9;" value-wrapper="">
   <filter field="stdEnrStatus" operator="equals" value="Active" />
+  <filter field="stdEnrStatus" operator="equals" value="Active No Primary" connector="or" />
 
   <sort field="relStdSklOid.sklSchoolName" direction="asc" />
   <sort field="relStdPsnOid.psnNameLast" direction="asc" />

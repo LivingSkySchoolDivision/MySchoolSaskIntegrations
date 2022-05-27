@@ -15,6 +15,7 @@
   <!-- Only export active or prereg students -->
   <filter field="stdEnrStatus" operator="equals" value="Active" />
   <filter field="stdEnrStatus" operator="equals" value="PreReg" connector="or" />
+  <filter field="stdEnrStatus" operator="equals" value="Active No Primary" connector="or" />
 
   <field id="relStdSklOid.sklSchoolID" header-source="constant" header-value="Building ID" />
   <field id="relStdPsnOid.psnFieldC003" header-source="constant" header-value="Last Name" />

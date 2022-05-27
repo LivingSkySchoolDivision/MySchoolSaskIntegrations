@@ -19,7 +19,10 @@
 -->
 <export table-id="tblStudent" header-row="true">
     <sort field="stdViewName" direction="asc" />
+    
     <filter field="stdEnrStatus" operator="equals" value="Active" />
+    <filter field="stdEnrStatus" operator="equals" value="Active No Primary" connector="or" />
+
     <field id="relStdSklOid.sklSchoolName" header-source="constant" header-value="SchoolName" />
     <field id="relStdSklOid.sklSchoolID" header-source="constant" header-value="SchoolNumber" />
     <field id="stdIDLocal" header-source="constant" header-value="LocalStudentNumber" />
