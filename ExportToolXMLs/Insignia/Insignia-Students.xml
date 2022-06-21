@@ -31,8 +31,8 @@
   <field id="relStdPsnOid.relPsnAdrMail.adrAddress01" header-source="constant" header-value="Address" />
   <field id="relStdPsnOid.relPsnAdrMail.adrAddress02" header-source="constant" header-value="Address_2" />
   <field id="relStdPsnOid.relPsnAdrMail.adrCity" header-source="constant" header-value="City" />
-  <field id="relStdPsnOid.relPsnAdrMail.adrCountry" header-source="constant" header-value="Province" />
-  <field id="relStdPsnOid.relPsnAdrMail.adrCounty" header-source="constant" header-value="Country" />
+  <field id="relStdPsnOid.relPsnAdrMail.adrState" header-source="constant" header-value="Province" />
+  <field id="relStdPsnOid.relPsnAdrMail.adrCountry" header-source="constant" header-value="Country" />
   <field id="relStdPsnOid.relPsnAdrMail.adrPostalCode" header-source="constant" header-value="PostalCode" />
 </export>
 
