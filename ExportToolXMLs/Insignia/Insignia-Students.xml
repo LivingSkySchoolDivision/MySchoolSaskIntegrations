@@ -26,5 +26,13 @@
   <field id="relStdPsnOid.psnGenderCode" header-source="constant" header-value="Gender" />
   <field id="stdHomeroom" header-source="constant" header-value="Homeroom" />
   <field id="relStdPsnOid.psnEmail01" header-source="constant" header-value="Email" />
+
+  <!-- Mailing address -->
+  <field id="relStdPsnOid.relPsnAdrMail.adrAddress01" header-source="constant" header-value="Address" />
+  <field id="relStdPsnOid.relPsnAdrMail.adrAddress02" header-source="constant" header-value="Address_2" />
+  <field id="relStdPsnOid.relPsnAdrMail.adrCity" header-source="constant" header-value="City" />
+  <field id="relStdPsnOid.relPsnAdrMail.adrCountry" header-source="constant" header-value="Province" />
+  <field id="relStdPsnOid.relPsnAdrMail.adrCounty" header-source="constant" header-value="Country" />
+  <field id="relStdPsnOid.relPsnAdrMail.adrPostalCode" header-source="constant" header-value="PostalCode" />
 </export>
 
