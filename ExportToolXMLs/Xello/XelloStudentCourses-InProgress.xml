@@ -11,6 +11,7 @@
     ===========================================================================
 -->
 <export table-id="tblStdSchedule" header-row="true" value-delimiter="|" value-wrapper="">
+    <filter field="relSscSchOid.schCtxOID" operator="equals" source="session" value="currentContext.oid" />
     <filter field="relSscMstOid.relMstCskOid.relCskCrsOid.crsFieldA004" operator="notEqual" value="ATT-AM" connector="and" />
     <filter field="relSscMstOid.relMstCskOid.relCskCrsOid.crsFieldA004" operator="notEqual" value="ATT-PM" connector="and" />
     <filter field="relSscMstOid.relMstCskOid.relCskCrsOid.crsFieldA004" operator="notEqual" value="NAC" connector="and" />
