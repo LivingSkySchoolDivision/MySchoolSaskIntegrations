@@ -15,6 +15,9 @@
     <!-- Ignore schools with no tenant ID set -->    
     <filter field="relMtcMstOid.relMstCskOid.relCskSklOid.sklFieldA008" operator="notEmpty" source="default" />
 
+    
+    <filter field="relMtcMstOid.schStartDate" format="MM/dd/yyyy" operator="greaterOrEqual" source="session" value="currentContext.startDate"/>
+
     <!-- Clevr Tenant ID -->   
     <!-- 
         In MySchoolSask, Clevr Tenant ID is stored in a field specific to each SCHOOL.
