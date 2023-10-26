@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    ===========================================================================
+    This export file was created by Mark Strendin, at 
+    Living Sky School Division No 202, for the 
+    MySchoolSask Virtual Integration Group.
+        
+    Other export file definitions, documentation, issue tracking, and 
+    most-recent copies of this export file can be found in our GitHub repository:
+    https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations    
+    ===========================================================================
+-->
+<export table-id="tblStdContact" header-row="true">
+  <!-- Only export contacts that live with the student -->
+  <!-- <filter field="ctjLivesWith" operator="equals" value="1" /> -->
+  <!-- Only export contacts with portal access -->
+  <filter field="ctjPortalAcs" operator="equals" value="1" />
+  <field id="relCtjCntOid.relCntPsnOid.psnEmail01" header-source="constant" header-value="Email" />
+  <field id="relCtjCntOid.ctjOID" header-source="constant" header-value="ExtId" />  
+  <field id="relCtjCntOid.relCntPsnOid.psnPhone01" header-source="constant" header-value="Phone" />
+  <field id="relCtjCntOid.cntViewName" header-source="constant" header-value="FullName" />
+  <constant value="" header-source="constant" header-value="PhoneType" />
+  <field id="ctjRelateCode" header-source="constant" header-value="Relationship" />
+  <field id="relCtjStdOid.stdIDLocal" header-source="constant" header-value="StudentNumber" />
+</export>

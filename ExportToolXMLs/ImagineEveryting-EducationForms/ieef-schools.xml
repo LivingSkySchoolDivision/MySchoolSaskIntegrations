@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    ===========================================================================
+    This export file was created by Mark Strendin, at 
+    Living Sky School Division No 202, for the 
+    MySchoolSask Virtual Integration Group.
+        
+    Other export file definitions, documentation, issue tracking, and 
+    most-recent copies of this export file can be found in our GitHub repository:
+    https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations    
+    ===========================================================================
+-->
+<export table-id="tblSchool"  header-row="true" value-delimiter=",">
+    <filter field="sklInactiveInd" operator="equals" value="0" />
+    <field id="sklSchoolName" header-source="constant" header-value="Name" />
+    <field id="sklSchoolID" header-source="constant" header-value="ExtId" />
+    <constant value="" header-source="constant" header-value="LowGrade" find="^0" replaceAll=""/>
+    <constant value="" header-source="constant" header-value="HighGrade" find="^0" replaceAll=""/>
+    <field id="sklSchoolID" header-source="constant" header-value="SchoolNumber" />
+</export>
