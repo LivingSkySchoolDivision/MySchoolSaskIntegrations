@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    ===========================================================================
+    This export file was created by Mark Strendin, at 
+    Living Sky School Division No 202, for the 
+    MySchoolSask Virtual Integration Group.
+        
+    Other export file definitions, documentation, issue tracking, and 
+    most-recent copies of this export file can be found in our GitHub repository:
+    https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations    
+    ===========================================================================
+-->
+<!-- 
+    Consider generating this file from your HR system instead of MSS.
+    
+    _Staff_ is for non-instructional staff such as support staff, school secretaries, etc.
+    
+    It's OK to be in both lists, but since the intent is non-instructional, many of these individuals
+    may not be in MSS in the first place.
+
+-->
+<export table-id="tblStaff" header-row="true" value-delimiter=",">    
+    <filter field="stfStatus" operator="equals" source="default" value="Active"/>
+    <field id="relStfPsnOid.psnEmail01" header-source="constant" header-value="Staff_email"/>
+    <field id="stfStaffID" header-source="constant" header-value="Staff_id"/>
+    <field id="relStfPsnOid.psnNameLast" header-source="constant" header-value="Last_name"/>
+    <field id="relStfPsnOid.psnNameFirst" header-source="constant" header-value="First_name"/>
+    <field id="relStfSklOid.sklSchoolID" header-source="constant" header-value="School_id"/>
+</export>
+
