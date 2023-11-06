@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    ===========================================================================
+    This export file was created by Mark Strendin, at 
+    Living Sky School Division No 202, for the 
+    MySchoolSask Virtual Integration Group.
+        
+    Other export file definitions, documentation, issue tracking, and 
+    most-recent copies of this export file can be found in our GitHub repository:
+    https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations    
+    ===========================================================================
+-->
+<export table-id="tblStdSchedule" header-row="true">
+	<filter field="relMtcMstOid.relMstSchOid.schStartDate" format="MM/dd/yyyy" operator="greaterOrEqual" source="session" value="currentContext.startDate"/>
+	<filter field="relSscStdOid.stdIDLocal" operator="notEmpty" connector="and"/>    
+	<field id="relSscSchOid.relSchSklOid.sklSchoolID" header-source="constant" header-value="School_id"/>
+	<field id="relSscMstOid.mstOID" header-source="constant" header-value="Section_id"/>
+	<field id="relSscStdOid.stdIDLocal" header-source="constant" header-value="Student_id"/>
+</export>
