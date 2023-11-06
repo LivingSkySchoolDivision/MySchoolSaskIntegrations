@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    ===========================================================================
+    This export file was created by Mark Strendin, at 
+    Living Sky School Division No 202, for the 
+    MySchoolSask Virtual Integration Group.
+        
+    Other export file definitions, documentation, issue tracking, and 
+    most-recent copies of this export file can be found in our GitHub repository:
+    https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations    
+    ===========================================================================
+-->
+<export table-id="tblSchMaster" header-row="true">
+	<filter field="schStartDate" format="MM/dd/yyyy" operator="greaterOrEqual" source="session" value="currentContext.startDate"/>
+	<filter field="relMstStfPrim.stfStaffID" operator="notEmpty" />    
+	<filter field="relMstCskOid.cskFieldA001" operator="notEqual" source="default" value="ATT-AM" connector="and"/>
+	<filter field="relMstCskOid.cskFieldA001" operator="notEqual" source="default" value="ATT-PM" connector="and"/>
+    <constant value="" header-source="constant" header-value="Term_end" /> <!-- doesn't seem possible to extract -->
+	<field id="relMstCskOid.relCskSklOid.sklSchoolID" header-source="constant" header-value="School_id"/>
+	<field id="relMstStfPrim.stfStaffID" header-source="constant" header-value="Teacher_id"/>    
+    <constant value="" header-source="constant" header-value="Teacher_2_id" />
+    <constant value="" header-source="constant" header-value="Teacher_3_id" /> 
+	<field id="relMstTrmOid.trmTermName" header-source="constant" header-value="Term_name"/>
+	<field id="mstOID" header-source="constant" header-value="Section_id"/>
+	<field id="relMstCskOid.relCskCrsOid.crsCourseDesc" header-source="constant" header-value="Course_name"/>
+	<field id="mstCourseView" header-source="constant" header-value="Course_number"/>
+    <field id="mstSectionNum" header-source="constant" header-value="Section_number"/>
+    <constant value="" header-source="constant" header-value="Course_description" />
+</export>
+  
