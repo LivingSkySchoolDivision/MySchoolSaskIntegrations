@@ -13,6 +13,8 @@
 <export table-id="tblStaff" header-row="true" value-delimiter=",">    
     <filter field="stfStatus" operator="equals" source="default" value="Active"/>
     <filter field="relStfSklOid.sklSchoolID" operator="notEmpty" source="default"/>
+    <!-- Only include staff that have a certification number (so, only include teachers) -->
+    <filter field="stfIDState" operator="notEmpty" source="default"/>
 
     <field id="relStfSklOid.sklSchoolID" header-source="constant" header-value="School_id"/>
     <field id="stfStaffID" header-source="constant" header-value="Teacher_id"/>

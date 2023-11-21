@@ -31,7 +31,7 @@
   <field id="relStdPsnOid.psnFieldC003" header-source="constant" header-value="LastName" /> <!-- Preferred last name -->
   <field id="relStdSklOid.sklSchoolID" header-source="constant" header-value="SchoolId" />
   <field id="relStdPsnOid.psnFieldC001" header-source="constant" header-value="FirstName" /> <!-- Preferred first name -->
-  <constant value="" header-source="constant" header-value="PhoneType" />
+  <constant value="primary" header-source="constant" header-value="PhoneType" />
   <field id="relStdPsnOid.psnDob" format="MM/dd/YYYY" header-source="constant" header-value="DateOfBirth" />
   <field id="stdIDLocal" header-source="constant" header-value="StudentNumber" />
   <field id="stdIDLocal" header-source="constant" header-value="StudentRegionId" />
