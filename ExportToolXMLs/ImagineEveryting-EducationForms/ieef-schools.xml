@@ -17,4 +17,7 @@
     <constant value="" header-source="constant" header-value="LowGrade" find="^0" replaceAll=""/>
     <constant value="" header-source="constant" header-value="HighGrade" find="^0" replaceAll=""/>
     <field id="sklSchoolID" header-source="constant" header-value="SchoolNumber" />
+    
+    <field id="sklStartGrade" header-source="constant" header-value="StartGrade" />
+    <field id="sklNumGrades" header-source="constant" header-value="NumGrades" />    
 </export>
