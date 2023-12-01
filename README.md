@@ -64,7 +64,7 @@ This git repository represents work and research done for the purpose of creatin
     * These two "multipart" exports allow finer grained control of which contacts are exported. They are configured to export the first 3 with "Has Family Portal Access" permission, and most importantly, nobody that _doesn't_ have this permission (unlike the other SchoolMessenger exports)
     * [SchoolMessenger Contacts - Multipart - Students](ExportToolXMLs/SchoolMessenger/SchoolMessenger-Multipart-Part1.xml)
     * [SchoolMessenger Contacts - Multipart - Contacts](ExportToolXMLs/SchoolMessenger/SchoolMessenger-Multipart-Part2.xml)    
-    * Script to combine these: [SchoolMessenger demographics multipart combiner script](https://github.com/LivingSkySchoolDivision/SyncOMatic/blob/main/Utilities/SchoolMessenger-Combine-Multipart.ps1)
+    * Script to combine these: [SchoolMessenger demographics multipart combiner script](ExportToolXMLs/SchoolMessenger/SchoolMessenger-Combine-Multipart.ps1)
 * Xello
   * [Xello Students](ExportToolXMLs/Xello/XelloStudents.xml)
   
