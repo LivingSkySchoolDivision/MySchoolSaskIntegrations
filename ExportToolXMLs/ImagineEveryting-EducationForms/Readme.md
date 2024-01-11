@@ -3,6 +3,8 @@
 These exports require fields that the XML based export system in Aspen/MSS is not capable of exporting - notably the start and end dates for sections.
 
 # Where can I find the exports?
+[Right Here in this repo, under "ReplicatedDatabaseSQLExports"](/ReplicatedDatabaseSQLExports/ImagineEverythingEducationForms/)
+
 
 # Does my school division need to pay for the Reporting/Replicated database to use these?
 Yes, you require access to the MSS SQL database for this vendor's exports, which unfortunately costs an extra fee.
