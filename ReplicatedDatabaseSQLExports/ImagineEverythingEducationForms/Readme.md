@@ -4,7 +4,7 @@
 
 ## Contacts.csv: 
  - "Email": "Contact_email",
- - "ExtId": "Contact_sis_id",
+ - "ExtId": "Contact_sis_id", --Primary Key, must be unique
  - "Phone": "Contact_phone",
  - "FullName": "Contact_name",
  - "PhoneType": "Contact_phone_type",
