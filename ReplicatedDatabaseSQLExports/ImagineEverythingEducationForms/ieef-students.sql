@@ -2,9 +2,7 @@
     This query relies on making a temporary table on the SQL server and staging 
     some data in it to link in the later query. This is done because the SQL server
     has limits for how complex a query can be, and it is extremely easy to hit those
-    limits (ie: by joining more than one table, for example).
-    
-    This method works around this limitation.
+    limits.
 */
 
 -- Get the entire list of "Persons" and cache it in a temporary table.
