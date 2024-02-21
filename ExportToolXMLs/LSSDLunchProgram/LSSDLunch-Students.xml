@@ -20,8 +20,18 @@
   
   <field id="relStdSklOid.sklSchoolName" header-source="constant" header-value="School" />
   <field id="stdIDLocal" header-source="constant" header-value="StudentID" />
+
+  <!-- uncomment these to use legal names -->
+  <!--
   <field id="relStdPsnOid.psnNameFirst" header-source="constant" header-value="FirstName" />
   <field id="relStdPsnOid.psnNameLast" header-source="constant" header-value="LastName" />
+  -->
+
+  <!-- uncomment these to use preferred names -->
+  <field id="relStdPsnOid.psnFieldC001" header-source="constant" header-value="FirstName" />
+  <field id="relStdPsnOid.psnFieldC003" header-source="constant" header-value="LastName" />
+
+
   <field id="stdHomeroom" header-source="constant" header-value="HomeRoom" />
 </export>
 
