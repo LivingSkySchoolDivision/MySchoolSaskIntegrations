@@ -1,27 +1,33 @@
-/* 
-    This query relies on making a temporary table on the SQL server and staging 
-    some data in it to link in the later query. This is done because the SQL server
-    has limits for how complex a query can be, and it is extremely easy to hit those
-    limits.
-*/
+SELECT
+	MSS_PERSON_ADDRESS.ADR_OID,
+	MSS_PERSON_ADDRESS.ADR_CITY,
+	MSS_PERSON_ADDRESS.ADR_STATE,
+	MSS_PERSON_ADDRESS.ADR_ADDRESS_LINE_01
+INTO #LSKYSD202_TEMP_MSS_ADDRESS
+FROM
+	MSS_PERSON_ADDRESS
+WHERE
+	NOT (
+		MSS_PERSON_ADDRESS.ADR_CITY IS NULL
+		AND MSS_PERSON_ADDRESS.ADR_STATE IS NULL
+		AND MSS_PERSON_ADDRESS.ADR_ADDRESS_LINE_01 IS NULL
+		);
 
--- Get the entire list of "Persons" and cache it in a temporary table.
 SELECT
 	MSS_PERSON.PSN_OID,
-	MSS_PERSON_ADDRESS.ADR_CITY as 'City', -- City in which the student resides
+	TEMP_ADDRESSES.ADR_CITY as 'City', -- City in which the student resides
 	MSS_PERSON.PSN_EMAIL_01 as 'Email',
 	MSS_PERSON.PSN_PHONE_01 as 'Phone',
-	MSS_PERSON_ADDRESS.ADR_STATE as 'State',
-	MSS_PERSON_ADDRESS.ADR_ADDRESS_LINE_01 as 'Street',
+	TEMP_ADDRESSES.ADR_STATE as 'State',
+	TEMP_ADDRESSES.ADR_ADDRESS_LINE_01 as 'Street',
 	MSS_PERSON.PSN_FIELDC_003 as 'LastName',
 	MSS_PERSON.PSN_FIELDC_001 as 'FirstName',
 	MSS_PERSON.PSN_DOB as 'DateOfBirth'
 INTO #LSKYSD202_Temp_MSS_PERSON
 FROM
 	MSS_PERSON
-	LEFT OUTER JOIN MSS_PERSON_ADDRESS ON MSS_PERSON.PSN_ADR_OID_PHYSICAL=MSS_PERSON_ADDRESS.ADR_OID;
+	LEFT OUTER JOIN #LSKYSD202_TEMP_MSS_ADDRESS as TEMP_ADDRESSES ON MSS_PERSON.PSN_ADR_OID_PHYSICAL=TEMP_ADDRESSES.ADR_OID;
 
--- Now get all the students, and link in the necesary info from the temporary table
 SELECT	
 	TEMP_PERSON.City as 'City', -- City in which the student resides
 	TEMP_PERSON.Email as 'Email',
@@ -43,6 +49,7 @@ FROM
 WHERE
 	STD_ENROLLMENT_STATUS IN ('Active', 'Active No Primary')
 	AND MSS_SCHOOL.SKL_OID IS NOT NULL;
-
--- Clean up temporary table
+	
 DROP TABLE IF EXISTS #LSKYSD202_Temp_MSS_PERSON;
+DROP TABLE IF EXISTS #LSKYSD202_TEMP_MSS_ADDRESS;
+
