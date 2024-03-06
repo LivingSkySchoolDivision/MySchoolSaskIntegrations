@@ -36,7 +36,7 @@ SELECT
 	TEMP_PERSON.State as 'State',
 	TEMP_PERSON.Street as 'Street',
 	TEMP_PERSON.LastName as 'LastName',
-	MSS_SCHOOL.SKL_OID as 'SchoolId',
+	MSS_SCHOOL.SKL_SCHOOL_ID as 'SchoolId',
 	TEMP_PERSON.FirstName as 'FirstName',
 	'Primary' as 'PhoneType',
 	TEMP_PERSON.DateOfBirth as 'DateOfBirth',
