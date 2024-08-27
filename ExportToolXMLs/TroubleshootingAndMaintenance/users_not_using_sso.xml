@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    ===========================================================================
+    This export file was created by Mark Strendin, at 
+    Living Sky School Division No 202, for the 
+    MySchoolSask Virtual Integration Group.
+        
+    Other export file definitions, documentation, issue tracking, and 
+    most-recent copies of this export file can be found in our GitHub repository:
+    https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations    
+    ===========================================================================
+-->
+<export table-id="tblUserInfo" header-row="true">
+  <sort field="usrViewName" direction="asc" />
+  
+  <!-- Only show enabled users -->
+  <filter field="usrLoginStatus" operator="equals" value="0" />
+
+  <!-- Only show users not set to SSO -->
+  <filter field="usrAuthType" operator="notEqual" value="3" />
+
+  <!-- Only show staff users -->
+  <filter field="usrLoginName" operator="contains" value="lskysd.ca" />
+
+  <field id="usrViewName" header-source="constant" header-value="Name" />
+  <field id="usrLoginName" header-source="constant" header-value="LoginID" />
+  <field id="usrAuthType" header-source="constant" header-value="AuthType" />
+  <field id="usrSsoGuid" header-source="constant" header-value="SSOGUID" />
+  <field id="usrLoginStatus" header-source="constant" header-value="LoginStatus" />
+</export>
