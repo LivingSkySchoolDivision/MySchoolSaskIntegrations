@@ -1,0 +1,27 @@
+/*
+    This SQL query exports all EAL students with their levels, from all schools.
+*/
+
+SELECT
+	SKL.SKL_SCHOOL_NAME AS 'School',
+	STD.STD_NAME_VIEW AS 'Student',
+	STD.STD_ENROLLMENT_STATUS as 'Student Status',
+	STD.STD_GRADE_LEVEL AS 'Grade',
+	PGM.PGM_PROGRAM_CODE AS 'Program',
+	PGM.PGM_FIELDA_001 AS 'Level',
+	FORMAT(PGM.PGM_START_DATE, 'MM-dd-yyyy') AS 'Start Date',
+	FORMAT(PGM.PGM_END_DATE, 'MM-dd-yyyy') AS 'End Date'
+FROM
+	MSS_STUDENT STD
+INNER JOIN
+	MSS_STUDENT_PROGRAM_PARTICIPATION PGM ON STD.STD_OID = PGM.PGM_STD_OID
+INNER JOIN
+	MSS_SCHOOL SKL ON STD.STD_SKL_OID = SKL.SKL_OID
+WHERE
+	PGM.PGM_PROGRAM_CODE = 'EAL' AND PGM.PGM_END_DATE > GETDATE()
+-- Uncomment the line below to filter out specific statuses
+--	AND STD.STD_ENROLLMENT_STATUS NOT IN ('Withdrawn', 'Comp Sch')
+ORDER BY
+	SKL.SKL_SCHOOL_NAME,
+	STD.STD_GRADE_LEVEL,
+	STD.STD_NAME_VIEW

@@ -86,3 +86,8 @@ This git repository represents work and research done for the purpose of creatin
 Click the link below to download this entire Git repository in a zip file.
 
 https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations/archive/master.zip
+
+# See Also
+Living Sky School Division maintains another list of SQL queries designed to be run against the MSS Replicated Database here: https://github.com/LivingSkySchoolDivision/MySchoolSaskRDSQLQueries
+
+These are more specific to Living Sky School Division's needs, and the repository contains SQL for our internal HR system as well, so we store these separately from this MSS-specific repository.
