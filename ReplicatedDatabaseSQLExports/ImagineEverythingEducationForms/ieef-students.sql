@@ -41,7 +41,7 @@ SELECT
 	'Primary' as 'PhoneType',
 	TEMP_PERSON.DateOfBirth as 'DateOfBirth',
 	STD_ID_LOCAL as 'StudentNumber', -- Internal division student number
-	STD_ID_LOCAL as 'StudentRegionId' -- Provincial student number
+	STD_ID_STATE as 'StudentRegionId' -- Provincial student number
 FROM
 	MSS_STUDENT
 	LEFT OUTER JOIN MSS_SCHOOL ON MSS_STUDENT.STD_SKL_OID=MSS_SCHOOL.SKL_OID
