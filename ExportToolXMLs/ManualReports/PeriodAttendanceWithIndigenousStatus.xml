@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    ===========================================================================
+    This export file was created by Mark Strendin, at 
+    Living Sky School Division No 202, for the 
+    MySchoolSask Virtual Integration Group.
+        
+    Other export file definitions, documentation, issue tracking, and 
+    most-recent copies of this export file can be found in our GitHub repository:
+    https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations    
+    ===========================================================================
+-->
+<export table-id="tblStdPerAtt" header-row="true">
+
+  <sort field="patDate" direction="desc" />
+  <sort field="relPatStdOid.stdViewName" direction="asc" />
+
+  <!-- 
+    Only include attendance for this school. If theres a way to get the user inputs to work, I'm not able to make it work, so for now it gets hard coded... 
+    Remove or comment out this filter line to just export all schools so you can filter it later in excel/whatever
+   -->
+  <filter field="relPatSklOid.sklSchoolID" operator="equals" value="XXXXXX" connector="and" />
+
+  <!-- Only include attendance for the current school year -->
+  <filter field="relPatMstOid.relMstSchOid.relSchCtxOid.ctxFieldA001" operator="equals" value="Current" connector="and" />
+
+  <field id="relPatStdOid.stdIDLocal" header-source="constant" header-value="Pupil Number" />
+  <field id="relPatStdOid.stdIDState" header-source="constant" header-value="Learning ID" />
+  <field id="relPatStdOid.stdViewName" header-source="constant" header-value="Student Full Name" />
+  <field id="relPatStdOid.stdGradeLevel" header-source="constant" header-value="Student Grade" />
+  <field id="relPatStdOid.stdCalendar" header-source="constant" header-value="Calendar Code" />
+  <field id="patPeriodView" header-source="constant" header-value="Period" />
+  <field id="relPatMstOid.relMstCskOid.cskFieldA001" header-source="constant" header-value="Course" />
+  <field id="patAbsentInd" header-source="constant" header-value="Is absent?" />
+  <field id="patTardyInd" header-source="constant" header-value="Is tardy?" />
+  <field id="patDismissInd" header-source="constant" header-value="Is dismissed?" />
+  <field id="patExcusedInd" header-source="constant" header-value="Is excused?" />
+  <field id="patDate" header-source="constant" header-value="Date" format="yyyy-MM-dd" />
+  <field id="patTimeIn" header-source="constant" header-value="Time In" />
+  <field id="patTimeOut" header-source="constant" header-value="Time Out" />
+  <field id="patReason" header-source="constant" header-value="Reason" />
+  <field id="relPatSklOid.sklSchoolID" header-source="constant" header-value="School ID" />
+  <field id="relPatSklOid.sklSchoolName" header-source="constant" header-value="School Name" />
+  <field id="relPatSklOid.sklFieldC001" header-source="constant" header-value="School Email" />
+  <field id="relPatSklOid.relSklAdrOid.adrPhone01" header-source="constant" header-value="School Phone Number" />
+  <field id="relPatStdOid.relStdPsnOid.psnFieldB002" header-source="constant" header-value="Indigenous Status" />
+
+</export>
