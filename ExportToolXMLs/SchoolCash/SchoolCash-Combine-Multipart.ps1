@@ -4,8 +4,18 @@ param(
     [Parameter(Mandatory=$true)][string]$OutputFileName
 )
 
+# THIS SCRIPT REQUIRES POWERSHELL 7 TO BE INSTALLED!!
+
 # This script enables the SchoolCash report to have multiple email addresses in the same field, separated by semicolens
 # because the XML based export system is not capable of doing this on it's own.
+
+Function LogThis
+{
+   Param ([string]$logmessage)
+   $Stamp = (Get-Date).toString("yyyy/MM/dd HH:mm:ss")
+   $Line = "$Stamp $logmessage"
+   write-host $Line
+}
 
 # Check if input files exist
 # Check that output file does not exist
@@ -26,6 +36,12 @@ if ((Test-Path $OutputFileName) -eq $true)
 {
     Remove-Item $OutputFileName
 }
+
+# Logging
+LogThis "Combining SchoolCash Multipart files..."
+LogThis " Input demographic file: $InputDemographicFileName"
+LogThis " Input contacts file: $InputContactsFileName"
+LogThis " Output filename: $OutputFileName"
 
 # Read in the contacts file and make a dictionary to work with
 $studentContactDictionary = @{}
@@ -56,4 +72,6 @@ $updated = foreach($Line in import-csv $InputDemographicFileName -Delimiter "`t"
 }
 
 # Output to a new file
+LogThis "Outputting final file..."
 $updated | Export-Csv -Path $OutputFileName -NoTypeInformation -Delimiter "`t" -UseQuotes Never 
+LogThis "Done!"
