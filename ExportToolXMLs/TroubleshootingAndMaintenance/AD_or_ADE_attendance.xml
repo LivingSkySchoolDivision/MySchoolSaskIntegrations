@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    ===========================================================================
+    This export file was created by Mark Strendin, at 
+    Living Sky School Division No 202, for the 
+    MySchoolSask Virtual Integration Group.
+        
+    Other export file definitions, documentation, issue tracking, and 
+    most-recent copies of this export file can be found in our GitHub repository:
+    https://github.com/LivingSkySchoolDivision/MySchoolSaskIntegrations    
+    ===========================================================================
+-->
+<export table-id="tblStdPerAtt" header-row="true">
+  <filter field="patDate" format="MM/dd/yyyy" operator="greaterOrEqual" source="session" value="currentContext.startDate"/>
+  <filter field="patCodeView" operator="equals" source="default" value="AD" connector="and"/>
+  <filter field="patCodeView" operator="equals" source="default" value="AD-E" connector="and"/>
+
+  <field id="patDate" header-source="constant" header-value="AbsenceDate" />
+  <field id="relPatStdOid.stdIDLocal" header-source="constant" header-value="StudentPupilNumber" />
+  <field id="relPatMstOid.relMstCskOid.relCskCrsOid.crsCourseDesc" header-source="constant" header-value="Section" />
+  <field id="relPatMstOid.relMstStfPrim.stfStaffID" header-source="constant" header-value="SectionTeacher" />
+  <field id="patCodeView" header-source="constant" header-value="Code" />
+</export>
