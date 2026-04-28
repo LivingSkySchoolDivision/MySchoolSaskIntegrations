@@ -17,10 +17,10 @@ WHERE
 
 SELECT
 	MSS_STUDENT.STD_ID_LOCAL,
-	Contact1.Name as Contact1Name,
+	COALESCE(Contact1.Name,'') as Contact1Name,
 	COALESCE(Contact1.PSN_EMAIL_01,'') as Contact1Email,
 	COALESCE(Contact1.CTJ_RELATIONSHIP_CODE,'') as Contact1Relation,
-	Contact2.Name as Contact2Name,
+	COALESCE(Contact2.Name,'') as Contact2Name,
 	COALESCE(Contact2.PSN_EMAIL_01,'') as Contact2Email,
 	COALESCE(Contact2.CTJ_RELATIONSHIP_CODE,'') as Contact2Relation
 FROM
