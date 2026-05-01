@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export table-id="tblSchool"  header-row="true" value-delimiter=",">
+    <filter field="sklInactiveInd" operator="equals" value="0" />
+    <field id="sklSchoolName" header-source="constant" header-value="SchoolName" />
+    <field id="sklSchoolID" header-source="constant" header-value="SchoolId" />
+</export>
