@@ -19,6 +19,27 @@ Example 1: Get daily attendance entries for _today_ only
 </export>
 ```
 
+The `connector` flag applies to the filter immediately above the one with this flag. 
+You can have multiple groups of filters.
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<export table-id="tblStudent" header-row="true">
+  <sort field="stdViewName" direction="asc" />
+
+  <filter field="relStdSklOid.sklSchoolID" operator="equals" value="4410223" />
+  <filter field="relStdSklOid.sklSchoolID" operator="equals" value="4410413" connector="or"  />
+
+  <filter field="stdEnrStatus" operator="equals" value="Active" />
+  <filter field="stdEnrStatus" operator="equals" value="Active No Primary" connector="or" />
+
+  ...
+
+</export>
+
+```
+
+
 ## Operators
 * equals
 * equalsIgnoreCase
