@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export table-id="tblStdContact" header-row="true"> 
+
   <filter field="relCtjStdOid.stdEnrStatus" operator="equals" value="Active" />
   <filter field="relCtjStdOid.stdEnrStatus" operator="equals" value="Active No Primary" connector="or" />
+
+  <filter field="ctjRecEmail" operator="equals" value="true" />
+  <filter field="ctjPortalAcs" operator="equals" value="true" connector="or" />
+  <filter field="ctjLivesWith" operator="equals" value="true" connector="or" />
 
   <field id="relCtjCntOid.ctjOID" header-source="constant" header-value="ContactOID" />  
   <field id="relCtjStdOid.stdOID" header-source="constant" header-value="StudentOID" />  
