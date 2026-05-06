@@ -20,9 +20,9 @@ Example 1: Get daily attendance entries for _today_ only
 ```
 
 The `connector` flag applies to the filter immediately above the one with this flag. 
-You can have multiple groups of filters.
+You can have multiple groups of filters - the XML export below would return all students at either of two schools (by ID number), and will only return "Active" or "Active No Primary" students.
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <export table-id="tblStudent" header-row="true">
   <sort field="stdViewName" direction="asc" />
