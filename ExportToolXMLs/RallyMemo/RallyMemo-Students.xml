@@ -15,5 +15,6 @@
   <field id="relStdPsnOid.psnNameFirst" header-source="constant" header-value="LegalFirstName" />
   <field id="stdGradeLevel" header-source="constant" header-value="Grade" find="^0" replaceAll="" />
   <field id="stdHomeroom" header-source="constant" header-value="Homeroom" />
+  <field id="relStdPsnOid.psnGenderCode" header-source="constant" header-value="Gender" />
 </export>
 
