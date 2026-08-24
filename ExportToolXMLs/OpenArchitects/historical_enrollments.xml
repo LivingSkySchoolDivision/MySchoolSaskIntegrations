@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This code exports historical enrollment data from Aspen (X2).-->
+<export table-id="tblStdEnroll" header-row="true">
+  <!--Sort by fields -->
+  <sort field="relEnrStdOid.stdIDLocal" />
+  <sort field="relEnrSklOid.sklSchoolID" />
+  <sort field="enrEnrDate" />
+  <sort field="enrTimestamp" />
+  <!--Select fields from the student enrollment table.-->
+  <field id="enrEnrDate" header-value="enrollment_date" header-source="constant" />
+  <field id="enrEnrType" header-value="enrollment_type" header-source="constant" />
+  <field id="enrEnrCode" header-value="enrollment_code" header-source="constant" />
+  <field id="enrEnrStatus" header-value="enrollment_status" header-source="constant" />
+  <field id="enrEnrReason" header-value="enrollment_reason" header-source="constant" />
+  <field id="relEnrSklOid.sklSchoolName" header-value="school_name" header-source="constant" />
+  <field id="relEnrSklOid.sklSchoolID" header-value="school_id" header-source="constant" />
+  <field id="relEnrStdOid.stdIDLocal" header-value="lasid" header-source="constant" />
+  <field id="enrTimestamp" header-value="time_stamp" header-source="constant" />
+  <field id="enrYog" header-value="year_of_graduation" header-source="constant" />
+  <field id="enrStdGUID" header-value="student_ref_id" header-source="constant" />
+</export>

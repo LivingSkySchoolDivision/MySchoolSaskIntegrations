@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--This xml code exports daily attendance data from Aspen (X2)-->
+
+<export table-id="tblStdAttend" header-row="true">
+  
+  <!--Filter to export data after a certain date--> 
+
+    <filter field="attDate" operator="greaterOrEqual" value="08/01/2019" />
+  
+  <!--Select fields from the attendance table--> 
+  
+    <field id="relAttStdOid.stdIDLocal" header-value="lasid" header-source="constant" />
+    <field id="relAttStdOid.stdIDLocal" header-value="student_id" header-source="constant" />  
+    <field id="attDate" format="MM/dd/yyyy" header-value="date" header-source="constant" />
+    <field id="attCodeView" header-value="attendance_code" header-source="constant" />
+    <field id="attAbsentInd" header-value="count_as_absent" header-source="constant" /> 
+    <field id="attTardyInd" header-value="count_as_tardy" header-source="constant" />
+    <field id="relAttStdOid.relStdSklOid.sklSchoolID" header-value="school_id" header-source="constant" />
+  
+</export>

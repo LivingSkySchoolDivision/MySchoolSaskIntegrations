@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--This xml code exports current section level enrollments from Aspen SIS.-->
+
+<export table-id="tblStdSchedule" header-row="true">
+  
+<!--Filter by schedule name. This must be updated annually.-->
+<filter field="relSscMstOid.relMstSchOid.schScheduleNam" operator="beginsWith" value="2024" connector="OR" />  
+<filter field="relSscMstOid.relMstSchOid.schScheduleNam" operator="beginsWith" value="2025" connector="OR" />
+  
+<!--Select fields to export from the tables student schedule, schedule master, and student-->
+  
+<field id="relSscStdOid.stdIDLocal" header-value="lasid" header-source="constant" />
+<field id="sscMstOID" header-value="section_id" header-source="constant" />
+<field id="relSscSchOid.relSchSklOid.sklSchoolID" header-value="school_id" header-source="constant" />
+<field id="relSscMstOid.mstRoomView" header-value="classroom" header-source="constant" />
+<field id="relSscMstOid.mstCourseView" header-value="course" header-source="constant" />
+<field id="relSscMstOid.mstDescription" header-value="description" header-source="constant" />
+<field id="relSscMstOid.mstEnrTotal" header-value="enrollment_total" header-source="constant" />
+<field id="relSscMstOid.mstSectionNum" header-value="section_number" header-source="constant" />
+<field id="relSscMstOid.relMstStfPrim.stfStaffID" header-value="teacher_id" header-source="constant" />
+<field id="relSscMstOid.relMstSchOid.schScheduleNam" header-value="schedule_name" header-source="constant" />
+  
+</export>

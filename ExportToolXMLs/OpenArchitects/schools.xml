@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--This file exports a school dimension table from Aspen (X2) -->
+
+<export table-id="tblSchool" header-row="true">
+  
+  <!--Select fields to export -->
+  
+    <field id="sklSchoolID" header-value="school_id" header-source="constant" />
+    <field id="sklSchoolName" header-value="school_name" header-source="constant" />
+  
+</export>

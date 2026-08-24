@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This xml code exports current section level enrollments from Aspen SIS.-->
+<export table-id="tblSchMstTeach" header-row="true">
+  <!--Filter by schedule name. This must be updated annually.-->
+  <filter field="relMtcMstOid.relMstSchOid.schScheduleNam" operator="beginsWith" value="2024-2025" />
+  <!--Select fields to export from the tables student schedule, schedule master, and student-->
+  <field id="relMtcMstOid.mstRoomView" header-value="classroom" header-source="constant" />
+  <field id="relMtcMstOid.mstCourseView" header-value="course" header-source="constant" />
+  <field id="relMtcMstOid.mstDescription" header-value="description" header-source="constant" />
+  <field id="relMtcMstOid.mstEnrTotal" header-value="enrollment_total" header-source="constant" />
+  <field id="relMtcMstOid.mstSectionNum" header-value="section_number" header-source="constant" />
+  <field id="sscMstOID" header-value="section_id" header-source="constant" />
+  <field id="relMtcStfOid.stfStaffID" header-value="teacher_id" header-source="constant" />
+  <field id="mtcTeacherRole" header-value="teacher_role" header-source="constant" />
+  <field id="mtcFieldB002" header-value="teacher_wa08_work_assignment" header-source="constant" />
+  <field id="mtcGBAccessInd" header-value="teacher_gradebook_access" header-source="constant" />
+  <field id="mtcPrimaryTchr" header-value="teacher_is_primary" header-source="constant" />
+</export>

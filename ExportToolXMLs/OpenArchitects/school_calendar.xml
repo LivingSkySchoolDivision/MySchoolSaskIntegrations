@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This xml code exports school calendar data from Aspen (X2)-->
+<export table-id="tblCalSklDate" header-row="true">
+  <!--Filter to all calendar dates after a certain date-->
+  <filter field="csdDate" operator="greaterOrEqual" value="08/01/2019" />
+  <!--Select fields for export-->
+  <field id="relCsdCasOid.relCasSklOid.sklSchoolName" header-value="school_name" header-source="constant" />
+  <field id="relCsdCasOid.relCasSklOid.sklSchoolID" header-value="school_id" header-source="constant" />
+  <field id="csdDate" header-value="date" header-source="constant" />
+  <field id="csdInSession" header-value="in_session" header-source="constant" />
+  <field id="relCsdCasOid.casCalendarID" header-value="calendar_id" header-source="constant" />
+</export>

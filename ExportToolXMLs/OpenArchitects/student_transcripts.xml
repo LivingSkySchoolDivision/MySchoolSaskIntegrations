@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export table-id="tblStdTrans" header-row="true">
+  <!-- filter start with 2019 SY -->
+  <filter field="trnCtxSklYear" operator="greaterOrEqual" value="2019" />
+  <!--student-->
+  <field id="relTrnStdOid.stdIDLocal" header-source="constant" header-value="StudentIDLocal" />
+  <field id="relTrnStdOid.stdIDState" header-source="constant" header-value="StudentStateId" />
+  <field id="trnGradeLevel" header-source="constant" header-value="grade_level" />
+  <!--school course-->
+  <field id="trnCtxSklYear" header-source="constant" header-value="SchoolYear" />
+  <field id="relTrnMstOid.mstCourseView" header-source="constant" header-value="course_view" />
+  <field id="relTrnMstOid.mstSectionNum" header-source="constant" header-value="section_number" />
+  <field id="trnCourseDesc" header-source="constant" header-value="course_description" />
+  <field id="trnFinalGrade" header-source="constant" header-value="final_grade" />
+  <field id="trnTotalCredit" header-source="constant" header-value="total_credit" />
+  <field id="relTrnMstOid.mstTermView" header-source="constant" header-value="term" />
+  <field id="relTrnStfOid.stfNameView" header-source="constant" header-value="staff_name" />
+  <field id="relTrnMstOid.mstStaffView" header-source="constant" header-value="staff_name_2" />
+  <field id="relTrnStfOid.stfStaffID" header-source="constant" header-value="teacher_id" />
+  <field id="relTrnCskOid.cskAcademicLvl" header-source="constant" header-value="academic_level" />
+  <field id="relTrnCskOid.cskGpaInd" header-source="constant" header-value="include_gpa" />
+  <field id="relTrnSklOid.sklSchoolID" header-source="constant" header-value="school_id" />
+<!--grades UPDATE field names, e.g. trnFieldA001 may not correspond to HS Term 1-->
+  <field id="trnFieldA001" header-source="constant" header-value="HS_Term_1" />
+  <field id="trnFieldA007" header-source="constant" header-value="HS_Term_2" />
+  <field id="trnFieldA006" header-source="constant" header-value="HS_Midterm_Avg" />
+  <field id="trnFieldA013" header-source="constant" header-value="HS_Term_3" />
+  <field id="trnFieldA011" header-source="constant" header-value="HS_Term_3_Cum_Avg" />
+  <field id="trnFieldA019" header-source="constant" header-value="HS_Term_4" />
+  <field id="trnFieldA067" header-source="constant" header-value="MS_Term_1" />
+  <field id="trnFieldA079" header-source="constant" header-value="MS_Term_2" />
+  <field id="trnFieldA091" header-source="constant" header-value="MS_Term_3" />
+  <field id="trnFieldA103" header-source="constant" header-value="MS_Term_4" />
+  <field id="trnFieldA031" header-source="constant" header-value="Elem_Term_1" />
+  <field id="trnFieldA013" header-source="constant" header-value="Elem_Term_2" />
+  <field id="trnFieldA024" header-source="constant" header-value="Elem_Term_3" />
+  <field id="trnFieldA025" header-source="constant" header-value="Elem_Term_4" />
+  <field id="trnFinalGrade" header-source="constant" header-value="All_Levels_Final_Grade" />
+</export>

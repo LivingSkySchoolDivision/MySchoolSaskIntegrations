@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This xml code exports student information data from Aspen (X2)-->
+<export table-id="tblStudent" header-row="true">
+  <!--Select fields from the student table-->
+  <field id="stdIDState" header-value="sasid" header-source="constant" />
+  <field id="stdEnrStatus" header-value="enroll_status" header-source="constant" />
+  <field id="stdGradeLevel" header-value="grade_level" header-source="constant" />
+  <field id="stdHomeLang" header-value="home_language" header-source="constant" />
+  <field id="stdIDLocal" header-value="lasid" header-source="constant" />
+  <field id="stdViewName" header-value="student_name" header-source="constant" />
+<!-- CHECK and UPDATE numbered field names, e.g. stdFIeldB011 may not correspond to sped_35 in all districts-->
+  <field id="stdFieldB013" header-value="sped_35" header-source="constant" />
+  <field id="stdFieldB015" header-value="sped_621" header-source="constant" />
+  <field id="stdFieldB021" header-value="status_504" header-source="constant" />
+  <field id="stdFieldB006" header-value="low_income" header-source="constant" />
+  <field id="stdSpedStatus" header-value="sped_eligibility_status" header-source="constant" />
+  <field id="relStdSklOid.sklSchoolID" header-value="school_id" header-source="constant" />
+  <field id="relStdSklOid.sklSchoolName" header-value="school_name" header-source="constant" />
+  <field id="relStdPsnOid.psnGenderCode" header-value="person_gender" header-source="constant" />
+  <field id="relStdPsnOid.psnHispLatInd" header-value="person_hispanic" header-source="constant" />
+  <field id="relStdPsnOid.psnRaceView" header-value="person_race" header-source="constant" />
+  <field id="relStdPsnOid.psnDob" header-value="dob" header-source="constant" />
+  <field id="stdCalendar" header-value="calendar" header-source="constant" />
+  <field id="stdHomeroom" header-value="homeroom" header-source="constant" />
+  <field id="stdHRTeacher" header-value="homeroom_teacher" header-source="constant" />
+  <field id="stdFieldB045" header-value="el" header-source="constant" />
+  <field id="stdFieldA103" header-value="ELL_status" header-source="constant" />
+  <field id="stdYog" header-value="year_of_graduation" header-source="constant" />
+  <!-- Contact info -->
+  <field id="relStdPsnOid.relPsnAdrPhys.adrAddress01" header-value="address_1" header-source="constant" />
+  <field id="relStdPsnOid.relPsnAdrPhys.adrAddress02" header-value="address_2" header-source="constant" />
+  <field id="relStdPsnOid.relPsnAdrPhys.adrAddress03" header-value="address_3" header-source="constant" />
+  <field id="relStdPsnOid.psnEmail01" header-value="email" header-source="constant" />
+  <field id="relStdPsnOid.psnPhone01" header-value="phone" header-source="constant" />
+  <field id="relStdPsnOid.psnNameLast" header-value="last_name" header-source="constant" />
+  <field id="relStdPsnOid.psnNameFirst" header-value="first_name" header-source="constant" /> 
+  <field id="stdEnrType" header-value="enrollment_reason" header-source="constant" />
+  <!-- nonstandard fields from Clients -->
+  <!--<field id="stdFieldA073" header-value="school_choice" header-source="constant" />-->
+  <!--<field id="stdFieldA070" header-value="open_enrollment" header-source="constant" />-->
+
+</export>

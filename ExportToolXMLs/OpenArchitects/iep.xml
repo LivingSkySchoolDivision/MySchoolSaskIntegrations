@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This xml code exports student information data from Aspen (X2)-->
+<export table-id="tblIEPData" header-row="true">
+  <!--Select fields from the IEP Data table-->
+  <field id="iepAmendInd" header-value="amendedIndicator" header-source="constant" />
+  <field id="iepComments" header-value="Comments" header-source="constant" />
+  <field id="iepConsentDate" header-value="ConsentDate" header-source="constant" />
+  <field id="iepConsentInd" header-value="ConsentIndicator" header-source="constant" />
+  <field id="iepEndDate" header-value="IEP_EndDate" header-source="constant" />
+  <field id="iepExitDate" header-value="ExitDate" header-source="constant" />
+  <field id="iepExitReason" header-value="ExitReason" header-source="constant" />
+  <field id="iepGUID" header-value="GUID" header-source="constant" />
+  <field id="iepMeetingType" header-value="MeetingType" header-source="constant" />
+  <field id="iepLastEv" header-value="LastEval" header-source="constant" />
+  <field id="iepLastRvw" header-value="LastReview" header-source="constant" />
+  <field id="iepMeetingDate" header-value="MeetingDate" header-source="constant" />
+  <field id="iepNextEv" header-value="NextEval" header-source="constant" />
+  <field id="iepNextRvw" header-value="NextReview" header-source="constant" />
+  <field id="iepSignedDate" header-value="IEPsigned" header-source="constant" />
+  <field id="iepIniElig" header-value="InitialEligibility" header-source="constant" />
+  <field id="iepLstElig" header-value="LastEligibility" header-source="constant" />
+  <field id="iepRefer" header-value="ReferralDate" header-source="constant" />
+  <field id="iepStartDate" header-value="IEP_StartDate" header-source="constant" />
+  <field id="iepStatus" header-value="IEP_Status" header-source="constant" />
+  <field id="iepStatChgRsn" header-value="IEP_StatusChange" header-source="constant" />
+  <field id="iepWFPhase" header-value="WorkflowPhase" header-source="constant" />
+<!-- CHECK and UPDATE field names, e.g. stdFIeldB011 may not correspond to sped_35 in all districts-->
+  <field id="relIepStdOid.stdFieldB012" header-value="sped_35" header-source="constant" />
+  <field id="relIepStdOid.stdFieldB014" header-value="sped_621" header-source="constant" />
+  <field id="relIepStdOid.stdFieldB016" header-value="PrimaryDisability" header-source="constant" />
+  <field id="relIepStdOid.stdFieldB018" header-value="LevelOfNeed" header-source="constant" />
+  <field id="relIepStdOid.stdFieldB019" header-value="EvalResults" header-source="constant" />
+  <field id="relIepStdOid.stdIDState" header-value="SASID" header-source="constant" />
+  <field id="relIepStdOid.stdIDLocal" header-value="LASID" header-source="constant" />
+</export>

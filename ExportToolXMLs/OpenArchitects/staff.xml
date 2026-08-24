@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This xml code exports staff information data from Aspen (X2)-->
+<!--for use with OA's teacher licensure and enrollment tools.-->
+<export table-id="tblStaff" header-row="true">
+  <!--Select fields from the student table-->
+  <field id="stfStaffID" header-value="local_teacher_id" header-source="constant" />
+  <field id="stfNameView" header-value="name" header-source="constant" />
+  <field id="stfIDState" header-value="state_teacher_id" header-source="constant" />
+  <field id="stfStatus" header-value="status" header-source="constant" />
+  <field id="stfStaffType" header-value="type" header-source="constant" />
+  <field id="relStfPsnOid.psnEmail01" header-value="email" header-source="constant" />
+  <field id="stfHireDate" header-value="Hire Date" header-source="constant" />
+<!-- CHECK and UPDATE custom field names -->
+  <field id="stfFieldA013" header-value="Exit Date 1" header-source="constant" />
+  <field id="relStfSklOid.sklSchoolID" header-value="School ID" header-source="constant" />
+<!-- Employee Type and Position Title may not be needed --> 
+  <field id="stfFieldA030" header-value="Employee Type" header-source="constant" />
+  <field id="stfFieldB009" header-value="Position Title" header-source="constant" />
+</export>

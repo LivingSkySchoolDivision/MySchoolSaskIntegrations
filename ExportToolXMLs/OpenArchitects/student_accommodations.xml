@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This xml code exports student accommodations information data from Aspen (X2)-->
+<export table-id="tblStdAccomm" header-row="true">
+  <!--Select fields from the student table-->
+  <field id="relIacStdOid.stdIDState" header-value="sasid" header-source="constant" />
+  <field id="relIacStdOid.stdIDLocal" header-value="lasid" header-source="constant" />
+  <field id="iacCategory" header-value="category" header-source="constant" />
+  <field id="iacContentArea" header-value="content_area" header-source="constant" />
+  <field id="iacDescription" header-value="description" header-source="constant" />
+  <field id="iacImplDate" header-value="implementation_date" header-source="constant" />
+  <field id="iacName" header-value="name" header-source="constant" />
+  <field id="iacPlanType" header-value="plan_type" header-source="constant" />
+  <field id="iacType" header-value="type" header-source="constant" />
+</export>
