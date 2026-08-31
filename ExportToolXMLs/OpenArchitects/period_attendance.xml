@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This xml code exports period attendance data from Aspen (X2)-->
+
+<export table-id="tblStdPerAtt" header-row="true">
+  
+  <!--Filter to export data on or after a certain date-->
+  <filter field="patDate" operator="greaterOrEqual" value="08/01/2026" />
+
+  <!--Select fields from the period attendance table-->
+  <field id="patOID" header-value="period_oid" header-source="constant" />  
+  <field id="relPatStdOid.stdIDLocal" header-value="lasid" header-source="constant" />
+  <field id="relPatStdOid.stdIDState" header-value="sasid" header-source="constant" />
+  <field id="relPatSklOid.sklSchoolID" header-value="school_id" header-source="constant" />
+  <field id="relPatMstOid.mstCourseView" header-value="course" header-source="constant" />
+  <field id="relPatMstOid.mstSectionNum" header-value="section_number" header-source="constant" />
+  <field id="patPeriodView" header-value="period" header-source="constant" />
+  <field id="patCodeView" header-value="attendance_code" header-source="constant" />
+  <field id="patDate" format="yyyy-MM-dd" header-value="date" header-source="constant" />
+  <field id="patAbsentInd" header-value="is_absent" header-source="constant" />
+  <field id="patExcusedInd" header-value="is_excused" header-source="constant" />
+  <field id="patTardyInd" header-value="is_tardy" header-source="constant" />
+  <field id="patDismissInd" header-value="count_as_dismissed" header-source="constant" />
+  <field id="patReason" header-value="reason" header-source="constant" />
+  <field id="patComment" header-value="comment" header-source="constant" find="[&quot;]" replaceAll="'" />
+  <field id="patTimeIn" header-value="time_in" header-source="constant" />
+  <field id="patTimeOut" header-value="time_out" header-source="constant" />
+  <field id="patMstOID" header-value="master_schedule_oid" header-source="constant" />
+</export>

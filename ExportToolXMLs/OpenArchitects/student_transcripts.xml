@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export table-id="tblStdTrans" header-row="true">
   <!-- filter start with 2019 SY -->
-  <filter field="trnCtxSklYear" operator="greaterOrEqual" value="2019" />
+  <filter field="trnCtxSklYear" operator="greaterOrEqual" value="2026" />
   <!--student-->
   <field id="relTrnStdOid.stdIDLocal" header-source="constant" header-value="StudentIDLocal" />
   <field id="relTrnStdOid.stdIDState" header-source="constant" header-value="StudentStateId" />

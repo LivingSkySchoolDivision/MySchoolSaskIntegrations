@@ -2,7 +2,8 @@
 <!--This xml code exports current section level enrollments from Aspen SIS.-->
 <export table-id="tblSchMstTeach" header-row="true">
   <!--Filter by schedule name. This must be updated annually.-->
-  <filter field="relMtcMstOid.relMstSchOid.schScheduleNam" operator="beginsWith" value="2024-2025" />
+  <filter field="relMtcMstOid.relMstSchOid.schScheduleNam" operator="beginsWith" value="2026-2027" />
+
   <!--Select fields to export from the tables student schedule, schedule master, and student-->
   <field id="relMtcMstOid.mstRoomView" header-value="classroom" header-source="constant" />
   <field id="relMtcMstOid.mstCourseView" header-value="course" header-source="constant" />

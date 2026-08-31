@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export table-id="tblStdIncident" header-row="true">
-  <filter field="cndIncDate" operator="greaterOrEqual" value="08/01/2020" />
+  <filter field="cndIncDate" operator="greaterOrEqual" value="08/01/2026" />
   <sort field="cndIncDate" direction="asc" />
   <field id="cndIncID" header-source="constant" header-value="IncidentId" />
   <field id="relCndSklOid.sklSchoolID" header-source="constant" header-value="school_id" />

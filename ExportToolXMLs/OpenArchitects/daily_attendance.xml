@@ -6,7 +6,7 @@
   
   <!--Filter to export data after a certain date--> 
 
-    <filter field="attDate" operator="greaterOrEqual" value="08/01/2019" />
+    <filter field="attDate" operator="greaterOrEqual" value="08/01/2026" />
   
   <!--Select fields from the attendance table--> 
   

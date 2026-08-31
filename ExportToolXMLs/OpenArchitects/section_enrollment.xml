@@ -5,8 +5,7 @@
 <export table-id="tblStdSchedule" header-row="true">
   
 <!--Filter by schedule name. This must be updated annually.-->
-<filter field="relSscMstOid.relMstSchOid.schScheduleNam" operator="beginsWith" value="2024" connector="OR" />  
-<filter field="relSscMstOid.relMstSchOid.schScheduleNam" operator="beginsWith" value="2025" connector="OR" />
+<filter field="relSscMstOid.relMstSchOid.schScheduleNam" operator="equals" value="2026-2027 Active Schedule"/> 
   
 <!--Select fields to export from the tables student schedule, schedule master, and student-->
   
