@@ -36,6 +36,6 @@
   <field id="relStdPsnOid.psnNameFirst" header-value="first_name" header-source="constant" /> 
   <field id="stdEnrType" header-value="enrollment_reason" header-source="constant" />
   <!-- nonstandard fields from Clients -->
-  <field id="PSN_FIELDC_005" header-value="reserve_of_residence" header-source="constant" />
-
+  <field id="relStdPsnOid.psnFieldB005" header-value="reserve_of_residence" header-source="constant" />
+  <field id="relStdPsnOid.psnFieldB002" header-value="indigenous_declaration" header-source="constant" />
 </export>
