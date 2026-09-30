@@ -24,12 +24,15 @@
   <field id="iepStatus" header-value="IEP_Status" header-source="constant" />
   <field id="iepStatChgRsn" header-value="IEP_StatusChange" header-source="constant" />
   <field id="iepWFPhase" header-value="WorkflowPhase" header-source="constant" />
-<!-- CHECK and UPDATE field names, e.g. stdFIeldB011 may not correspond to sped_35 in all districts-->
-  <field id="relIepStdOid.stdFieldB012" header-value="sped_35" header-source="constant" />
-  <field id="relIepStdOid.stdFieldB014" header-value="sped_621" header-source="constant" />
-  <field id="relIepStdOid.stdFieldB016" header-value="PrimaryDisability" header-source="constant" />
-  <field id="relIepStdOid.stdFieldB018" header-value="LevelOfNeed" header-source="constant" />
-  <field id="relIepStdOid.stdFieldB019" header-value="EvalResults" header-source="constant" />
+
+  <!-- Previously these were mapped to fields that MSS uses for different and unrelated data -->
+  <!-- I don't think we have this data in a format that can be exported here, so blank these for now -->
+  <constant value="" header-source="constant" header-value="sped_35" />
+  <constant value="" header-source="constant" header-value="sped_621" />
+  <constant value="" header-source="constant" header-value="PrimaryDisability" />
+  <constant value="" header-source="constant" header-value="LevelOfNeed" />
+  <constant value="" header-source="constant" header-value="EvalResults" />
+  
   <field id="relIepStdOid.stdIDState" header-value="SASID" header-source="constant" />
   <field id="relIepStdOid.stdIDLocal" header-value="LASID" header-source="constant" />
 </export>
